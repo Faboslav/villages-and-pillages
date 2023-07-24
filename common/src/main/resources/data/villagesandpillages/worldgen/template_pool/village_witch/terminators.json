@@ -1,0 +1,69 @@
+{
+	"name": "villagesandpillages:village_witch/terminators",
+	"fallback": "minecraft:empty",
+	"elements": [
+		{
+			"weight": 1,
+			"element": {
+				"location": "villagesandpillages:village_witch/road/end/road_end_dead",
+				"processors": "villagesandpillages:village_witch",
+				"projection": "rigid",
+				"element_type": "minecraft:single_pool_element"
+			}
+		},
+		{
+			"weight": 5,
+			"element": {
+				"location": "villagesandpillages:village_witch/road/end/road_end_short",
+				"processors": "villagesandpillages:village_witch",
+				"projection": "rigid",
+				"element_type": "minecraft:single_pool_element"
+			}
+		},
+		{
+			"weight": 9,
+			"element": {
+				"location": "villagesandpillages:village_witch/road/end/road_end_medium",
+				"processors": "villagesandpillages:village_witch",
+				"projection": "rigid",
+				"element_type": "minecraft:single_pool_element"
+			}
+		},
+		{
+			"weight": 13,
+			"element": {
+				"location": "villagesandpillages:village_witch/road/end/road_end_long",
+				"processors": "villagesandpillages:village_witch",
+				"projection": "rigid",
+				"element_type": "minecraft:single_pool_element"
+			}
+		},
+		{
+			"weight": 30,
+			"element": {
+				"location": "villagesandpillages:village_witch/house/small/small_house_01",
+				"processors": "villagesandpillages:village_witch_house",
+				"projection": "rigid",
+				"element_type": "minecraft:single_pool_element"
+			}
+		},
+		{
+			"weight": 25,
+			"element": {
+				"location": "villagesandpillages:village_witch/house/small/small_house_02",
+				"processors": "villagesandpillages:village_witch_house",
+				"projection": "rigid",
+				"element_type": "minecraft:single_pool_element"
+			}
+		},
+		{
+			"weight": 20,
+			"element": {
+				"location": "villagesandpillages:village_witch/house/medium/medium_house_01",
+				"processors": "villagesandpillages:village_witch_house",
+				"projection": "rigid",
+				"element_type": "minecraft:single_pool_element"
+			}
+		}
+	]
+}

@@ -1,0 +1,50 @@
+{
+	"schema_version": 1,
+	"quilt_loader": {
+		"group": "${group}",
+		"id": "villagesandpillages",
+		"version": "${modVersion}",
+		"name": "${modName}",
+		"description": "${modDescription}",
+		"authors": [
+			"${modAuthor}"
+		],
+		"contact": {
+			"homepage": "https://github.com/Faboslav/friends-and-foes-beekeeper-hut",
+			"sources": "https://github.com/Faboslav/friends-and-foes-beekeeper-hut",
+			"issues": "https://github.com/Faboslav/friends-and-foes-beekeeper-hut/issues",
+			"wiki": "https://github.com/Faboslav/friends-and-foes-beekeeper-hut/wiki"
+		},
+		"license": "CC BY-NC-ND 4.0",
+		"icon": "icon.jpg",
+		"intermediate_mappings": "net.fabricmc:intermediary",
+		"environment": "*",
+		"entrypoints": {
+			"init": [
+				"com.faboslav.villagesandpillages.quilt.BeekeeperHutQuilt"
+			]
+		},
+		"depends": [
+			{
+				"id": "java",
+				"version": ">=17"
+			},
+			{
+				"id": "minecraft",
+				"version": ">=1.19.2"
+			},
+			{
+				"id": "quilt_loader",
+				"version": "*"
+			},
+			{
+				"id": "quilt_base",
+				"version": "*"
+			},
+			{
+				"id": "yungsapi",
+				"version": ">=3.8.5"
+			}
+		]
+	}
+}

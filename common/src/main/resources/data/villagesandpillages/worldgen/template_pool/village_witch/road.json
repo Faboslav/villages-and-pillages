@@ -1,0 +1,69 @@
+{
+	"name": "villagesandpillages:village_witch/road",
+	"fallback": "villagesandpillages:village_witch/terminators",
+	"elements": [
+		{
+			"weight": 30,
+			"element": {
+				"location": "villagesandpillages:village_witch/road/crossroad/crossroad_four_way",
+				"processors": "villagesandpillages:village_witch",
+				"projection": "rigid",
+				"element_type": "minecraft:single_pool_element"
+			}
+		},
+		{
+			"weight": 20,
+			"element": {
+				"location": "villagesandpillages:village_witch/road/crossroad/crossroad_three_way",
+				"processors": "villagesandpillages:village_witch",
+				"projection": "rigid",
+				"element_type": "minecraft:single_pool_element"
+			}
+		},
+		{
+			"weight": 10,
+			"element": {
+				"location": "villagesandpillages:village_witch/road/crossroad/crossroad_two_way",
+				"processors": "villagesandpillages:village_witch",
+				"projection": "rigid",
+				"element_type": "minecraft:single_pool_element"
+			}
+		},
+		{
+			"weight": 5,
+			"element": {
+				"location": "villagesandpillages:village_witch/road/crossroad/crossroad_one_way",
+				"processors": "villagesandpillages:village_witch",
+				"projection": "rigid",
+				"element_type": "minecraft:single_pool_element"
+			}
+		},
+		{
+			"weight": 5,
+			"element": {
+				"location": "villagesandpillages:village_witch/road/crossroad/crossroad_one_way_damaged",
+				"processors": "villagesandpillages:village_witch",
+				"projection": "rigid",
+				"element_type": "minecraft:single_pool_element"
+			}
+		},
+		{
+			"weight": 20,
+			"element": {
+				"location": "villagesandpillages:village_witch/road/road_long",
+				"processors": "villagesandpillages:village_witch",
+				"projection": "rigid",
+				"element_type": "minecraft:single_pool_element"
+			}
+		},
+		{
+			"weight": 40,
+			"element": {
+				"location": "villagesandpillages:village_witch/road/road_medium",
+				"processors": "villagesandpillages:village_witch",
+				"projection": "rigid",
+				"element_type": "minecraft:single_pool_element"
+			}
+		}
+	]
+}

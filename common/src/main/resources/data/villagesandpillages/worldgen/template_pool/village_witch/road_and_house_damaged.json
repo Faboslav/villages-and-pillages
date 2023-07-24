@@ -1,0 +1,51 @@
+{
+	"name": "villagesandpillages:village_witch/road_and_house",
+	"fallback": "villagesandpillages:village_witch/terminators",
+	"elements": [
+		{
+			"weight": 10,
+			"element": {
+				"location": "villagesandpillages:village_witch/road/crossroad/crossroad_one_way_damaged",
+				"processors": "villagesandpillages:village_witch",
+				"projection": "rigid",
+				"element_type": "minecraft:single_pool_element"
+			}
+		},
+		{
+			"weight": 10,
+			"element": {
+				"location": "villagesandpillages:village_witch/road/crossroad/crossroad_one_way_broken",
+				"processors": "villagesandpillages:village_witch",
+				"projection": "rigid",
+				"element_type": "minecraft:single_pool_element"
+			}
+		},
+		{
+			"weight": 30,
+			"element": {
+				"location": "villagesandpillages:village_witch/house/small/small_house_01",
+				"processors": "villagesandpillages:village_witch_house",
+				"projection": "rigid",
+				"element_type": "minecraft:single_pool_element"
+			}
+		},
+		{
+			"weight": 25,
+			"element": {
+				"location": "villagesandpillages:village_witch/house/small/small_house_02",
+				"processors": "villagesandpillages:village_witch_house",
+				"projection": "rigid",
+				"element_type": "minecraft:single_pool_element"
+			}
+		},
+		{
+			"weight": 30,
+			"element": {
+				"location": "villagesandpillages:village_witch/house/medium/medium_house_01",
+				"processors": "villagesandpillages:village_witch_house",
+				"projection": "rigid",
+				"element_type": "minecraft:single_pool_element"
+			}
+		}
+	]
+}

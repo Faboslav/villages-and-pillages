@@ -1,0 +1,15 @@
+{
+	"name": "villagesandpillages:village_witch/center",
+	"fallback": "minecraft:empty",
+	"elements": [
+		{
+			"weight": 1,
+			"element": {
+				"location": "villagesandpillages:village_witch/center/center_01",
+				"processors": "villagesandpillages:village_witch",
+				"projection": "rigid",
+				"element_type": "minecraft:single_pool_element"
+			}
+		}
+	]
+}

@@ -1,0 +1,57 @@
+{
+	"name": "villagesandpillages:village_witch/decoration",
+	"fallback": "minecraft:empty",
+	"elements": [
+		{
+			"weight": 100,
+			"element": {
+				"element_type": "minecraft:empty_pool_element"
+			}
+		},
+		{
+			"weight": 4,
+			"element": {
+				"location": "villagesandpillages:village_witch/decoration/villager_cage_01",
+				"processors": "villagesandpillages:village_witch",
+				"projection": "rigid",
+				"element_type": "minecraft:single_pool_element"
+			}
+		},
+		{
+			"weight": 4,
+			"element": {
+				"location": "villagesandpillages:village_witch/decoration/villager_cage_02",
+				"processors": "villagesandpillages:village_witch",
+				"projection": "rigid",
+				"element_type": "minecraft:single_pool_element"
+			}
+		},
+		{
+			"weight": 2,
+			"element": {
+				"location": "villagesandpillages:village_witch/decoration/dead_tree_01",
+				"processors": "villagesandpillages:village_witch",
+				"projection": "rigid",
+				"element_type": "minecraft:single_pool_element"
+			}
+		},
+		{
+			"weight": 2,
+			"element": {
+				"location": "villagesandpillages:village_witch/decoration/dead_tree_02",
+				"processors": "villagesandpillages:village_witch",
+				"projection": "rigid",
+				"element_type": "minecraft:single_pool_element"
+			}
+		},
+		{
+			"weight": 2,
+			"element": {
+				"location": "villagesandpillages:village_witch/decoration/dead_tree_03",
+				"processors": "villagesandpillages:village_witch",
+				"projection": "rigid",
+				"element_type": "minecraft:single_pool_element"
+			}
+		}
+	]
+}

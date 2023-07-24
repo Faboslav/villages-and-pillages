@@ -1,0 +1,15 @@
+{
+	"name": "villagesandpillages:village_witch/entity/witch",
+	"fallback": "villagesandpillages:village_witch/entity/witch",
+	"elements": [
+		{
+			"weight": 1,
+			"element": {
+				"location": "villagesandpillages:village_witch/entity/witch",
+				"processors": "minecraft:empty",
+				"projection": "rigid",
+				"element_type": "minecraft:single_pool_element"
+			}
+		}
+	]
+}
