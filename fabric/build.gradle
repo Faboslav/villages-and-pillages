@@ -45,6 +45,12 @@ dependencies {
 	//modRuntimeOnly "curse.maven:async-locator-625069:4257310"
 	modRuntimeOnly "curse.maven:disablecustomworldsadvice-401978:3827588"
 
+	// Integrations
+	// Waystones
+	//modRuntimeOnly "curse.maven:cloth-config-348521:4633414"
+	//modRuntimeOnly "curse.maven:balm-fabric-500525:4442592"
+	//modRuntimeOnly "curse.maven:waystones-fabric-500087:4635403"
+
 	common(project(path: ":common", configuration: "namedElements")) { transitive false }
 	shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
 }

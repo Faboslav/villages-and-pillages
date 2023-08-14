@@ -8,7 +8,26 @@
 				"location": "villagesandpillages:village_witch/center/center_01",
 				"processors": "villagesandpillages:village_witch",
 				"projection": "rigid",
-				"element_type": "minecraft:single_pool_element"
+				"element_type": "yungsapi:yung_single_element"
+			}
+		},
+		{
+			"weight": 1,
+			"element": {
+				"location": "villagesandpillages:village_witch/center/center_waystones_01",
+				"processors": "villagesandpillages:village_witch",
+				"projection": "rigid",
+				"condition": {
+					"type": "yungsapi:all_of",
+					"conditions": [
+						{
+							"type": "yungsapi:mod_loaded",
+							"modid": "waystones"
+						}
+					]
+				},
+				"is_priority": true,
+				"element_type": "yungsapi:yung_single_element"
 			}
 		}
 	]

@@ -4,6 +4,9 @@ import com.faboslav.villagesandpillages.VillagesAndPillages;
 import com.faboslav.villagesandpillages.init.VillagesAndPillagesStructureTypes;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import com.yungnickyoung.minecraft.yungsapi.world.structure.YungJigsawStructure;
+import com.yungnickyoung.minecraft.yungsapi.world.structure.terrainadaptation.EnhancedTerrainAdaptation;
+import com.yungnickyoung.minecraft.yungsapi.world.structure.terrainadaptation.EnhancedTerrainAdaptationType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.structure.pool.StructurePool;
@@ -11,6 +14,7 @@ import net.minecraft.structure.pool.StructurePoolBasedGenerator;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
+import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.util.math.intprovider.IntProvider;
 import net.minecraft.util.math.random.Random;
@@ -35,7 +39,7 @@ import java.util.function.Predicate;
  * @author TelepathicGrunt
  * <a href="https://github.com/TelepathicGrunt/RepurposedStructures">https://github.com/TelepathicGrunt/RepurposedStructures</a>
  */
-public class VillageWitchStructure extends Structure
+public class VillageWitchStructure extends YungJigsawStructure
 {
 	public static final int MAX_TOTAL_STRUCTURE_RADIUS = 128;
 	public static final Codec<VillageWitchStructure> CODEC = RecordCodecBuilder.create(builder -> builder.group(configCodecBuilder(builder), StructurePool.REGISTRY_CODEC.fieldOf("start_pool").forGetter((structure) -> {
@@ -56,6 +60,12 @@ public class VillageWitchStructure extends Structure
 		return structure.projectStartToHeightmap;
 	}), Codec.intRange(1, MAX_TOTAL_STRUCTURE_RADIUS).fieldOf("max_distance_from_center").forGetter((structure) -> {
 		return structure.maxDistanceFromCenter;
+	}), Codec.INT.optionalFieldOf("max_y").forGetter((structure) -> {
+		return structure.maxY;
+	}), Codec.INT.optionalFieldOf("min_y").forGetter((structure) -> {
+		return structure.minY;
+	}), EnhancedTerrainAdaptationType.ADAPTATION_CODEC.optionalFieldOf("enhanced_terrain_adaptation", EnhancedTerrainAdaptation.NONE).forGetter((structure) -> {
+		return structure.enhancedTerrainAdaptation;
 	})).apply(builder, VillageWitchStructure::new));
 
 	public final RegistryEntry<StructurePool> startPool;
@@ -67,6 +77,9 @@ public class VillageWitchStructure extends Structure
 	public final boolean useExpansionHack;
 	public final Optional<Heightmap.Type> projectStartToHeightmap;
 	public final int maxDistanceFromCenter;
+	public final Optional<Integer> maxY;
+	public final Optional<Integer> minY;
+	public final EnhancedTerrainAdaptation enhancedTerrainAdaptation;
 
 	public VillageWitchStructure(
 		Structure.Config structureSettings,
@@ -78,9 +91,26 @@ public class VillageWitchStructure extends Structure
 		IntProvider zOffsetInChunk,
 		boolean useExpansionHack,
 		Optional<Heightmap.Type> projectStartToHeightmap,
-		int maxBlockDistanceFromCenter
+		int maxBlockDistanceFromCenter,
+		Optional<Integer> maxY,
+		Optional<Integer> minY,
+		EnhancedTerrainAdaptation enhancedTerrainAdaptation
 	) {
-		super(structureSettings);
+		super(
+			structureSettings,
+			startPool,
+			startJigsawName,
+			maxDepth,
+			startHeight,
+			xOffsetInChunk,
+			zOffsetInChunk,
+			useExpansionHack,
+			projectStartToHeightmap,
+			maxBlockDistanceFromCenter,
+			maxY,
+			minY,
+			enhancedTerrainAdaptation
+		);
 		this.startPool = startPool;
 		this.startJigsawName = startJigsawName;
 		this.maxDepth = maxDepth;
@@ -90,6 +120,11 @@ public class VillageWitchStructure extends Structure
 		this.useExpansionHack = useExpansionHack;
 		this.projectStartToHeightmap = projectStartToHeightmap;
 		this.maxDistanceFromCenter = maxBlockDistanceFromCenter;
+		this.maxY = maxY;
+		this.minY = minY;
+		this.enhancedTerrainAdaptation = enhancedTerrainAdaptation;
+
+		VillagesAndPillages.getLogger().info(startHeight.toString());
 	}
 
 	@Override
@@ -138,7 +173,7 @@ public class VillageWitchStructure extends Structure
 					//VillagesAndPillages.getLogger().info("structure biome check: " + new BlockPos(x, 68, z).toShortString());
 					var structurePosition = new StructurePosition(new BlockPos(x, 68, z), collector -> {});
 
-					if (isBiomeValid(
+					if (this.isBiomeValid(
 						structurePosition,
 						context.chunkGenerator(),
 						context.noiseConfig(),
@@ -156,11 +191,11 @@ public class VillageWitchStructure extends Structure
 				);
 
 				mutable.set(blockPos).move(xOffset, -6, zOffset);
-				BlockState state = blockView.getState(mutable.getY());
 
 				if (
-					state.getFluidState().isEmpty()
-					&& state.isOf(Blocks.AIR) == false
+					this.isViableBlockState(blockView.getState(mutable.getY()))
+					//&& this.isViableBlockState(blockView.getState(mutable.move(Direction.UP).getY()))
+					//&& this.isViableBlockState(blockView.getState(mutable.move(Direction.UP, 2).getY()))
 				) {
 					negativeFluidChecks++;
 
@@ -177,7 +212,18 @@ public class VillageWitchStructure extends Structure
 		return true;
 	}
 
-	private static boolean isBiomeValid(
+	private boolean isViableBlockState(BlockState blockState) {
+		if(
+			blockState.getFluidState().isEmpty()
+		   	|| blockState.isOf(Blocks.AIR) == false)
+		{
+			return false;
+		}
+
+		return true;
+	}
+
+	private boolean isBiomeValid(
 		StructurePosition result,
 		ChunkGenerator chunkGenerator,
 		NoiseConfig noiseConfig,

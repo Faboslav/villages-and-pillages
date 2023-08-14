@@ -14,7 +14,7 @@
 				"location": "villagesandpillages:village_witch/decoration/villager_cage_01",
 				"processors": "villagesandpillages:village_witch",
 				"projection": "rigid",
-				"element_type": "minecraft:single_pool_element"
+				"element_type": "yungsapi:yung_single_element"
 			}
 		},
 		{
@@ -23,7 +23,7 @@
 				"location": "villagesandpillages:village_witch/decoration/villager_cage_02",
 				"processors": "villagesandpillages:village_witch",
 				"projection": "rigid",
-				"element_type": "minecraft:single_pool_element"
+				"element_type": "yungsapi:yung_single_element"
 			}
 		},
 		{
@@ -32,7 +32,7 @@
 				"location": "villagesandpillages:village_witch/decoration/dead_tree_01",
 				"processors": "villagesandpillages:village_witch",
 				"projection": "rigid",
-				"element_type": "minecraft:single_pool_element"
+				"element_type": "yungsapi:yung_single_element"
 			}
 		},
 		{
@@ -41,7 +41,7 @@
 				"location": "villagesandpillages:village_witch/decoration/dead_tree_02",
 				"processors": "villagesandpillages:village_witch",
 				"projection": "rigid",
-				"element_type": "minecraft:single_pool_element"
+				"element_type": "yungsapi:yung_single_element"
 			}
 		},
 		{
@@ -50,7 +50,7 @@
 				"location": "villagesandpillages:village_witch/decoration/dead_tree_03",
 				"processors": "villagesandpillages:village_witch",
 				"projection": "rigid",
-				"element_type": "minecraft:single_pool_element"
+				"element_type": "yungsapi:yung_single_element"
 			}
 		}
 	]

@@ -8,7 +8,7 @@
 				"location": "villagesandpillages:village_witch/road/end/road_end_dead",
 				"processors": "villagesandpillages:village_witch",
 				"projection": "rigid",
-				"element_type": "minecraft:single_pool_element"
+				"element_type": "yungsapi:yung_single_element"
 			}
 		},
 		{
@@ -17,7 +17,7 @@
 				"location": "villagesandpillages:village_witch/road/end/road_end_short",
 				"processors": "villagesandpillages:village_witch",
 				"projection": "rigid",
-				"element_type": "minecraft:single_pool_element"
+				"element_type": "yungsapi:yung_single_element"
 			}
 		},
 		{
@@ -26,7 +26,7 @@
 				"location": "villagesandpillages:village_witch/road/end/road_end_medium",
 				"processors": "villagesandpillages:village_witch",
 				"projection": "rigid",
-				"element_type": "minecraft:single_pool_element"
+				"element_type": "yungsapi:yung_single_element"
 			}
 		},
 		{
@@ -35,7 +35,7 @@
 				"location": "villagesandpillages:village_witch/road/end/road_end_long",
 				"processors": "villagesandpillages:village_witch",
 				"projection": "rigid",
-				"element_type": "minecraft:single_pool_element"
+				"element_type": "yungsapi:yung_single_element"
 			}
 		},
 		{
@@ -44,7 +44,7 @@
 				"location": "villagesandpillages:village_witch/house/small/small_house_01",
 				"processors": "villagesandpillages:village_witch_house",
 				"projection": "rigid",
-				"element_type": "minecraft:single_pool_element"
+				"element_type": "yungsapi:yung_single_element"
 			}
 		},
 		{
@@ -53,16 +53,25 @@
 				"location": "villagesandpillages:village_witch/house/small/small_house_02",
 				"processors": "villagesandpillages:village_witch_house",
 				"projection": "rigid",
-				"element_type": "minecraft:single_pool_element"
+				"element_type": "yungsapi:yung_single_element"
 			}
 		},
 		{
-			"weight": 20,
+			"weight": 10,
 			"element": {
 				"location": "villagesandpillages:village_witch/house/medium/medium_house_01",
 				"processors": "villagesandpillages:village_witch_house",
 				"projection": "rigid",
-				"element_type": "minecraft:single_pool_element"
+				"element_type": "yungsapi:yung_single_element"
+			}
+		},
+		{
+			"weight": 10,
+			"element": {
+				"location": "villagesandpillages:village_witch/house/medium/medium_house_02",
+				"processors": "villagesandpillages:village_witch_house",
+				"projection": "rigid",
+				"element_type": "yungsapi:yung_single_element"
 			}
 		}
 	]

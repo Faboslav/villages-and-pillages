@@ -8,7 +8,7 @@
 				"location": "villagesandpillages:village_witch/entity/witch",
 				"processors": "minecraft:empty",
 				"projection": "rigid",
-				"element_type": "minecraft:single_pool_element"
+				"element_type": "yungsapi:yung_single_element"
 			}
 		}
 	]

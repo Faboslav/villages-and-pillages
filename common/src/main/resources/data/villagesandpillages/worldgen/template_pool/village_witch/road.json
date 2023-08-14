@@ -3,12 +3,38 @@
 	"fallback": "villagesandpillages:village_witch/terminators",
 	"elements": [
 		{
-			"weight": 30,
+			"weight": 1,
 			"element": {
 				"location": "villagesandpillages:village_witch/road/crossroad/crossroad_four_way",
 				"processors": "villagesandpillages:village_witch",
 				"projection": "rigid",
-				"element_type": "minecraft:single_pool_element"
+				"is_priority": true,
+				"condition": {
+					"type": "yungsapi:all_of",
+					"conditions": [
+						{
+							"type": "yungsapi:piece_in_horizontal_direction",
+							"pieces": ["yungsapi:all"],
+							"range": 5,
+							"rotation": "none"
+						},
+						{
+							"type": "yungsapi:not",
+							"condition": {
+								"type": "yungsapi:piece_in_horizontal_direction",
+								"pieces": [
+									"villagesandpillages:village_witch/house/small/small_house_01",
+									"villagesandpillages:village_witch/house/small/small_house_02",
+									"villagesandpillages:village_witch/house/medium/medium_house_01",
+									"villagesandpillages:village_witch/house/medium/medium_house_02"
+								],
+								"range": 5,
+								"rotation": "none"
+							}
+						}
+					]
+				},
+				"element_type": "yungsapi:yung_single_element"
 			}
 		},
 		{
@@ -17,7 +43,33 @@
 				"location": "villagesandpillages:village_witch/road/crossroad/crossroad_three_way",
 				"processors": "villagesandpillages:village_witch",
 				"projection": "rigid",
-				"element_type": "minecraft:single_pool_element"
+				"is_priority": true,
+				"condition": {
+					"type": "yungsapi:all_of",
+					"conditions": [
+						{
+							"type": "yungsapi:piece_in_horizontal_direction",
+							"pieces": ["yungsapi:all"],
+							"range": 30,
+							"rotation": "none"
+						},
+						{
+							"type": "yungsapi:not",
+							"condition": {
+								"type": "yungsapi:piece_in_horizontal_direction",
+								"pieces": [
+									"villagesandpillages:village_witch/house/small/small_house_01",
+									"villagesandpillages:village_witch/house/small/small_house_02",
+									"villagesandpillages:village_witch/house/medium/medium_house_01",
+									"villagesandpillages:village_witch/house/medium/medium_house_02"
+								],
+								"range": 30,
+								"rotation": "none"
+							}
+						}
+					]
+				},
+				"element_type": "yungsapi:yung_single_element"
 			}
 		},
 		{
