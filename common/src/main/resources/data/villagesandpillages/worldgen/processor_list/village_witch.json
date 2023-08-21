@@ -18,10 +18,7 @@
 				"Name": "minecraft:light_gray_concrete"
 			},
 			"target_block_output": {
-				"Name": "minecraft:mossy_cobblestone_wall",
-				"Properties": {
-					"waterlogged": "true"
-				}
+				"Name": "minecraft:mossy_cobblestone_wall"
 			}
 		},
 		{

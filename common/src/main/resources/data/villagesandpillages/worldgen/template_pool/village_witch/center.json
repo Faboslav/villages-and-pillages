@@ -1,6 +1,6 @@
 {
 	"name": "villagesandpillages:village_witch/center",
-	"fallback": "minecraft:empty",
+	"fallback": "villagesandpillages:village_witch/terminators",
 	"elements": [
 		{
 			"weight": 1,

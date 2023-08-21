@@ -8,6 +8,7 @@
 	},
 	"mixins": [
 		"ChunkRegionAccessor",
+		"LessTreesInVillageWitchMixin",
 		"NoTreesOnWitchVillageHouseMixin",
 		"StructureTemplateMixin",
 		"accessor.StructureProcessorAccessor"

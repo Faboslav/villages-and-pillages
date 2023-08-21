@@ -5,11 +5,7 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.SlabBlock;
-import net.minecraft.block.Waterloggable;
-import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
 import net.minecraft.state.property.Properties;
-import net.minecraft.state.property.Property;
 import net.minecraft.structure.StructurePlacementData;
 import net.minecraft.structure.StructureTemplate;
 import net.minecraft.structure.processor.StructureProcessor;
@@ -93,7 +89,7 @@ public final class CollapsedUnderwaterProcessor extends StructureProcessor
 				) {
 					BlockState modifiedTargetBlockOutput = targetBlockOutput;
 
-					if(modifiedTargetBlockOutput.contains(Properties.WATERLOGGED)) {
+					if (modifiedTargetBlockOutput.contains(Properties.WATERLOGGED)) {
 						modifiedTargetBlockOutput = targetBlockOutput.with(Properties.WATERLOGGED, true);
 					}
 

@@ -4,17 +4,16 @@ import com.faboslav.villagesandpillages.VillagesAndPillages;
 import com.faboslav.villagesandpillages.init.VillagesAndPillagesStructureTypes;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import com.yungnickyoung.minecraft.yungsapi.api.YungJigsawManager;
 import com.yungnickyoung.minecraft.yungsapi.world.structure.YungJigsawStructure;
 import com.yungnickyoung.minecraft.yungsapi.world.structure.terrainadaptation.EnhancedTerrainAdaptation;
 import com.yungnickyoung.minecraft.yungsapi.world.structure.terrainadaptation.EnhancedTerrainAdaptationType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.structure.pool.StructurePool;
-import net.minecraft.structure.pool.StructurePoolBasedGenerator;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
-import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.util.math.intprovider.IntProvider;
 import net.minecraft.util.math.random.Random;
@@ -143,15 +142,17 @@ public class VillageWitchStructure extends YungJigsawStructure
 		int startY = this.startHeight.get(context.random(), new HeightContext(context.chunkGenerator(), context.world()));
 		BlockPos startPos = new BlockPos(chunkPos.getOffsetX(xOffset), startY, chunkPos.getOffsetZ(zOffset));
 
-		return StructurePoolBasedGenerator.generate(
+		return YungJigsawManager.assembleJigsawStructure(
 			context,
 			this.startPool,
 			this.startJigsawName,
 			this.maxDepth,
 			startPos,
-			false,
+			this.useExpansionHack,
 			this.projectStartToHeightmap,
-			this.maxDistanceFromCenter
+			this.maxDistanceFromCenter,
+			this.maxY,
+			this.minY
 		);
 	}
 
@@ -169,9 +170,9 @@ public class VillageWitchStructure extends YungJigsawStructure
 			for (int zOffset = -checkRadius; zOffset <= checkRadius; zOffset += 8) {
 				int x = xOffset + blockPos.getX();
 				int z = zOffset + blockPos.getZ();
-				if(xOffset % checkRadius == 0 && zOffset % checkRadius == 0) {
-					//VillagesAndPillages.getLogger().info("structure biome check: " + new BlockPos(x, 68, z).toShortString());
-					var structurePosition = new StructurePosition(new BlockPos(x, 68, z), collector -> {});
+				if (xOffset % checkRadius == 0 && zOffset % checkRadius == 0) {
+					var structurePosition = new StructurePosition(new BlockPos(x, 68, z), collector -> {
+					});
 
 					if (this.isBiomeValid(
 						structurePosition,
@@ -192,11 +193,7 @@ public class VillageWitchStructure extends YungJigsawStructure
 
 				mutable.set(blockPos).move(xOffset, -6, zOffset);
 
-				if (
-					this.isViableBlockState(blockView.getState(mutable.getY()))
-					//&& this.isViableBlockState(blockView.getState(mutable.move(Direction.UP).getY()))
-					//&& this.isViableBlockState(blockView.getState(mutable.move(Direction.UP, 2).getY()))
-				) {
+				if (this.isViableBlockState(blockView.getState(mutable.getY()))) {
 					negativeFluidChecks++;
 
 					// More than half blocks are negative check
@@ -207,16 +204,13 @@ public class VillageWitchStructure extends YungJigsawStructure
 			}
 		}
 
-		VillagesAndPillages.getLogger().info("da");
-
 		return true;
 	}
 
 	private boolean isViableBlockState(BlockState blockState) {
-		if(
+		if (
 			blockState.getFluidState().isEmpty()
-		   	|| blockState.isOf(Blocks.AIR) == false)
-		{
+			|| blockState.isOf(Blocks.AIR) == false) {
 			return false;
 		}
 

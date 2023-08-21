@@ -37,42 +37,6 @@
 				"projection": "rigid",
 				"element_type": "yungsapi:yung_single_element"
 			}
-		},
-		{
-			"weight": 30,
-			"element": {
-				"location": "villagesandpillages:village_witch/house/small/small_house_01",
-				"processors": "villagesandpillages:village_witch_house",
-				"projection": "rigid",
-				"element_type": "yungsapi:yung_single_element"
-			}
-		},
-		{
-			"weight": 25,
-			"element": {
-				"location": "villagesandpillages:village_witch/house/small/small_house_02",
-				"processors": "villagesandpillages:village_witch_house",
-				"projection": "rigid",
-				"element_type": "yungsapi:yung_single_element"
-			}
-		},
-		{
-			"weight": 10,
-			"element": {
-				"location": "villagesandpillages:village_witch/house/medium/medium_house_01",
-				"processors": "villagesandpillages:village_witch_house",
-				"projection": "rigid",
-				"element_type": "yungsapi:yung_single_element"
-			}
-		},
-		{
-			"weight": 10,
-			"element": {
-				"location": "villagesandpillages:village_witch/house/medium/medium_house_02",
-				"processors": "villagesandpillages:village_witch_house",
-				"projection": "rigid",
-				"element_type": "yungsapi:yung_single_element"
-			}
 		}
 	]
 }

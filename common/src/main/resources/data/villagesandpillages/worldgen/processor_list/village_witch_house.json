@@ -4,6 +4,9 @@
 			"processor_type": "villagesandpillages:waterlog_processor"
 		},
 		{
+			"processor_type": "villagesandpillages:village_witch_opened_door_processor"
+		},
+		{
 			"processor_type": "villagesandpillages:pillar_processor",
 			"target_block": {
 				"Name": "minecraft:brown_concrete"
@@ -160,27 +163,6 @@
 					},
 					"output_state": {
 						"Name": "minecraft:air"
-					}
-				}
-			]
-		},
-		{
-			"processor_type": "minecraft:rule",
-			"rules": [
-				{
-					"input_predicate": {
-						"block": "minecraft:spruce_door",
-						"predicate_type": "minecraft:random_block_match",
-						"probability": 0.5
-					},
-					"location_predicate": {
-						"predicate_type": "minecraft:always_true"
-					},
-					"output_state": {
-						"Name": "minecraft:spruce_door",
-						"Properties": {
-							"open": "false"
-						}
 					}
 				}
 			]

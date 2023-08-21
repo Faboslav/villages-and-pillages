@@ -1,6 +1,6 @@
 {
 	"replace": false,
 	"values": [
-		"villagesandpillages:village_witch"
+		"#minecraft:village"
 	]
 }
