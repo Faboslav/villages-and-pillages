@@ -122,8 +122,6 @@ public class VillageWitchStructure extends YungJigsawStructure
 		this.maxY = maxY;
 		this.minY = minY;
 		this.enhancedTerrainAdaptation = enhancedTerrainAdaptation;
-
-		VillagesAndPillages.getLogger().info(startHeight.toString());
 	}
 
 	@Override
