@@ -199,10 +199,6 @@ public class VillageWitchStructure extends YungJigsawStructure
 			}
 		}
 
-
-		StructureSet villageWitchStructureSet = ((ChunkGeneratorAccessor) context.chunkGenerator()).getStructureSetRegistry().get(VillagesAndPillages.makeID("village_witch"));
-		RegistryEntry<StructureSet> registryEntry = RegistryEntry.of(villageWitchStructureSet);
-
 		return true;
 	}
 

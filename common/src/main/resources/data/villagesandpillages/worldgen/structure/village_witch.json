@@ -24,8 +24,8 @@
 				{
 					"type": "minecraft:witch",
 					"weight": 1,
-					"minCount": 3,
-					"maxCount": 6
+					"minCount": 4,
+					"maxCount": 8
 				}
 			]
 		},

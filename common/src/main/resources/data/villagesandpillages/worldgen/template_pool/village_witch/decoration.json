@@ -20,7 +20,10 @@
 						"type": "yungsapi:piece_in_range",
 						"pieces": [
 							"villagesandpillages:village_witch/decoration/villager_cage_01",
-							"villagesandpillages:village_witch/decoration/villager_cage_02"
+							"villagesandpillages:village_witch/decoration/villager_cage_02",
+							"villagesandpillages:village_witch/road/crossroad/crossroad_two_way",
+							"villagesandpillages:village_witch/road/crossroad/crossroad_three_way",
+							"villagesandpillages:village_witch/road/crossroad/crossroad_four_way"
 						],
 						"horizontal_range": 5,
 						"rotation": "none"
@@ -43,7 +46,10 @@
 						"type": "yungsapi:piece_in_range",
 						"pieces": [
 							"villagesandpillages:village_witch/decoration/villager_cage_01",
-							"villagesandpillages:village_witch/decoration/villager_cage_02"
+							"villagesandpillages:village_witch/decoration/villager_cage_02",
+							"villagesandpillages:village_witch/road/crossroad/crossroad_two_way",
+							"villagesandpillages:village_witch/road/crossroad/crossroad_three_way",
+							"villagesandpillages:village_witch/road/crossroad/crossroad_four_way"
 						],
 						"horizontal_range": 5,
 						"rotation": "none"
