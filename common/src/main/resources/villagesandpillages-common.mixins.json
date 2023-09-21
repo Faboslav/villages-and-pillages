@@ -7,10 +7,10 @@
 		"defaultRequire": 1
 	},
 	"mixins": [
-		"ChunkRegionAccessor",
 		"LessTreesInVillageWitchMixin",
 		"NoTreesOnWitchVillageHouseMixin",
 		"StructureTemplateMixin",
+		"accessor.ChunkRegionAccessor",
 		"accessor.StructureProcessorAccessor"
 	]
 }

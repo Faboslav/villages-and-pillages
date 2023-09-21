@@ -17,9 +17,9 @@ public class VillageWitchFlowerPotProcessor extends StructureProcessor
 	public static final VillageWitchFlowerPotProcessor INSTANCE = new VillageWitchFlowerPotProcessor();
 	public static final Codec<VillageWitchFlowerPotProcessor> CODEC = Codec.unit(() -> INSTANCE);
 	private final BlockStateRandomizer pottedPlantsSelector = new BlockStateRandomizer(Blocks.FLOWER_POT.getDefaultState())
-		.addBlock(Blocks.POTTED_DEAD_BUSH.getDefaultState(), 0.3f)
-		.addBlock(Blocks.POTTED_BLUE_ORCHID.getDefaultState(), 0.15f)
-		.addBlock(Blocks.AZALEA.getDefaultState(), 0.15f)
+		.addBlock(Blocks.POTTED_BLUE_ORCHID.getDefaultState(), 0.25f)
+		.addBlock(Blocks.POTTED_AZALEA_BUSH.getDefaultState(), 0.25f)
+		.addBlock(Blocks.POTTED_DEAD_BUSH.getDefaultState(), 0.2f)
 		.addBlock(Blocks.POTTED_BROWN_MUSHROOM.getDefaultState(), 0.15f)
 		.addBlock(Blocks.POTTED_RED_MUSHROOM.getDefaultState(), 0.15f);
 

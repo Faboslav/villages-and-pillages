@@ -1,4 +1,4 @@
-package com.faboslav.villagesandpillages.mixin;
+package com.faboslav.villagesandpillages.mixin.accessor;
 
 import net.minecraft.world.ChunkRegion;
 import net.minecraft.world.gen.StructureAccessor;

@@ -1,5 +1,5 @@
 {
-	"type": "yungsapi:yung_jigsaw",
+	"type": "villagesandpillages:village_witch_structure",
 	"start_pool": "villagesandpillages:village_witch/center",
 	"start_jigsaw_name": "villagesandpillages:village_witch_anchor",
 	"size": 5,
@@ -24,8 +24,8 @@
 				{
 					"type": "minecraft:witch",
 					"weight": 1,
-					"minCount": 2,
-					"maxCount": 4
+					"minCount": 3,
+					"maxCount": 6
 				}
 			]
 		},

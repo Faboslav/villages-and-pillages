@@ -10,6 +10,7 @@ import com.yungnickyoung.minecraft.yungsapi.world.structure.terrainadaptation.En
 import com.yungnickyoung.minecraft.yungsapi.world.structure.terrainadaptation.EnhancedTerrainAdaptationType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.structure.StructureSet;
 import net.minecraft.structure.pool.StructurePool;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
@@ -155,11 +156,6 @@ public class VillageWitchStructure extends YungJigsawStructure
 	}
 
 	private boolean extraSpawningChecks(Context context, BlockPos blockPos) {
-		/*
-		if(context.chunkGenerator().shouldStructureGenerateInRange(RegistryEntry.of(StructureSets.initAndGetDefault()), context.noiseConfig(), context.seed(), blockPos.getX(), blockPos.getZ(), 128)) {
-
-		}*/
-
 		int checkRadius = 64;
 		BlockPos.Mutable mutable = new BlockPos.Mutable();
 		int negativeFluidChecks = 0;
@@ -168,6 +164,7 @@ public class VillageWitchStructure extends YungJigsawStructure
 			for (int zOffset = -checkRadius; zOffset <= checkRadius; zOffset += 8) {
 				int x = xOffset + blockPos.getX();
 				int z = zOffset + blockPos.getZ();
+
 				if (xOffset % checkRadius == 0 && zOffset % checkRadius == 0) {
 					var structurePosition = new StructurePosition(new BlockPos(x, 68, z), collector -> {
 					});
@@ -201,6 +198,10 @@ public class VillageWitchStructure extends YungJigsawStructure
 				}
 			}
 		}
+
+
+		StructureSet villageWitchStructureSet = ((ChunkGeneratorAccessor) context.chunkGenerator()).getStructureSetRegistry().get(VillagesAndPillages.makeID("village_witch"));
+		RegistryEntry<StructureSet> registryEntry = RegistryEntry.of(villageWitchStructureSet);
 
 		return true;
 	}

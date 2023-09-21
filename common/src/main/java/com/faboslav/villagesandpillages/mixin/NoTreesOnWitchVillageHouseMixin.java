@@ -1,6 +1,7 @@
 package com.faboslav.villagesandpillages.mixin;
 
 import com.faboslav.villagesandpillages.VillagesAndPillages;
+import com.faboslav.villagesandpillages.mixin.accessor.ChunkRegionAccessor;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;

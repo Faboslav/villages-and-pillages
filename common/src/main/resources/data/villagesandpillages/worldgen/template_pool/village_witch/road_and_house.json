@@ -296,6 +296,7 @@
 								"pieces": [
 									"villagesandpillages:village_witch/house/small/small_house_01",
 									"villagesandpillages:village_witch/house/small/small_house_02",
+									"villagesandpillages:village_witch/house/small/small_house_03",
 									"villagesandpillages:village_witch/house/medium/medium_house_01",
 									"villagesandpillages:village_witch/house/medium/medium_house_02"
 								],
@@ -332,6 +333,7 @@
 								"pieces": [
 									"villagesandpillages:village_witch/house/small/small_house_01",
 									"villagesandpillages:village_witch/house/small/small_house_02",
+									"villagesandpillages:village_witch/house/small/small_house_03",
 									"villagesandpillages:village_witch/house/medium/medium_house_01",
 									"villagesandpillages:village_witch/house/medium/medium_house_02"
 								],
@@ -368,6 +370,7 @@
 								"pieces": [
 									"villagesandpillages:village_witch/house/small/small_house_01",
 									"villagesandpillages:village_witch/house/small/small_house_02",
+									"villagesandpillages:village_witch/house/small/small_house_03",
 									"villagesandpillages:village_witch/house/medium/medium_house_01",
 									"villagesandpillages:village_witch/house/medium/medium_house_02"
 								],
@@ -404,6 +407,7 @@
 								"pieces": [
 									"villagesandpillages:village_witch/house/small/small_house_01",
 									"villagesandpillages:village_witch/house/small/small_house_02",
+									"villagesandpillages:village_witch/house/small/small_house_03",
 									"villagesandpillages:village_witch/house/medium/medium_house_01",
 									"villagesandpillages:village_witch/house/medium/medium_house_02"
 								],
@@ -467,6 +471,7 @@
 								"pieces": [
 									"villagesandpillages:village_witch/house/small/small_house_01",
 									"villagesandpillages:village_witch/house/small/small_house_02",
+									"villagesandpillages:village_witch/house/small/small_house_03",
 									"villagesandpillages:village_witch/house/medium/medium_house_01",
 									"villagesandpillages:village_witch/house/medium/medium_house_02"
 								],
@@ -495,6 +500,7 @@
 								"pieces": [
 									"villagesandpillages:village_witch/house/small/small_house_01",
 									"villagesandpillages:village_witch/house/small/small_house_02",
+									"villagesandpillages:village_witch/house/small/small_house_03",
 									"villagesandpillages:village_witch/house/medium/medium_house_01",
 									"villagesandpillages:village_witch/house/medium/medium_house_02"
 								],
@@ -523,6 +529,7 @@
 								"pieces": [
 									"villagesandpillages:village_witch/house/small/small_house_01",
 									"villagesandpillages:village_witch/house/small/small_house_02",
+									"villagesandpillages:village_witch/house/small/small_house_03",
 									"villagesandpillages:village_witch/house/medium/medium_house_01",
 									"villagesandpillages:village_witch/house/medium/medium_house_02"
 								],
@@ -551,6 +558,7 @@
 								"pieces": [
 									"villagesandpillages:village_witch/house/small/small_house_01",
 									"villagesandpillages:village_witch/house/small/small_house_02",
+									"villagesandpillages:village_witch/house/small/small_house_03",
 									"villagesandpillages:village_witch/house/medium/medium_house_01",
 									"villagesandpillages:village_witch/house/medium/medium_house_02"
 								],
@@ -579,6 +587,7 @@
 								"pieces": [
 									"villagesandpillages:village_witch/house/small/small_house_01",
 									"villagesandpillages:village_witch/house/small/small_house_02",
+									"villagesandpillages:village_witch/house/small/small_house_03",
 									"villagesandpillages:village_witch/house/medium/medium_house_01",
 									"villagesandpillages:village_witch/house/medium/medium_house_02"
 								],
@@ -607,6 +616,7 @@
 								"pieces": [
 									"villagesandpillages:village_witch/house/small/small_house_01",
 									"villagesandpillages:village_witch/house/small/small_house_02",
+									"villagesandpillages:village_witch/house/small/small_house_03",
 									"villagesandpillages:village_witch/house/medium/medium_house_01",
 									"villagesandpillages:village_witch/house/medium/medium_house_02"
 								],
@@ -635,6 +645,7 @@
 								"pieces": [
 									"villagesandpillages:village_witch/house/small/small_house_01",
 									"villagesandpillages:village_witch/house/small/small_house_02",
+									"villagesandpillages:village_witch/house/small/small_house_03",
 									"villagesandpillages:village_witch/house/medium/medium_house_01",
 									"villagesandpillages:village_witch/house/medium/medium_house_02"
 								],
@@ -663,6 +674,7 @@
 								"pieces": [
 									"villagesandpillages:village_witch/house/small/small_house_01",
 									"villagesandpillages:village_witch/house/small/small_house_02",
+									"villagesandpillages:village_witch/house/small/small_house_03",
 									"villagesandpillages:village_witch/house/medium/medium_house_01",
 									"villagesandpillages:village_witch/house/medium/medium_house_02"
 								],
@@ -690,6 +702,17 @@
 			"weight": 1,
 			"element": {
 				"location": "villagesandpillages:village_witch/house/small/small_house_02",
+				"processors": "villagesandpillages:village_witch_house",
+				"projection": "rigid",
+				"name": "house",
+				"max_count": 2,
+				"element_type": "yungsapi:yung_single_element"
+			}
+		},
+		{
+			"weight": 1,
+			"element": {
+				"location": "villagesandpillages:village_witch/house/small/small_house_03",
 				"processors": "villagesandpillages:village_witch_house",
 				"projection": "rigid",
 				"name": "house",
