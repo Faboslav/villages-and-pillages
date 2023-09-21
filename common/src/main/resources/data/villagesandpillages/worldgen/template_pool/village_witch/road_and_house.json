@@ -39,6 +39,23 @@
 		{
 			"weight": 1,
 			"element": {
+				"location": "villagesandpillages:village_witch/house/small/small_house_03",
+				"processors": "villagesandpillages:village_witch_house",
+				"projection": "rigid",
+				"is_priority": true,
+				"condition": {
+					"type": "yungsapi:depth",
+					"min_required_depth": 1,
+					"max_possible_depth": 1
+				},
+				"name": "first_house",
+				"max_count": 1,
+				"element_type": "yungsapi:yung_single_element"
+			}
+		},
+		{
+			"weight": 2,
+			"element": {
 				"location": "villagesandpillages:village_witch/house/medium/medium_house_01",
 				"processors": "villagesandpillages:village_witch_house",
 				"projection": "rigid",
@@ -54,7 +71,7 @@
 			}
 		},
 		{
-			"weight": 1,
+			"weight": 2,
 			"element": {
 				"location": "villagesandpillages:village_witch/house/medium/medium_house_02",
 				"processors": "villagesandpillages:village_witch_house",
@@ -88,9 +105,26 @@
 			}
 		},
 		{
-			"weight": 1,
+			"weight": 2,
 			"element": {
 				"location": "villagesandpillages:village_witch/house/small/small_house_02",
+				"processors": "villagesandpillages:village_witch_house",
+				"projection": "rigid",
+				"is_priority": true,
+				"condition": {
+					"type": "yungsapi:depth",
+					"min_required_depth": 2,
+					"max_possible_depth": 2
+				},
+				"name": "second_house",
+				"max_count": 1,
+				"element_type": "yungsapi:yung_single_element"
+			}
+		},
+		{
+			"weight": 1,
+			"element": {
+				"location": "villagesandpillages:village_witch/house/small/small_house_03",
 				"processors": "villagesandpillages:village_witch_house",
 				"projection": "rigid",
 				"is_priority": true,
@@ -139,7 +173,7 @@
 			}
 		},
 		{
-			"weight": 1,
+			"weight": 2,
 			"element": {
 				"location": "villagesandpillages:village_witch/house/small/small_house_01",
 				"processors": "villagesandpillages:village_witch_house",
@@ -159,6 +193,23 @@
 			"weight": 1,
 			"element": {
 				"location": "villagesandpillages:village_witch/house/small/small_house_02",
+				"processors": "villagesandpillages:village_witch_house",
+				"projection": "rigid",
+				"is_priority": true,
+				"condition": {
+					"type": "yungsapi:depth",
+					"min_required_depth": 3,
+					"max_possible_depth": 3
+				},
+				"name": "third_house",
+				"max_count": 1,
+				"element_type": "yungsapi:yung_single_element"
+			}
+		},
+		{
+			"weight": 2,
+			"element": {
+				"location": "villagesandpillages:village_witch/house/small/small_house_03",
 				"processors": "villagesandpillages:village_witch_house",
 				"projection": "rigid",
 				"is_priority": true,
@@ -241,7 +292,7 @@
 			}
 		},
 		{
-			"weight": 1,
+			"weight": 2,
 			"element": {
 				"location": "villagesandpillages:village_witch/house/medium/medium_house_01",
 				"processors": "villagesandpillages:village_witch_house",
@@ -258,7 +309,7 @@
 			}
 		},
 		{
-			"weight": 1,
+			"weight": 2,
 			"element": {
 				"location": "villagesandpillages:village_witch/house/medium/medium_house_02",
 				"processors": "villagesandpillages:village_witch_house",
@@ -688,7 +739,7 @@
 			}
 		},
 		{
-			"weight": 1,
+			"weight": 2,
 			"element": {
 				"location": "villagesandpillages:village_witch/house/small/small_house_01",
 				"processors": "villagesandpillages:village_witch_house",
@@ -710,7 +761,7 @@
 			}
 		},
 		{
-			"weight": 1,
+			"weight": 2,
 			"element": {
 				"location": "villagesandpillages:village_witch/house/small/small_house_03",
 				"processors": "villagesandpillages:village_witch_house",
