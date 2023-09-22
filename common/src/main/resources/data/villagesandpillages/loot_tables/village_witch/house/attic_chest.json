@@ -5,11 +5,12 @@
 			"rolls": {
 				"type": "minecraft:uniform",
 				"min": 2.0,
-				"max": 3.0
+				"max": 4.0
 			},
 			"entries": [
 				{
 					"type": "minecraft:item",
+					"weight": 1,
 					"functions": [
 						{
 							"function": "minecraft:set_count",
@@ -24,6 +25,7 @@
 				},
 				{
 					"type": "minecraft:item",
+					"weight": 1,
 					"functions": [
 						{
 							"function": "minecraft:set_count",
@@ -34,7 +36,7 @@
 							}
 						}
 					],
-					"name": "minecraft:honeycomb"
+					"name": "minecraft:cobweb"
 				},
 				{
 					"type": "minecraft:item",
@@ -44,8 +46,8 @@
 							"function": "minecraft:set_count",
 							"count": {
 								"type": "minecraft:uniform",
-								"min": 1.0,
-								"max": 3.0
+								"min": 2.0,
+								"max": 4.0
 							}
 						}
 					],
@@ -56,10 +58,25 @@
 		{
 			"rolls": {
 				"type": "minecraft:uniform",
-				"min": 2.0,
-				"max": 3.0
+				"min": 3.0,
+				"max": 5.0
 			},
 			"entries": [
+				{
+					"type": "minecraft:item",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": {
+								"type": "minecraft:uniform",
+								"min": 1.0,
+								"max": 1.0
+							}
+						}
+					],
+					"name": "minecraft:painting"
+				},
 				{
 					"type": "minecraft:item",
 					"weight": 1,
@@ -77,6 +94,21 @@
 				},
 				{
 					"type": "minecraft:item",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": {
+								"type": "minecraft:uniform",
+								"min": 1.0,
+								"max": 1.0
+							}
+						}
+					],
+					"name": "minecraft:book"
+				},
+				{
+					"type": "minecraft:item",
 					"weight": 2,
 					"functions": [
 						{
@@ -88,22 +120,22 @@
 							}
 						}
 					],
-					"name": "minecraft:bread"
+					"name": "minecraft:leather"
 				},
 				{
 					"type": "minecraft:item",
-					"weight": 4,
+					"weight": 1,
 					"functions": [
 						{
 							"function": "minecraft:set_count",
 							"count": {
-								"type": "minecraft:uniform",
-								"min": 1.0,
-								"max": 2.0
+								"min": 2.0,
+								"max": 4.0,
+								"type": "minecraft:uniform"
 							}
 						}
 					],
-					"name": "minecraft:wheat"
+					"name": "minecraft:glass_bottle"
 				}
 			]
 		}

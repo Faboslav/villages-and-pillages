@@ -8,7 +8,7 @@
 	"placement": {
 		"type": "yungsapi:enhanced_random_spread",
 		"salt": 365808513,
-		"spacing": 18,
-		"separation": 9
+		"spacing": 20,
+		"separation": 10
 	}
 }

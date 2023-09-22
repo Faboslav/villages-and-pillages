@@ -47,8 +47,8 @@ public class VillageWitchBrewingStandProcessor extends StructureProcessor
 			);
 			case 1 -> addBrewingRecipe(
 				itemsListNbt,
-				"minecraft:golden_carrot",
-				"minecraft:night_vision",
+				"minecraft:magma_cream",
+				"minecraft:fire_resistance",
 				random
 			);
 			case 2 -> addBrewingRecipe(
@@ -61,6 +61,30 @@ public class VillageWitchBrewingStandProcessor extends StructureProcessor
 				itemsListNbt,
 				"minecraft:pufferfish",
 				"minecraft:water_breathing",
+				random
+			);
+			case 4 -> addBrewingRecipe(
+				itemsListNbt,
+				"minecraft:fermented_spider_eye",
+				"minecraft:slowness",
+				random
+			);
+			case 5 -> addBrewingRecipe(
+				itemsListNbt,
+				"minecraft:spider_eye",
+				"minecraft:poison",
+				random
+			);
+			case 6 -> addBrewingRecipe(
+				itemsListNbt,
+				"minecraft:fermented_spider_eye",
+				"minecraft:weakness",
+				random
+			);
+			case 7 -> addBrewingRecipe(
+				itemsListNbt,
+				"minecraft:fermented_spider_eye",
+				"minecraft:harming",
 				random
 			);
 		}
@@ -82,7 +106,7 @@ public class VillageWitchBrewingStandProcessor extends StructureProcessor
 
 		itemsListTag.add(Util.make(new NbtCompound(), itemTag -> {
 			putPotionInSlot(itemTag, (byte) 1, outputPotionId);
-			if (randomSource.nextFloat() < .5f) putPotionInSlot(itemTag, (byte) 0, outputPotionId);
+			if (randomSource.nextFloat() < .75f) putPotionInSlot(itemTag, (byte) 0, outputPotionId);
 			if (randomSource.nextFloat() < .5f) putPotionInSlot(itemTag, (byte) 2, outputPotionId);
 		}));
 	}

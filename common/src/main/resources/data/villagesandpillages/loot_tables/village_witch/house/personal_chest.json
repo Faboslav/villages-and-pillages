@@ -3,38 +3,25 @@
 	"pools": [
 		{
 			"rolls": {
-				"type": "minecraft:uniform",
-				"min": 2.0,
-				"max": 3.0
+				"min": 3.0,
+				"max": 5.0,
+				"type": "minecraft:uniform"
 			},
 			"entries": [
 				{
 					"type": "minecraft:item",
+					"weight": 1,
 					"functions": [
 						{
 							"function": "minecraft:set_count",
 							"count": {
-								"type": "minecraft:uniform",
 								"min": 1.0,
-								"max": 1.0
+								"max": 3.0,
+								"type": "minecraft:uniform"
 							}
 						}
 					],
-					"name": "minecraft:emerald"
-				},
-				{
-					"type": "minecraft:item",
-					"functions": [
-						{
-							"function": "minecraft:set_count",
-							"count": {
-								"type": "minecraft:uniform",
-								"min": 2.0,
-								"max": 4.0
-							}
-						}
-					],
-					"name": "minecraft:honeycomb"
+					"name": "minecraft:stick"
 				},
 				{
 					"type": "minecraft:item",
@@ -43,21 +30,96 @@
 						{
 							"function": "minecraft:set_count",
 							"count": {
-								"type": "minecraft:uniform",
-								"min": 1.0,
-								"max": 3.0
+								"min": 2.0,
+								"max": 5.0,
+								"type": "minecraft:uniform"
 							}
 						}
 					],
-					"name": "minecraft:string"
+					"name": "minecraft:glass_bottle"
+				},
+				{
+					"type": "minecraft:item",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": {
+								"min": 3.0,
+								"max": 6.0,
+								"type": "minecraft:uniform"
+							}
+						}
+					],
+					"name": "minecraft:glowstone_dust"
+				},
+				{
+					"type": "minecraft:item",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": {
+								"min": 3.0,
+								"max": 6.0,
+								"type": "minecraft:uniform"
+							}
+						}
+					],
+					"name": "minecraft:redstone"
+				},
+				{
+					"type": "minecraft:item",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": {
+								"min": 3.0,
+								"max": 6.0,
+								"type": "minecraft:uniform"
+							}
+						}
+					],
+					"name": "minecraft:spider_eye"
+				},
+				{
+					"type": "minecraft:item",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": {
+								"min": 3.0,
+								"max": 6.0,
+								"type": "minecraft:uniform"
+							}
+						}
+					],
+					"name": "minecraft:gunpowder"
+				},
+				{
+					"type": "minecraft:item",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": {
+								"min": 3.0,
+								"max": 6.0,
+								"type": "minecraft:uniform"
+							}
+						}
+					],
+					"name": "minecraft:sugar"
 				}
 			]
 		},
 		{
 			"rolls": {
-				"type": "minecraft:uniform",
 				"min": 2.0,
-				"max": 3.0
+				"max": 4.0,
+				"type": "minecraft:uniform"
 			},
 			"entries": [
 				{
@@ -65,45 +127,55 @@
 					"weight": 1,
 					"functions": [
 						{
-							"function": "minecraft:set_count",
-							"count": {
-								"type": "minecraft:uniform",
-								"min": 1.0,
-								"max": 1.0
-							}
+							"function": "minecraft:set_nbt",
+							"tag": "{Potion:\"minecraft:healing\"}"
 						}
 					],
-					"name": "minecraft:flower_pot"
+					"name": "minecraft:potion"
 				},
 				{
 					"type": "minecraft:item",
-					"weight": 2,
+					"weight": 1,
 					"functions": [
 						{
-							"function": "minecraft:set_count",
-							"count": {
-								"type": "minecraft:uniform",
-								"min": 1.0,
-								"max": 2.0
-							}
+							"function": "minecraft:set_nbt",
+							"tag": "{Potion:\"minecraft:regeneration\"}"
 						}
 					],
-					"name": "minecraft:bread"
+					"name": "minecraft:potion"
 				},
 				{
 					"type": "minecraft:item",
-					"weight": 4,
+					"weight": 1,
 					"functions": [
 						{
-							"function": "minecraft:set_count",
-							"count": {
-								"type": "minecraft:uniform",
-								"min": 1.0,
-								"max": 2.0
-							}
+							"function": "minecraft:set_nbt",
+							"tag": "{Potion:\"minecraft:fire_resistance\"}"
 						}
 					],
-					"name": "minecraft:wheat"
+					"name": "minecraft:potion"
+				},
+				{
+					"type": "minecraft:item",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{Potion:\"minecraft:swiftness\"}"
+						}
+					],
+					"name": "minecraft:potion"
+				},
+				{
+					"type": "minecraft:item",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{Potion:\"minecraft:water_breathing\"}"
+						}
+					],
+					"name": "minecraft:potion"
 				}
 			]
 		}
