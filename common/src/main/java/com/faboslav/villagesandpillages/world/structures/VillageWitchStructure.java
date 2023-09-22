@@ -1,6 +1,5 @@
 package com.faboslav.villagesandpillages.world.structures;
 
-import com.faboslav.villagesandpillages.VillagesAndPillages;
 import com.faboslav.villagesandpillages.init.VillagesAndPillagesStructureTypes;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
@@ -10,7 +9,6 @@ import com.yungnickyoung.minecraft.yungsapi.world.structure.terrainadaptation.En
 import com.yungnickyoung.minecraft.yungsapi.world.structure.terrainadaptation.EnhancedTerrainAdaptationType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.structure.StructureSet;
 import net.minecraft.structure.pool.StructurePool;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;

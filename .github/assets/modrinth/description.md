@@ -1,4 +1,6 @@
-<img title="Friends&amp;Foes - Beeekeper Hut" src="https://raw.githubusercontent.com/Faboslav/friends-and-foes/master/.github/assets/images/title.jpg" alt="Friends&amp;Foes - Beeekeper Hut">
+<h1><center>Villages&Pillages</center></h1>
+
+<hr>
 
 <p></p>
 <p style="text-align: center;">
@@ -11,24 +13,22 @@
 	<a style="text-decoration: none;" href="https://discord.gg/QGwFvvMQCn">
 		<img src="https://img.shields.io/discord/924964658169913404?color=5865F2&amp;label=&amp;labelColor=111214&amp;logoColor=white&amp;style=for-the-badge&amp;logo=discord" height="28" />
 	</a>
-	<a style="text-decoration: none;" href="https://modrinth.com/mod/qsl">
-		<img src="https://img.shields.io/static/v1?label=&amp;message=Requires Quilted Fabric API&amp;color=c9d1d9&amp;labelColor=111214&amp;logoColor=white&amp;style=for-the-badge&amp;logo=curseforge" height="28" />
+	<a style="text-decoration: none;" href="https://modrinth.com/mod/fabric-api">
+		<img src="https://img.shields.io/static/v1?label=&amp;message=Requires Fabric API&amp;color=c9d1d9&amp;labelColor=111214&amp;logoColor=white&amp;style=for-the-badge&amp;logo=curseforge" height="28" />
 	</a>
-	<a style="text-decoration: none;" href="https://modrinth.com/mod/friends-and-foes-quilt">
-		<img src="https://img.shields.io/static/v1?label=&amp;message=Requires Friends%26Foes&amp;color=c9d1d9&amp;labelColor=111214&amp;logoColor=white&amp;style=for-the-badge&amp;logo=curseforge" height="28" />
+	<a style="text-decoration: none;" href="https://modrinth.com/mod/yungs-api">
+		<img src="https://img.shields.io/static/v1?label=&amp;message=Requires YUNG's APIs&amp;color=c9d1d9&amp;labelColor=111214&amp;logoColor=white&amp;style=for-the-badge&amp;logo=curseforge" height="28" />
 	</a>
 </p>
 
 <hr>
 
 <p>
-	<span style="font-size: 14px;">Friends&Foes - Beekeeper Hut is a small addon adding the beekeeper hut structure. Structure can be found in meadow and flower forest biomes.</span>
+	<span style="font-size: 14px;">Villages&Pillages is a small structure mod  with a thrilling twist to Minecraft by introducing hostile and unfriendly pillages that stand in stark contrast to the peaceful villages players are familiar with.</span>
 </p>
-<p>
-	<span style="font-size: 14px;">Looking for the <a style="font-size: 14px;" href="https://modrinth.com/mod/friends-and-foes-beekeeper-hut-fabric">Fabric</a> or <a style="font-size: 14px;" href="https://modrinth.com/mod/friends-and-foes-beekeeper-hut-forge">Forge</a> version?</span>
-</p>
-
 <hr>
+
+<h2>Season 1: Witch Village</h2>
 
 <p>
 	<img src="https://raw.githubusercontent.com/Faboslav/friends-and-foes-beekeeper-hut/master/.github/assets/images/beekeeper_hut1.png" width="412" height="232" />
