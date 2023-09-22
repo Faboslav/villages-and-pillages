@@ -8,9 +8,9 @@ import net.minecraft.util.Identifier;
 public class StructureProcessorTypeRegistry
 {
 	@ExpectPlatform
-	public static void registerStructureProcessorType(
-		Identifier identifier,
-		StructureProcessorType<? extends StructureProcessor> structureProcessorType
+	public static <T extends StructureProcessor> void registerStructureProcessorType(
+		String name,
+		StructureProcessorType<T> structureProcessorType
 	) {
 		throw new AssertionError();
 	}

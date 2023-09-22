@@ -1,7 +1,8 @@
 package com.faboslav.villagesandpillages.platform.fabric;
 
 import com.faboslav.villagesandpillages.VillagesAndPillages;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.world.gen.structure.Structure;
 import net.minecraft.world.gen.structure.StructureType;
 
@@ -11,6 +12,6 @@ public class StructureTypeRegistryImpl
 		String name,
 		StructureType<T> structureType
 	) {
-		Registry.register(Registry.STRUCTURE_TYPE, VillagesAndPillages.makeID(name), structureType);
+		Registry.register(Registries.STRUCTURE_TYPE, VillagesAndPillages.makeID(name), structureType);
 	}
 }

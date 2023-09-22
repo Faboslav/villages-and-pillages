@@ -22,7 +22,7 @@ configurations {
 dependencies {
 	forge "net.minecraftforge:forge:${rootProject.forge_version}"
 
-	modApi "com.yungnickyoung.minecraft.yungsapi:YungsApi:${minecraft_version}-Forge-${yungsapi_version}"
+	modApi "com.yungnickyoung.minecraft.yungsapi:YungsApi:${yungsapi_mc_version}-Fabric-${yungsapi_version}"
 
 	modRuntimeOnly "curse.maven:cloth-config-348521:4633416"
 	modRuntimeOnly "curse.maven:balm-531761:4442591"

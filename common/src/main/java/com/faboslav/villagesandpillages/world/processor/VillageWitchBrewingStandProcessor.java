@@ -28,12 +28,12 @@ public class VillageWitchBrewingStandProcessor extends StructureProcessor
 		StructureTemplate.StructureBlockInfo currentBlockInfo,
 		StructurePlacementData structurePlacementData
 	) {
-		if (currentBlockInfo.state.getBlock() != Blocks.BREWING_STAND) {
+		if (currentBlockInfo.state().getBlock() != Blocks.BREWING_STAND) {
 			return currentBlockInfo;
 		}
 
-		Random random = structurePlacementData.getRandom(currentBlockInfo.pos);
-		NbtCompound nbt = currentBlockInfo.nbt;
+		Random random = structurePlacementData.getRandom(currentBlockInfo.pos());
+		NbtCompound nbt = currentBlockInfo.nbt();
 		NbtList itemsListNbt = nbt.getList("Items", 10);
 
 		int randomNumber = random.nextInt(4);
@@ -89,7 +89,7 @@ public class VillageWitchBrewingStandProcessor extends StructureProcessor
 			);
 		}
 
-		currentBlockInfo = new StructureTemplate.StructureBlockInfo(currentBlockInfo.pos, currentBlockInfo.state, nbt);
+		currentBlockInfo = new StructureTemplate.StructureBlockInfo(currentBlockInfo.pos(), currentBlockInfo.state(), nbt);
 
 		return currentBlockInfo;
 	}

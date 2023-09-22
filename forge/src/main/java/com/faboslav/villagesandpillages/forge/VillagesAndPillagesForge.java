@@ -1,6 +1,7 @@
 package com.faboslav.villagesandpillages.forge;
 
 import com.faboslav.villagesandpillages.VillagesAndPillages;
+import com.faboslav.villagesandpillages.platform.forge.StructureProcessorTypeRegistryImpl;
 import com.faboslav.villagesandpillages.platform.forge.StructureTypeRegistryImpl;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -18,6 +19,7 @@ public final class VillagesAndPillagesForge
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
 		StructureTypeRegistryImpl.STRUCTURE_TYPES.register(bus);
+		StructureProcessorTypeRegistryImpl.STRUCTURE_PROCESSOR_TYPES.register(bus);
 
 		bus.addListener(VillagesAndPillagesForge::init);
 

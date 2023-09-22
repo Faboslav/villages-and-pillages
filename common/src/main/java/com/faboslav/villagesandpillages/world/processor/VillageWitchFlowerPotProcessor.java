@@ -2,7 +2,7 @@ package com.faboslav.villagesandpillages.world.processor;
 
 import com.faboslav.villagesandpillages.init.VillagesAndPillagesProcessorTypes;
 import com.mojang.serialization.Codec;
-import com.yungnickyoung.minecraft.yungsapi.world.BlockStateRandomizer;
+import com.yungnickyoung.minecraft.yungsapi.api.world.randomize.BlockStateRandomizer;
 import net.minecraft.block.Blocks;
 import net.minecraft.structure.StructurePlacementData;
 import net.minecraft.structure.StructureTemplate;
@@ -32,14 +32,14 @@ public class VillageWitchFlowerPotProcessor extends StructureProcessor
 		StructureTemplate.StructureBlockInfo currentBlockInfo,
 		StructurePlacementData structurePlacementData
 	) {
-		if (currentBlockInfo.state.getBlock() != Blocks.FLOWER_POT) {
+		if (currentBlockInfo.state().getBlock() != Blocks.FLOWER_POT) {
 			return currentBlockInfo;
 		}
 
-		Random random = structurePlacementData.getRandom(currentBlockInfo.pos);
+		Random random = structurePlacementData.getRandom(currentBlockInfo.pos());
 
 		currentBlockInfo = new StructureTemplate.StructureBlockInfo(
-			currentBlockInfo.pos,
+			currentBlockInfo.pos(),
 			pottedPlantsSelector.get(random),
 			null
 		);

@@ -30,7 +30,7 @@ public final class VillagerWitchOpenedDoorProcessor extends StructureProcessor
 		StructureTemplate.StructureBlockInfo currentBlockInfo,
 		StructurePlacementData structurePlacementData
 	) {
-		Block block = currentBlockInfo.state.getBlock();
+		Block block = currentBlockInfo.state().getBlock();
 		if (
 			block instanceof DoorBlock == false
 			|| block.getDefaultMapColor() != Blocks.SPRUCE_PLANKS.getDefaultMapColor()
@@ -38,8 +38,8 @@ public final class VillagerWitchOpenedDoorProcessor extends StructureProcessor
 			return currentBlockInfo;
 		}
 
-		BlockPos.Mutable doorBlockPos = currentBlockInfo.pos.mutableCopy();
-		BlockState doorBlockState = currentBlockInfo.state;
+		BlockPos.Mutable doorBlockPos = currentBlockInfo.pos().mutableCopy();
+		BlockState doorBlockState = currentBlockInfo.state();
 		DoubleBlockHalf doubleBlockHalf = doorBlockState.get(DoorBlock.HALF);
 
 		BlockPos.Mutable lowerDoorBlockPos = doorBlockPos.mutableCopy();
