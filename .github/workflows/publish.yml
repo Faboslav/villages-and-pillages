@@ -10,16 +10,21 @@ env:
         Java 17
         Java 18
     GAME_VERSIONS: |
-        1.20
-        1.20.1
-    FABRIC_DEPENDENCIES: |
+        1.19.2
+    FABRIC_DEPENDENCIES_CURSEFORGE: |
         fabric-api | depends | *
+        yungs-api-fabric | depends | *
+    FABRIC_DEPENDENCIES_MODRINTH: |
+        fabric-api | depends | *
+        yungs-api | depends | *
     FABRIC_LOADERS: |
         fabric
         quilt
     FORGE_LOADERS: |
         forge
         neoforge
+    FORGE_DEPENDENCIES: |
+        yungs-api | depends | *
     RETRY_ATTEMPTS: 3
     RELAY_DELAY: 10000
     VERSION_RESOLVER: latest
