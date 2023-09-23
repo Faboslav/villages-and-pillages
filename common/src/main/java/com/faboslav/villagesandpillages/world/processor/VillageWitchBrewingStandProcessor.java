@@ -36,7 +36,7 @@ public class VillageWitchBrewingStandProcessor extends StructureProcessor
 		NbtCompound nbt = currentBlockInfo.nbt();
 		NbtList itemsListNbt = nbt.getList("Items", 10);
 
-		int randomNumber = random.nextInt(4);
+		int randomNumber = random.nextInt(6);
 
 		switch (randomNumber) {
 			case 0 -> addBrewingRecipe(
