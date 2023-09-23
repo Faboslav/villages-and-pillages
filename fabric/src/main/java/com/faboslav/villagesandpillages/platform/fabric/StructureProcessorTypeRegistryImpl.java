@@ -1,6 +1,5 @@
 package com.faboslav.villagesandpillages.platform.fabric;
 
-import com.faboslav.villagesandpillages.VillagesAndPillages;
 import net.minecraft.structure.processor.StructureProcessor;
 import net.minecraft.structure.processor.StructureProcessorType;
 import net.minecraft.util.Identifier;

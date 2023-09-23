@@ -20,7 +20,7 @@ configurations {
 }
 
 dependencies {
-	forge "net.minecraftforge:forge:${rootProject.forge_version}"
+	forge "net.minecraftforge:forge:${minecraft_version}-${rootProject.forge_version}"
 
 	modApi "com.yungnickyoung.minecraft.yungsapi:YungsApi:${minecraft_version}-Forge-${yungsapi_version}"
 
@@ -39,6 +39,7 @@ processResources {
 	inputs.property "modDescription", rootProject.mod_description
 	inputs.property "modAuthor", rootProject.mod_author
 	inputs.property "minecraftVersion", rootProject.minecraft_version
+	inputs.property "forgeVersion", rootProject.forge_version
 	inputs.property "yungsapiVersion", rootProject.yungsapi_version
 
 	filesMatching("META-INF/mods.toml") {

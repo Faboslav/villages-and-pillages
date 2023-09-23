@@ -13,18 +13,14 @@ logoFile = "icon.jpg"
 displayURL="https://www.curseforge.com/minecraft/mc-mods/villages-and-pillages"
 
 [[dependencies.${modId}]]
-modId = "forge"
-mandatory = true
-versionRange = "[43.1.1,)"
-ordering = "NONE"
-side = "BOTH"
-
-[[dependencies.${modId}]]
 modId = "minecraft"
 mandatory = true
-versionRange = "[1.19.2,)"
-ordering = "NONE"
-side = "BOTH"
+versionRange = "[${minecraftVersion})"
+
+[[dependencies.${modId}]]
+modId = "forge"
+mandatory = true
+versionRange = "[${forgeVersion},)"
 
 [[dependencies.${modId}]]
 modId = "yungsapi"
