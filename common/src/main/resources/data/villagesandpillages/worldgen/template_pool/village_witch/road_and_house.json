@@ -598,7 +598,6 @@
 							"condition": {
 								"type": "yungsapi:piece_in_range",
 								"pieces": [
-
 									"villagesandpillages:village_witch/road/crossroad/crossroad_one_way",
 									"villagesandpillages:village_witch/road/crossroad/crossroad_one_way_damaged",
 									"villagesandpillages:village_witch/road/crossroad/crossroad_one_way_broken",

@@ -33,7 +33,7 @@ dependencies {
 	// Core dependencies
 	modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
 	modApi "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_api_version}"
-	modApi "com.yungnickyoung.minecraft.yungsapi:YungsApi:${yungsapi_minecraft_version}-Fabric-${yungsapi_version}"
+	modApi "com.yungnickyoung.minecraft.yungsapi:YungsApi:${rootProject.yungsapi_minecraft_version}-Fabric-${rootProject.yungsapi_version}"
 
 	// For faster development https://www.cursemaven.com/
 	// https://www.curseforge.com/minecraft/mc-mods/skip-transitions/files
@@ -47,9 +47,9 @@ dependencies {
 
 	// Integrations
 	// Waystones
-	modRuntimeOnly "curse.maven:cloth-config-348521:4633442"
-	modRuntimeOnly "curse.maven:balm-fabric-500525:4757221"
-	modRuntimeOnly "curse.maven:waystones-fabric-500087:4749831"
+	//modRuntimeOnly "curse.maven:cloth-config-348521:4633442"
+	//modRuntimeOnly "curse.maven:balm-fabric-500525:4757221"
+	//modRuntimeOnly "curse.maven:waystones-fabric-500087:4749831"
 
 	common(project(path: ":common", configuration: "namedElements")) { transitive false }
 	shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }

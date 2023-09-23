@@ -21,14 +21,6 @@ public final class VillagesAndPillagesForge
 		StructureTypeRegistryImpl.STRUCTURE_TYPES.register(bus);
 		StructureProcessorTypeRegistryImpl.STRUCTURE_PROCESSOR_TYPES.register(bus);
 
-		bus.addListener(VillagesAndPillagesForge::init);
-
 		MinecraftForge.EVENT_BUS.register(this);
-	}
-
-	private static void init(final FMLCommonSetupEvent event) {
-		event.enqueueWork(() -> {
-			VillagesAndPillages.postInit();
-		});
 	}
 }

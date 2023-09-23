@@ -15,7 +15,7 @@ displayURL = "https://www.curseforge.com/minecraft/mc-mods/villages-and-pillages
 [[dependencies.${modId}]]
 modId = "minecraft"
 mandatory = true
-versionRange = "[${minecraftVersion})"
+versionRange = "[${minecraftVersion},)"
 
 [[dependencies.${modId}]]
 modId = "forge"

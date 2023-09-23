@@ -14,8 +14,4 @@ public class StructureProcessorTypeRegistryImpl
 	) {
 		Registry.register(Registries.STRUCTURE_PROCESSOR, VillagesAndPillages.makeID(name), structureProcessorType);
 	}
-
-	public static void postInit() {
-
-	}
 }

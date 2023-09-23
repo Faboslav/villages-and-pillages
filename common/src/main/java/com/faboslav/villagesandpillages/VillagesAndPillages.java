@@ -1,6 +1,7 @@
 package com.faboslav.villagesandpillages;
 
 import com.faboslav.villagesandpillages.init.VillagesAndPillagesProcessorTypes;
+import com.faboslav.villagesandpillages.init.VillagesAndPillagesStructureTypes;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,9 +24,6 @@ public final class VillagesAndPillages
 
 	public static void init() {
 		VillagesAndPillagesProcessorTypes.init();
-	}
-
-	public static void postInit() {
-		VillagesAndPillagesProcessorTypes.postInit();
+		VillagesAndPillagesStructureTypes.init();
 	}
 }

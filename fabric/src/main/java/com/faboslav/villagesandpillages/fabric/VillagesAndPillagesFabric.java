@@ -8,6 +8,5 @@ public final class VillagesAndPillagesFabric implements ModInitializer
 	@Override
 	public void onInitialize() {
 		VillagesAndPillages.init();
-		VillagesAndPillages.postInit();
 	}
 }

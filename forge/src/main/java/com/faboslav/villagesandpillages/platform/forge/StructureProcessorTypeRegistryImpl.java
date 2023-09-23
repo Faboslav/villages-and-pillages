@@ -16,8 +16,4 @@ public class StructureProcessorTypeRegistryImpl
 	) {
 		STRUCTURE_PROCESSOR_TYPES.register(name, () -> structureProcessorType);
 	}
-
-	public static void postInit() {
-
-	}
 }
