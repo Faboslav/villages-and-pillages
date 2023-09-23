@@ -49,6 +49,7 @@ processResources {
 			"modDescription": rootProject.mod_description,
 			"modAuthor": rootProject.mod_author,
 			"minecraftVersion": rootProject.minecraft_version,
+			"forgeVersion": rootProject.forge_version,
 			"yungsapiVersion": rootProject.yungsapi_version
 	}
 }
