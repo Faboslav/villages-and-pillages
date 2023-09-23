@@ -115,7 +115,7 @@ jobs:
                     loaders: ${{ env.FABRIC_LOADERS }}
                     game-versions: ${{ env.GAME_VERSIONS }}
                     name: Villages&Pillages ${{ github.ref_name }} (Fabric)
-                    dependencies: ${{ env.FABRIC_DEPENDENCIES }}
+                    dependencies: ${{ env.FABRIC_DEPENDENCIES_CURSEFORGE }}
                     java: ${{ env.JAVA_VERSIONS }}
 
                     retry-attempts: ${{ env.RETRY_ATTEMPTS }}
@@ -148,7 +148,7 @@ jobs:
                     game-versions: ${{ env.GAME_VERSIONS }}
                     name: Villages&Pillages ${{ github.ref_name }} (Fabric)
                     version: fabric-${{ github.ref_name }}
-                    dependencies: ${{ env.FABRIC_DEPENDENCIES }}
+                    dependencies: ${{ env.FABRIC_DEPENDENCIES_MODRINTH }}
                     java: ${{ env.JAVA_VERSIONS }}
                     retry-attempts: ${{ env.RETRY_ATTEMPTS }}
                     retry-delay: ${{ env.RETRY_DELAY }}
@@ -195,6 +195,7 @@ jobs:
                     loaders: ${{ env.FORGE_LOADERS }}
                     game-versions: ${{ env.GAME_VERSIONS }}
                     name: Villages&Pillages ${{ github.ref_name }} (Forge)
+                    dependencies: ${{ env.FORGE_DEPENDENCIES }}
                     java: ${{ env.JAVA_VERSIONS }}
 
                     retry-attempts: ${{ env.RETRY_ATTEMPTS }}
@@ -227,6 +228,7 @@ jobs:
                     game-versions: ${{ env.GAME_VERSIONS }}
                     name: Villages&Pillages ${{ github.ref_name }} (Forge)
                     version: forge-${{ github.ref_name }}
+                    dependencies: ${{ env.FORGE_DEPENDENCIES }}
                     java: ${{ env.JAVA_VERSIONS }}
                     retry-attempts: ${{ env.RETRY_ATTEMPTS }}
                     retry-delay: ${{ env.RETRY_DELAY }}
