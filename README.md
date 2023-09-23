@@ -3,6 +3,7 @@
 Villages&Pillages is a structure mod that brings an exciting twist to Minecraft by introducing hostile and unfriendly pillages, providing a thrilling contrast to the peaceful villages.
 
 The mod will receive seasonal updates, with the first season featuring the addition of Witch Villages!
+
 ## Compatibility
 
 Villages&Pillages is designed to be fully compatible with all world generation mods, and it currently offers enhanced compatibility with the Waystones mod.
@@ -30,7 +31,7 @@ This mod would not exist in the state as it is without the following people:
 - [TelepathicGrunt] - Support with structure generation related stuff and things
 - [yungnickyoung] - Amazing "YUNG's API" and related additional support
 
-[report crash/bug, share your ideas or give some feedback]: https://github.com/Faboslav/friends-and-foes/issues/new/choose
+[report crash/bug, share your ideas or give some feedback]: https://github.com/Faboslav/villages-and-pillages/issues/new/choose
 
 [CurseForge]: https://www.curseforge.com/minecraft/mc-mods/villages-and-pillages
 
