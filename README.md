@@ -1,8 +1,4 @@
-<p align="center">
-	<h1>Villages&Pillages</h1>
-</p>
-
----
+# Villages&Pillages
 
 Villages&Pillages is a structure mod that brings an exciting twist to Minecraft by introducing hostile and unfriendly pillagers, providing a thrilling contrast to the peaceful villages.
 
@@ -32,6 +28,7 @@ Please feel free to explore my code for examples of how I've tackled and solved 
 This mod would not exist in the state as it is without the following people:
 
 - [TelepathicGrunt] - Support with structure generation related stuff and things
+- [yungnickyoung] - Amazing "YUNG's API" and related additional support
 
 [report crash/bug, share your ideas or give some feedback]: https://github.com/Faboslav/friends-and-foes/issues/new/choose
 
@@ -46,4 +43,7 @@ This mod would not exist in the state as it is without the following people:
 [Ko-fi]: https://ko-fi.com/faboslav
 
 [CC BY-NC-ND 4.0]: https://github.com/Faboslav/friends-and-foes/blob/master/LICENSE.txt
+
 [TelepathicGrunt]: https://github.com/TelepathicGrunt
+
+[yungnickyoung]: https://github.com/yungnickyoung
