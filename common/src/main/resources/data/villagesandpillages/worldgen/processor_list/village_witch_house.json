@@ -143,7 +143,7 @@
 					"input_predicate": {
 						"block": "minecraft:white_concrete",
 						"predicate_type": "minecraft:random_block_match",
-						"probability": 0.1
+						"probability": 0.2
 					},
 					"location_predicate": {
 						"predicate_type": "minecraft:always_true"
