@@ -99,6 +99,6 @@
 				"projection": "rigid",
 				"element_type": "yungsapi:yung_single_element"
 			}
-		},
+		}
 	]
 }
