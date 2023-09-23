@@ -32,7 +32,7 @@ public class VillageWitchFlowerPotProcessor extends StructureProcessor
 		StructureTemplate.StructureBlockInfo currentBlockInfo,
 		StructurePlacementData structurePlacementData
 	) {
-		if (currentBlockInfo.state.getBlock() != Blocks.FLOWER_POT) {
+		if (currentBlockInfo.state.isOf(Blocks.FLOWER_POT) == false) {
 			return currentBlockInfo;
 		}
 

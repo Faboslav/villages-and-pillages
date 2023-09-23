@@ -28,7 +28,7 @@ public class VillageWitchBrewingStandProcessor extends StructureProcessor
 		StructureTemplate.StructureBlockInfo currentBlockInfo,
 		StructurePlacementData structurePlacementData
 	) {
-		if (currentBlockInfo.state.getBlock() != Blocks.BREWING_STAND) {
+		if (currentBlockInfo.state.isOf(Blocks.BREWING_STAND) == false) {
 			return currentBlockInfo;
 		}
 
@@ -36,7 +36,7 @@ public class VillageWitchBrewingStandProcessor extends StructureProcessor
 		NbtCompound nbt = currentBlockInfo.nbt;
 		NbtList itemsListNbt = nbt.getList("Items", 10);
 
-		int randomNumber = random.nextInt(4);
+		int randomNumber = random.nextBetween(0, 7);
 
 		switch (randomNumber) {
 			case 0 -> addBrewingRecipe(

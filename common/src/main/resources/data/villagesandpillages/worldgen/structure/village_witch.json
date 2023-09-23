@@ -2,7 +2,7 @@
 	"type": "villagesandpillages:village_witch_structure",
 	"start_pool": "villagesandpillages:village_witch/center",
 	"start_jigsaw_name": "villagesandpillages:village_witch_anchor",
-	"size": 5,
+	"size": 7,
 	"biomes": "#villagesandpillages:has_structure/village_witch",
 	"step": "surface_structures",
 	"enhanced_terrain_adaptation": {

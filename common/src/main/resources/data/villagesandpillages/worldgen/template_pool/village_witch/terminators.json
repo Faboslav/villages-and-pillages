@@ -63,6 +63,15 @@
 			}
 		},
 		{
+			"weight": 2,
+			"element": {
+				"location": "villagesandpillages:village_witch/road/end/road_end_short",
+				"processors": "villagesandpillages:village_witch",
+				"projection": "rigid",
+				"element_type": "yungsapi:yung_single_element"
+			}
+		},
+		{
 			"weight": 1,
 			"element": {
 				"location": "villagesandpillages:village_witch/road/end/road_end_dead",
@@ -88,15 +97,6 @@
 						}
 					]
 				},
-				"element_type": "yungsapi:yung_single_element"
-			}
-		},
-		{
-			"weight": 1,
-			"element": {
-				"location": "villagesandpillages:village_witch/road/end/road_end_short",
-				"processors": "villagesandpillages:village_witch",
-				"projection": "rigid",
 				"element_type": "yungsapi:yung_single_element"
 			}
 		}

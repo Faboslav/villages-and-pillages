@@ -96,8 +96,8 @@
 				"is_priority": true,
 				"condition": {
 					"type": "yungsapi:depth",
-					"min_required_depth": 2,
-					"max_possible_depth": 2
+					"min_required_depth": 3,
+					"max_possible_depth": 3
 				},
 				"name": "second_house",
 				"max_count": 1,
@@ -113,8 +113,8 @@
 				"is_priority": true,
 				"condition": {
 					"type": "yungsapi:depth",
-					"min_required_depth": 2,
-					"max_possible_depth": 2
+					"min_required_depth": 3,
+					"max_possible_depth": 3
 				},
 				"name": "second_house",
 				"max_count": 1,
@@ -130,8 +130,8 @@
 				"is_priority": true,
 				"condition": {
 					"type": "yungsapi:depth",
-					"min_required_depth": 2,
-					"max_possible_depth": 2
+					"min_required_depth": 3,
+					"max_possible_depth": 3
 				},
 				"name": "second_house",
 				"max_count": 1,
@@ -147,8 +147,8 @@
 				"is_priority": true,
 				"condition": {
 					"type": "yungsapi:depth",
-					"min_required_depth": 2,
-					"max_possible_depth": 2
+					"min_required_depth": 3,
+					"max_possible_depth": 3
 				},
 				"name": "second_house",
 				"max_count": 1,
@@ -164,8 +164,8 @@
 				"is_priority": true,
 				"condition": {
 					"type": "yungsapi:depth",
-					"min_required_depth": 2,
-					"max_possible_depth": 2
+					"min_required_depth": 3,
+					"max_possible_depth": 3
 				},
 				"name": "second_house",
 				"max_count": 1,
@@ -181,8 +181,8 @@
 				"is_priority": true,
 				"condition": {
 					"type": "yungsapi:depth",
-					"min_required_depth": 3,
-					"max_possible_depth": 3
+					"min_required_depth": 5,
+					"max_possible_depth": 5
 				},
 				"name": "third_house",
 				"max_count": 1,
@@ -198,8 +198,8 @@
 				"is_priority": true,
 				"condition": {
 					"type": "yungsapi:depth",
-					"min_required_depth": 3,
-					"max_possible_depth": 3
+					"min_required_depth": 5,
+					"max_possible_depth": 5
 				},
 				"name": "third_house",
 				"max_count": 1,
@@ -215,8 +215,8 @@
 				"is_priority": true,
 				"condition": {
 					"type": "yungsapi:depth",
-					"min_required_depth": 3,
-					"max_possible_depth": 3
+					"min_required_depth": 5,
+					"max_possible_depth": 5
 				},
 				"name": "third_house",
 				"max_count": 1,
@@ -232,8 +232,8 @@
 				"is_priority": true,
 				"condition": {
 					"type": "yungsapi:depth",
-					"min_required_depth": 3,
-					"max_possible_depth": 3
+					"min_required_depth": 5,
+					"max_possible_depth": 5
 				},
 				"name": "third_house",
 				"max_count": 1,
@@ -249,8 +249,8 @@
 				"is_priority": true,
 				"condition": {
 					"type": "yungsapi:depth",
-					"min_required_depth": 3,
-					"max_possible_depth": 3
+					"min_required_depth": 5,
+					"max_possible_depth": 5
 				},
 				"name": "third_house",
 				"max_count": 1,
@@ -266,8 +266,8 @@
 				"is_priority": true,
 				"condition": {
 					"type": "yungsapi:depth",
-					"min_required_depth": 4,
-					"max_possible_depth": 4
+					"min_required_depth": 7,
+					"max_possible_depth": 7
 				},
 				"name": "fourth_house",
 				"max_count": 1,
@@ -283,8 +283,25 @@
 				"is_priority": true,
 				"condition": {
 					"type": "yungsapi:depth",
-					"min_required_depth": 4,
-					"max_possible_depth": 4
+					"min_required_depth": 7,
+					"max_possible_depth": 7
+				},
+				"name": "fourth_house",
+				"max_count": 1,
+				"element_type": "yungsapi:yung_single_element"
+			}
+		},
+		{
+			"weight": 1,
+			"element": {
+				"location": "villagesandpillages:village_witch/house/small/small_house_02",
+				"processors": "villagesandpillages:village_witch_house",
+				"projection": "rigid",
+				"is_priority": true,
+				"condition": {
+					"type": "yungsapi:depth",
+					"min_required_depth": 7,
+					"max_possible_depth": 7
 				},
 				"name": "fourth_house",
 				"max_count": 1,
@@ -300,8 +317,8 @@
 				"is_priority": true,
 				"condition": {
 					"type": "yungsapi:depth",
-					"min_required_depth": 4,
-					"max_possible_depth": 4
+					"min_required_depth": 7,
+					"max_possible_depth": 7
 				},
 				"name": "fourth_house",
 				"max_count": 1,
@@ -317,8 +334,8 @@
 				"is_priority": true,
 				"condition": {
 					"type": "yungsapi:depth",
-					"min_required_depth": 4,
-					"max_possible_depth": 4
+					"min_required_depth": 7,
+					"max_possible_depth": 7
 				},
 				"name": "fourth_house",
 				"max_count": 1,
@@ -414,7 +431,7 @@
 		{
 			"weight": 1,
 			"element": {
-				"location": "villagesandpillages:village_witch/road/crossroad/crossroad_two_way",
+				"location": "villagesandpillages:village_witch/road/crossroad/crossroad_three_way",
 				"processors": "villagesandpillages:village_witch",
 				"projection": "rigid",
 				"is_priority": true,
@@ -424,7 +441,7 @@
 						{
 							"type": "yungsapi:depth",
 							"min_required_depth": 2,
-							"max_possible_depth": 4
+							"max_possible_depth": 6
 						},
 						{
 							"type": "yungsapi:not",
@@ -450,7 +467,50 @@
 					]
 				},
 				"name": "second_crossroad",
-				"max_count": 1,
+				"max_count": 2,
+				"element_type": "yungsapi:yung_single_element"
+			}
+		},
+		{
+			"weight": 1,
+			"element": {
+				"location": "villagesandpillages:village_witch/road/crossroad/crossroad_two_way",
+				"processors": "villagesandpillages:village_witch",
+				"projection": "rigid",
+				"is_priority": true,
+				"condition": {
+					"type": "yungsapi:all_of",
+					"conditions": [
+						{
+							"type": "yungsapi:depth",
+							"min_required_depth": 2,
+							"max_possible_depth": 6
+						},
+						{
+							"type": "yungsapi:not",
+							"condition": {
+								"type": "yungsapi:piece_in_range",
+								"pieces": [
+									"villagesandpillages:village_witch/road/crossroad/crossroad_one_way",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_one_way_damaged",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_one_way_broken",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_two_way",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_three_way",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_four_way",
+									"villagesandpillages:village_witch/house/small/small_house_01",
+									"villagesandpillages:village_witch/house/small/small_house_02",
+									"villagesandpillages:village_witch/house/small/small_house_03",
+									"villagesandpillages:village_witch/house/medium/medium_house_01",
+									"villagesandpillages:village_witch/house/medium/medium_house_02"
+								],
+								"horizontal_range": 3,
+								"rotation": "none"
+							}
+						}
+					]
+				},
+				"name": "second_crossroad",
+				"max_count": 2,
 				"element_type": "yungsapi:yung_single_element"
 			}
 		},
@@ -467,7 +527,7 @@
 						{
 							"type": "yungsapi:depth",
 							"min_required_depth": 4,
-							"max_possible_depth": 4
+							"max_possible_depth": 6
 						},
 						{
 							"type": "yungsapi:not",
@@ -553,7 +613,7 @@
 					]
 				},
 				"name": "road_medium",
-				"max_count": 1,
+				"max_count": 2,
 				"element_type": "yungsapi:yung_single_element"
 			}
 		},
@@ -746,6 +806,12 @@
 							"condition": {
 								"type": "yungsapi:piece_in_range",
 								"pieces": [
+									"villagesandpillages:village_witch/road/crossroad/crossroad_one_way",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_one_way_damaged",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_one_way_broken",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_two_way",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_three_way",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_four_way",
 									"villagesandpillages:village_witch/house/small/small_house_01",
 									"villagesandpillages:village_witch/house/small/small_house_02",
 									"villagesandpillages:village_witch/house/small/small_house_03",
@@ -762,7 +828,7 @@
 			}
 		},
 		{
-			"weight": 1,
+			"weight": 2,
 			"element": {
 				"location": "villagesandpillages:village_witch/road/road_medium",
 				"processors": "villagesandpillages:village_witch",
@@ -775,6 +841,12 @@
 							"condition": {
 								"type": "yungsapi:piece_in_range",
 								"pieces": [
+									"villagesandpillages:village_witch/road/crossroad/crossroad_one_way",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_one_way_damaged",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_one_way_broken",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_two_way",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_three_way",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_four_way",
 									"villagesandpillages:village_witch/house/small/small_house_01",
 									"villagesandpillages:village_witch/house/small/small_house_02",
 									"villagesandpillages:village_witch/house/small/small_house_03",
@@ -791,7 +863,7 @@
 			}
 		},
 		{
-			"weight": 1,
+			"weight": 3,
 			"element": {
 				"location": "villagesandpillages:village_witch/road/road_short",
 				"processors": "villagesandpillages:village_witch",
@@ -804,6 +876,12 @@
 							"condition": {
 								"type": "yungsapi:piece_in_range",
 								"pieces": [
+									"villagesandpillages:village_witch/road/crossroad/crossroad_one_way",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_one_way_damaged",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_one_way_broken",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_two_way",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_three_way",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_four_way",
 									"villagesandpillages:village_witch/house/small/small_house_01",
 									"villagesandpillages:village_witch/house/small/small_house_02",
 									"villagesandpillages:village_witch/house/small/small_house_03",
@@ -826,7 +904,7 @@
 				"processors": "villagesandpillages:village_witch_house",
 				"projection": "rigid",
 				"name": "house",
-				"max_count": 2,
+				"max_count": 3,
 				"element_type": "yungsapi:yung_single_element"
 			}
 		},
@@ -837,7 +915,7 @@
 				"processors": "villagesandpillages:village_witch_house",
 				"projection": "rigid",
 				"name": "house",
-				"max_count": 2,
+				"max_count": 3,
 				"element_type": "yungsapi:yung_single_element"
 			}
 		},
@@ -848,7 +926,7 @@
 				"processors": "villagesandpillages:village_witch_house",
 				"projection": "rigid",
 				"name": "house",
-				"max_count": 2,
+				"max_count": 3,
 				"element_type": "yungsapi:yung_single_element"
 			}
 		},
@@ -859,7 +937,7 @@
 				"processors": "villagesandpillages:village_witch_house",
 				"projection": "rigid",
 				"name": "house",
-				"max_count": 2,
+				"max_count": 3,
 				"element_type": "yungsapi:yung_single_element"
 			}
 		},
@@ -870,7 +948,7 @@
 				"processors": "villagesandpillages:village_witch_house",
 				"projection": "rigid",
 				"name": "house",
-				"max_count": 2,
+				"max_count": 3,
 				"element_type": "yungsapi:yung_single_element"
 			}
 		}
