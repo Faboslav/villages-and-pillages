@@ -345,13 +345,19 @@
 							"condition": {
 								"type": "yungsapi:piece_in_range",
 								"pieces": [
+									"villagesandpillages:village_witch/road/crossroad/crossroad_one_way",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_one_way_damaged",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_one_way_broken",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_two_way",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_three_way",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_four_way",
 									"villagesandpillages:village_witch/house/small/small_house_01",
 									"villagesandpillages:village_witch/house/small/small_house_02",
 									"villagesandpillages:village_witch/house/small/small_house_03",
 									"villagesandpillages:village_witch/house/medium/medium_house_01",
 									"villagesandpillages:village_witch/house/medium/medium_house_02"
 								],
-								"horizontal_range": 4,
+								"horizontal_range": 3,
 								"rotation": "none"
 							}
 						}
@@ -382,13 +388,19 @@
 							"condition": {
 								"type": "yungsapi:piece_in_range",
 								"pieces": [
+									"villagesandpillages:village_witch/road/crossroad/crossroad_one_way",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_one_way_damaged",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_one_way_broken",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_two_way",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_three_way",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_four_way",
 									"villagesandpillages:village_witch/house/small/small_house_01",
 									"villagesandpillages:village_witch/house/small/small_house_02",
 									"villagesandpillages:village_witch/house/small/small_house_03",
 									"villagesandpillages:village_witch/house/medium/medium_house_01",
 									"villagesandpillages:village_witch/house/medium/medium_house_02"
 								],
-								"horizontal_range": 4,
+								"horizontal_range": 3,
 								"rotation": "none"
 							}
 						}
@@ -419,13 +431,19 @@
 							"condition": {
 								"type": "yungsapi:piece_in_range",
 								"pieces": [
+									"villagesandpillages:village_witch/road/crossroad/crossroad_one_way",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_one_way_damaged",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_one_way_broken",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_two_way",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_three_way",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_four_way",
 									"villagesandpillages:village_witch/house/small/small_house_01",
 									"villagesandpillages:village_witch/house/small/small_house_02",
 									"villagesandpillages:village_witch/house/small/small_house_03",
 									"villagesandpillages:village_witch/house/medium/medium_house_01",
 									"villagesandpillages:village_witch/house/medium/medium_house_02"
 								],
-								"horizontal_range": 4,
+								"horizontal_range": 3,
 								"rotation": "none"
 							}
 						}
@@ -456,13 +474,19 @@
 							"condition": {
 								"type": "yungsapi:piece_in_range",
 								"pieces": [
+									"villagesandpillages:village_witch/road/crossroad/crossroad_one_way",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_one_way_damaged",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_one_way_broken",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_two_way",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_three_way",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_four_way",
 									"villagesandpillages:village_witch/house/small/small_house_01",
 									"villagesandpillages:village_witch/house/small/small_house_02",
 									"villagesandpillages:village_witch/house/small/small_house_03",
 									"villagesandpillages:village_witch/house/medium/medium_house_01",
 									"villagesandpillages:village_witch/house/medium/medium_house_02"
 								],
-								"horizontal_range": 4,
+								"horizontal_range": 3,
 								"rotation": "none"
 							}
 						}
@@ -482,8 +506,13 @@
 				"projection": "rigid",
 				"is_priority": true,
 				"condition": {
-					"type": "yungsapi:depth",
-					"max_possible_depth": 1
+					"type": "yungsapi:all_of",
+					"conditions": [
+						{
+							"type": "yungsapi:depth",
+							"max_possible_depth": 1
+						}
+					]
 				},
 				"name": "road_long",
 				"max_count": 1,
@@ -498,8 +527,30 @@
 				"projection": "rigid",
 				"is_priority": true,
 				"condition": {
-					"type": "yungsapi:depth",
-					"max_possible_depth": 2
+					"type": "yungsapi:all_of",
+					"conditions": [
+						{
+							"type": "yungsapi:depth",
+							"max_possible_depth": 2
+						},
+						{
+							"type": "yungsapi:not",
+							"condition": {
+								"type": "yungsapi:piece_in_range",
+								"pieces": [
+
+									"villagesandpillages:village_witch/road/crossroad/crossroad_one_way",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_one_way_damaged",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_one_way_broken",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_two_way",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_three_way",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_four_way"
+								],
+								"horizontal_range": 2,
+								"rotation": "none"
+							}
+						}
+					]
 				},
 				"name": "road_medium",
 				"max_count": 1,
@@ -520,13 +571,19 @@
 							"condition": {
 								"type": "yungsapi:piece_in_range",
 								"pieces": [
+									"villagesandpillages:village_witch/road/crossroad/crossroad_one_way",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_one_way_damaged",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_one_way_broken",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_two_way",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_three_way",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_four_way",
 									"villagesandpillages:village_witch/house/small/small_house_01",
 									"villagesandpillages:village_witch/house/small/small_house_02",
 									"villagesandpillages:village_witch/house/small/small_house_03",
 									"villagesandpillages:village_witch/house/medium/medium_house_01",
 									"villagesandpillages:village_witch/house/medium/medium_house_02"
 								],
-								"horizontal_range": 4,
+								"horizontal_range": 3,
 								"rotation": "none"
 							}
 						}
@@ -549,13 +606,19 @@
 							"condition": {
 								"type": "yungsapi:piece_in_range",
 								"pieces": [
+									"villagesandpillages:village_witch/road/crossroad/crossroad_one_way",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_one_way_damaged",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_one_way_broken",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_two_way",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_three_way",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_four_way",
 									"villagesandpillages:village_witch/house/small/small_house_01",
 									"villagesandpillages:village_witch/house/small/small_house_02",
 									"villagesandpillages:village_witch/house/small/small_house_03",
 									"villagesandpillages:village_witch/house/medium/medium_house_01",
 									"villagesandpillages:village_witch/house/medium/medium_house_02"
 								],
-								"horizontal_range": 4,
+								"horizontal_range": 3,
 								"rotation": "none"
 							}
 						}
@@ -578,13 +641,19 @@
 							"condition": {
 								"type": "yungsapi:piece_in_range",
 								"pieces": [
+									"villagesandpillages:village_witch/road/crossroad/crossroad_one_way",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_one_way_damaged",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_one_way_broken",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_two_way",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_three_way",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_four_way",
 									"villagesandpillages:village_witch/house/small/small_house_01",
 									"villagesandpillages:village_witch/house/small/small_house_02",
 									"villagesandpillages:village_witch/house/small/small_house_03",
 									"villagesandpillages:village_witch/house/medium/medium_house_01",
 									"villagesandpillages:village_witch/house/medium/medium_house_02"
 								],
-								"horizontal_range": 4,
+								"horizontal_range": 3,
 								"rotation": "none"
 							}
 						}
@@ -607,13 +676,19 @@
 							"condition": {
 								"type": "yungsapi:piece_in_range",
 								"pieces": [
+									"villagesandpillages:village_witch/road/crossroad/crossroad_one_way",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_one_way_damaged",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_one_way_broken",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_two_way",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_three_way",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_four_way",
 									"villagesandpillages:village_witch/house/small/small_house_01",
 									"villagesandpillages:village_witch/house/small/small_house_02",
 									"villagesandpillages:village_witch/house/small/small_house_03",
 									"villagesandpillages:village_witch/house/medium/medium_house_01",
 									"villagesandpillages:village_witch/house/medium/medium_house_02"
 								],
-								"horizontal_range": 4,
+								"horizontal_range": 3,
 								"rotation": "none"
 							}
 						}
@@ -636,13 +711,19 @@
 							"condition": {
 								"type": "yungsapi:piece_in_range",
 								"pieces": [
+									"villagesandpillages:village_witch/road/crossroad/crossroad_one_way",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_one_way_damaged",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_one_way_broken",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_two_way",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_three_way",
+									"villagesandpillages:village_witch/road/crossroad/crossroad_four_way",
 									"villagesandpillages:village_witch/house/small/small_house_01",
 									"villagesandpillages:village_witch/house/small/small_house_02",
 									"villagesandpillages:village_witch/house/small/small_house_03",
 									"villagesandpillages:village_witch/house/medium/medium_house_01",
 									"villagesandpillages:village_witch/house/medium/medium_house_02"
 								],
-								"horizontal_range": 4,
+								"horizontal_range": 3,
 								"rotation": "none"
 							}
 						}
@@ -671,7 +752,7 @@
 									"villagesandpillages:village_witch/house/medium/medium_house_01",
 									"villagesandpillages:village_witch/house/medium/medium_house_02"
 								],
-								"horizontal_range": 4,
+								"horizontal_range": 2,
 								"rotation": "none"
 							}
 						}
@@ -700,7 +781,7 @@
 									"villagesandpillages:village_witch/house/medium/medium_house_01",
 									"villagesandpillages:village_witch/house/medium/medium_house_02"
 								],
-								"horizontal_range": 4,
+								"horizontal_range": 2,
 								"rotation": "none"
 							}
 						}
@@ -729,7 +810,7 @@
 									"villagesandpillages:village_witch/house/medium/medium_house_01",
 									"villagesandpillages:village_witch/house/medium/medium_house_02"
 								],
-								"horizontal_range": 4,
+								"horizontal_range": 2,
 								"rotation": "none"
 							}
 						}
