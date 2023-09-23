@@ -1,6 +1,6 @@
 # Villages&Pillages
 
-Villages&Pillages is a structure mod that brings an exciting twist to Minecraft by introducing hostile and unfriendly pillagers, providing a thrilling contrast to the peaceful villages.
+Villages&Pillages is a structure mod that brings an exciting twist to Minecraft by introducing hostile and unfriendly pillages, providing a thrilling contrast to the peaceful villages.
 
 The mod will receive seasonal updates, with the first season featuring the addition of Witch Villages!
 ## Compatibility
@@ -42,7 +42,7 @@ This mod would not exist in the state as it is without the following people:
 
 [Ko-fi]: https://ko-fi.com/faboslav
 
-[CC BY-NC-ND 4.0]: https://github.com/Faboslav/friends-and-foes/blob/master/LICENSE.txt
+[CC BY-NC-ND 4.0]: https://github.com/Faboslav/villages-and-pillages/blob/master/LICENSE.txt
 
 [TelepathicGrunt]: https://github.com/TelepathicGrunt
 
