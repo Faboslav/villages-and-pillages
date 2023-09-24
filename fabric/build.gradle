@@ -33,7 +33,7 @@ dependencies {
 	// Core dependencies
 	modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
 	modApi "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_api_version}"
-	modApi "com.yungnickyoung.minecraft.yungsapi:YungsApi:${rootProject.minecraft_version}-Fabric-${rootProject.yungsapi_version}"
+	modApi "com.yungnickyoung.minecraft.yungsapi:YungsApi:${rootProject.yungsapi_minecraft_version}-Fabric-${rootProject.yungsapi_version}"
 
 	// For faster development https://www.cursemaven.com/
 	// https://www.curseforge.com/minecraft/mc-mods/skip-transitions/files
