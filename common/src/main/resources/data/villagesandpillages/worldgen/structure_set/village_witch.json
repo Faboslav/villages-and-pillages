@@ -1,14 +1,14 @@
 {
-	"structures": [
-		{
-			"structure": "villagesandpillages:village_witch",
-			"weight": 1
-		}
-	],
-	"placement": {
-		"type": "yungsapi:enhanced_random_spread",
-		"salt": 365808513,
-		"spacing": 20,
-		"separation": 10
-	}
+  "structures": [
+    {
+      "structure": "villagesandpillages:village_witch",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "yungsapi:enhanced_random_spread",
+    "salt": 365808513,
+    "spacing": 24,
+    "separation": 16
+  }
 }
