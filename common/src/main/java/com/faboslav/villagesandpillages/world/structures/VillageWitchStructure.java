@@ -189,8 +189,8 @@ public class VillageWitchStructure extends YungJigsawStructure
 				if (this.isViableBlockState(blockView.getState(mutable.getY()))) {
 					negativeFluidChecks++;
 
-					// More than half blocks are negative check
-					if (negativeFluidChecks > 96) {
+					// More than third of total blocks are negative check
+					if (negativeFluidChecks > 64) {
 						return false;
 					}
 				}
