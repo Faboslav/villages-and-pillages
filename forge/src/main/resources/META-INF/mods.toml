@@ -28,6 +28,6 @@ versionRange = "[${forgeVersion},)"
 [[dependencies.${ modId }]]
 modId = "yungsapi"
 mandatory = true
-versionRange = "[${minecraftVersion}-Forge-${yungsapiVersion},)"
+versionRange = "[${yungsapiMinecraftVersion}-Forge-${yungsapiVersion},)"
 ordering = "NONE"
 side = "BOTH"

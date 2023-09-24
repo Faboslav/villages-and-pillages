@@ -33,7 +33,7 @@ dependencies {
 	// Core dependencies
 	modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
 	modApi "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_api_version}"
-	modApi "com.yungnickyoung.minecraft.yungsapi:YungsApi:${rootProject.minecraft_version}-Fabric-${rootProject.yungsapi_version}"
+	modApi "com.yungnickyoung.minecraft.yungsapi:YungsApi:${rootProject.yungsapi_minecraft_version}-Fabric-${rootProject.yungsapi_version}"
 
 	// For faster development https://www.cursemaven.com/
 	// https://www.curseforge.com/minecraft/mc-mods/skip-transitions/files
@@ -68,6 +68,7 @@ processResources {
 	inputs.property 'modVersion', rootProject.mod_version
 	inputs.property 'modAuthor', rootProject.mod_author
 	inputs.property "minecraftVersion", rootProject.minecraft_version
+	inputs.property "yungsapiMinecraftVersion", rootProject.yungsapi_minecraft_version
 	inputs.property "yungsapiVersion", rootProject.yungsapi_version
 
 	filesMatching("fabric.mod.json") {
@@ -80,6 +81,7 @@ processResources {
 			"minecraftVersion": rootProject.minecraft_version,
 			"fabricApiVersion": rootProject.fabric_api_version,
 			"fabricLoaderVersion": rootProject.fabric_loader_version,
+			"yungsapiMinecraftVersion": rootProject.yungsapi_minecraft_version,
 			"yungsapiVersion": rootProject.yungsapi_version
 		])
 	}

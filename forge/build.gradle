@@ -22,7 +22,7 @@ configurations {
 dependencies {
 	forge "net.minecraftforge:forge:${rootProject.minecraft_version}-${rootProject.forge_version}"
 
-	modApi "com.yungnickyoung.minecraft.yungsapi:YungsApi:${rootProject.minecraft_version}-Forge-${rootProject.yungsapi_version}"
+	modApi "com.yungnickyoung.minecraft.yungsapi:YungsApi:${rootProject.yungsapi_minecraft_version}-Forge-${rootProject.yungsapi_version}"
 
 	//modRuntimeOnly "curse.maven:cloth-config-348521:4633416"
 	//modRuntimeOnly "curse.maven:balm-531761:4442591"
@@ -40,6 +40,7 @@ processResources {
 	inputs.property "modAuthor", rootProject.mod_author
 	inputs.property "minecraftVersion", rootProject.minecraft_version
 	inputs.property "forgeVersion", rootProject.forge_version
+	inputs.property "yungsapiMinecraftVersion", rootProject.yungsapi_minecraft_version
 	inputs.property "yungsapiVersion", rootProject.yungsapi_version
 
 	filesMatching("META-INF/mods.toml") {
@@ -50,6 +51,7 @@ processResources {
 			"modAuthor": rootProject.mod_author,
 			"minecraftVersion": rootProject.minecraft_version,
 			"forgeVersion": rootProject.forge_version,
+			"yungsapiMinecraftVersion": rootProject.yungsapi_minecraft_version,
 			"yungsapiVersion": rootProject.yungsapi_version
 	}
 }

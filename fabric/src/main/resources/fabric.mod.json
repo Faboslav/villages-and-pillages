@@ -29,7 +29,7 @@
 		"minecraft": ">=${minecraftVersion}",
 		"fabricloader": ">=${fabricLoaderVersion}",
 		"fabric": ">=${fabricApiVersion}",
-		"yungsapi": ">=${minecraftVersion}-Fabric-${yungsapiVersion}"
+		"yungsapi": ">=${yungsapiMinecraftVersion}-Fabric-${yungsapiVersion}"
 	},
 	"custom": {
 		"catalogue": {
