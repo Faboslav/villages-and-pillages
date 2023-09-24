@@ -107,14 +107,14 @@ jobs:
             -   name: "Publish Fabric to CurseForge"
                 uses: Kir-Antipov/mc-publish@v3.2
                 with:
-                    curseforge-id: 551364
+                    curseforge-id: 915531
                     curseforge-token: ${{ secrets.CURSEFORGE_RELEASE_TOKEN }}
 
                     files-primary: fabric/build/libs/villagesandpillages-fabric-${{ github.ref_name }}.jar
                     version-type: ${{ env.VERSION_TYPE }}
                     loaders: ${{ env.FABRIC_LOADERS }}
                     game-versions: ${{ env.GAME_VERSIONS }}
-                    name: Villages&Pillages ${{ github.ref_name }} (Fabric)
+                    name: Villages&Pillages ${{ github.ref_name }} (Fabric/Quilt)
                     dependencies: ${{ env.FABRIC_DEPENDENCIES_CURSEFORGE }}
                     java: ${{ env.JAVA_VERSIONS }}
 
@@ -137,7 +137,7 @@ jobs:
             -   name: "Publish Fabric to Modrinth"
                 uses: Kir-Antipov/mc-publish@v3.2
                 with:
-                    modrinth-id: POQ2i9zu
+                    modrinth-id: klXONLDA
                     modrinth-featured: true
                     modrinth-unfeature-mode: version-intersection
                     modrinth-token: ${{ secrets.MODRINTH_RELEASE_TOKEN }}
@@ -146,7 +146,7 @@ jobs:
                     version-type: ${{ env.VERSION_TYPE }}
                     loaders: ${{ env.FABRIC_LOADERS }}
                     game-versions: ${{ env.GAME_VERSIONS }}
-                    name: Villages&Pillages ${{ github.ref_name }} (Fabric)
+                    name: Villages&Pillages ${{ github.ref_name }} (Fabric/Quilt)
                     version: fabric-${{ github.ref_name }}
                     dependencies: ${{ env.FABRIC_DEPENDENCIES_MODRINTH }}
                     java: ${{ env.JAVA_VERSIONS }}
@@ -187,14 +187,14 @@ jobs:
             -   name: "Publish Forge to CurseForge"
                 uses: Kir-Antipov/mc-publish@v3.2
                 with:
-                    curseforge-id: 602059
+                    curseforge-id: 915531
                     curseforge-token: ${{ secrets.CURSEFORGE_RELEASE_TOKEN }}
 
                     files-primary: forge/build/libs/villagesandpillages-forge-${{ github.ref_name }}.jar
                     version-type: ${{ env.VERSION_TYPE }}
                     loaders: ${{ env.FORGE_LOADERS }}
                     game-versions: ${{ env.GAME_VERSIONS }}
-                    name: Villages&Pillages ${{ github.ref_name }} (Forge)
+                    name: Villages&Pillages ${{ github.ref_name }} (Forge/NeoForge)
                     dependencies: ${{ env.FORGE_DEPENDENCIES }}
                     java: ${{ env.JAVA_VERSIONS }}
 
@@ -217,7 +217,7 @@ jobs:
             -   name: "Publish Forge to Modrinth"
                 uses: Kir-Antipov/mc-publish@v3.2
                 with:
-                    modrinth-id: BOCJKD49
+                    modrinth-id: klXONLDA
                     modrinth-featured: true
                     modrinth-unfeature-mode: version-intersection
                     modrinth-token: ${{ secrets.MODRINTH_RELEASE_TOKEN }}
@@ -226,7 +226,7 @@ jobs:
                     version-type: ${{ env.VERSION_TYPE }}
                     loaders: ${{ env.FORGE_LOADERS }}
                     game-versions: ${{ env.GAME_VERSIONS }}
-                    name: Villages&Pillages ${{ github.ref_name }} (Forge)
+                    name: Villages&Pillages ${{ github.ref_name }} (Forge/NeoForge)
                     version: forge-${{ github.ref_name }}
                     dependencies: ${{ env.FORGE_DEPENDENCIES }}
                     java: ${{ env.JAVA_VERSIONS }}
