@@ -7,9 +7,9 @@ import net.minecraft.structure.processor.StructureProcessorType;
 public class StructureProcessorTypeRegistry
 {
 	@ExpectPlatform
-	public static <T extends StructureProcessor> void registerStructureProcessorType(
+	public static void registerStructureProcessorType(
 		String name,
-		StructureProcessorType<T> structureProcessorType
+		StructureProcessorType<? extends StructureProcessor> structureProcessorType
 	) {
 		throw new AssertionError();
 	}

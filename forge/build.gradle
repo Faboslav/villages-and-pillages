@@ -39,6 +39,9 @@ processResources {
 	inputs.property "modDescription", rootProject.mod_description
 	inputs.property "modAuthor", rootProject.mod_author
 	inputs.property "minecraftVersion", rootProject.minecraft_version
+	inputs.property "forgeVersion", rootProject.forge_version
+	inputs.property "yungsapiMinecraftVersion", rootProject.yungsapi_minecraft_version
+	inputs.property "yungsapiVersion", rootProject.yungsapi_version
 
 	filesMatching("META-INF/mods.toml") {
 		expand "modId": rootProject.mod_id,

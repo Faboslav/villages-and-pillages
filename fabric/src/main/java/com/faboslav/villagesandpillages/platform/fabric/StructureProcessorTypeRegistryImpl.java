@@ -8,9 +8,9 @@ import net.minecraft.structure.processor.StructureProcessorType;
 
 public class StructureProcessorTypeRegistryImpl
 {
-	public static <T extends StructureProcessor> void registerStructureProcessorType(
+	public static void registerStructureProcessorType(
 		String name,
-		StructureProcessorType<T> structureProcessorType
+		StructureProcessorType<? extends StructureProcessor> structureProcessorType
 	) {
 		Registry.register(Registries.STRUCTURE_PROCESSOR, VillagesAndPillages.makeID(name), structureProcessorType);
 	}

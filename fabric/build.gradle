@@ -37,10 +37,9 @@ dependencies {
 
 	// For faster development https://www.cursemaven.com/
 	// https://www.curseforge.com/minecraft/mc-mods/skip-transitions/files
-	modRuntimeOnly "curse.maven:skip-transitions-592071:4628108"
-	// https://www.curseforge.com/minecraft/mc-mods/fastload
-	modRuntimeOnly "curse.maven:fastload-630620:4706149"
-	// https://www.curseforge.com/minecraft/mc-mods/lazydfu/files
+	//modRuntimeOnly "curse.maven:skip-transitions-592071:3735539"
+	// https://www.curseforge.com/minecraft/mc-mods/just-load
+	//modRuntimeOnly "curse.maven:just-load-601990:3921149"
 	modRuntimeOnly "curse.maven:lazydfu-433518:3821870"
 	// https://www.curseforge.com/minecraft/mc-mods/fabric-disable-custom-worlds-advice/files
 	modRuntimeOnly "curse.maven:disablecustomworldsadvice-401978:4619700"
@@ -62,6 +61,8 @@ processResources {
 	inputs.property 'modVersion', rootProject.mod_version
 	inputs.property 'modAuthor', rootProject.mod_author
 	inputs.property "minecraftVersion", rootProject.minecraft_version
+	inputs.property "yungsapiMinecraftVersion", rootProject.yungsapi_minecraft_version
+	inputs.property "yungsapiVersion", rootProject.yungsapi_version
 
 	filesMatching("fabric.mod.json") {
 		expand([

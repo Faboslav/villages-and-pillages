@@ -10,7 +10,9 @@ env:
         Java 17
         Java 18
     GAME_VERSIONS: |
-        1.19.2
+        1.20
+        1.20.1
+        1.20.2
     FABRIC_DEPENDENCIES_CURSEFORGE: |
         fabric-api | depends | *
         yungs-api-fabric | depends | *
