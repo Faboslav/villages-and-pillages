@@ -1,34 +1,41 @@
 {
-  "schemaVersion": 1,
-  "id": "${modId}",
-  "version": "${modVersion}",
-  "name": "${modName}",
-  "description": "${modDescription}",
-  "authors": [
-    "${modAuthor}"
-  ],
-  "contact": {
-    "homepage": "https://www.curseforge.com/minecraft/mc-mods/villages-and-pillages",
-    "sources": "https://github.com/Faboslav/villages-and-pillages",
-    "issues": "https://github.com/Faboslav/villages-and-pillages/issues",
-    "discord": "https://discord.com/invite/QGwFvvMQCn"
-  },
-  "license": "CC BY-NC-ND 4.0",
-  "icon": "icon.png",
-  "environment": "*",
-  "entrypoints": {
-    "main": [
-      "com.faboslav.villagesandpillages.fabric.VillagesAndPillagesFabric"
-    ]
-  },
-  "mixins": [
-    "villagesandpillages-common.mixins.json"
-  ],
-  "depends": {
-    "java": ">=17",
-    "minecraft": ">=${minecraftVersion}",
-    "fabricloader": ">=${fabricLoaderVersion}",
-    "fabric": ">=${fabricApiVersion}",
-    "yungsapi": ">=${minecraftVersion}-Fabric-${yungsapiVersion}"
-  }
+	"schemaVersion": 1,
+	"id": "${modId}",
+	"version": "${modVersion}",
+	"name": "${modName}",
+	"description": "${modDescription}",
+	"authors": [
+		"${modAuthor}"
+	],
+	"contact": {
+		"homepage": "https://www.curseforge.com/minecraft/mc-mods/villages-and-pillages",
+		"sources": "https://github.com/Faboslav/villages-and-pillages",
+		"issues": "https://github.com/Faboslav/villages-and-pillages/issues",
+		"discord": "https://discord.com/invite/QGwFvvMQCn"
+	},
+	"license": "CC BY-NC-ND 4.0",
+	"icon": "icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.faboslav.villagesandpillages.fabric.VillagesAndPillagesFabric"
+		]
+	},
+	"mixins": [
+		"villagesandpillages-common.mixins.json"
+	],
+	"depends": {
+		"java": ">=17",
+		"minecraft": ">=${minecraftVersion}",
+		"fabricloader": ">=${fabricLoaderVersion}",
+		"fabric": ">=${fabricApiVersion}",
+		"yungsapi": ">=${minecraftVersion}-Fabric-${yungsapiVersion}"
+	},
+	"custom": {
+		"catalogue": {
+			"icon": {
+				"image": "icon.png"
+			}
+		}
+	}
 }

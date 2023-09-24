@@ -33,23 +33,23 @@ dependencies {
 	// Core dependencies
 	modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
 	modApi "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_api_version}"
-	modApi "com.yungnickyoung.minecraft.yungsapi:YungsApi:${minecraft_version}-Fabric-${yungsapi_version}"
+	modApi "com.yungnickyoung.minecraft.yungsapi:YungsApi:${rootProject.minecraft_version}-Fabric-${rootProject.yungsapi_version}"
 
 	// For faster development https://www.cursemaven.com/
 	// https://www.curseforge.com/minecraft/mc-mods/skip-transitions/files
-	modRuntimeOnly "curse.maven:skip-transitions-592071:3735539"
+	//modRuntimeOnly "curse.maven:skip-transitions-592071:3735539"
 	// https://www.curseforge.com/minecraft/mc-mods/just-load
 	//modRuntimeOnly "curse.maven:just-load-601990:3921149"
 	// https://www.curseforge.com/minecraft/mc-mods/fastload
 	//modRuntimeOnly "curse.maven:fastload-630620:4278866"
 	// https://www.curseforge.com/minecraft/mc-mods/lazydfu/files
-	modRuntimeOnly "curse.maven:lazydfu-433518:3821870"
+	//modRuntimeOnly "curse.maven:lazydfu-433518:3821870"
 	// https://www.curseforge.com/minecraft/mc-mods/starlight/files
-	modRuntimeOnly "curse.maven:lithium-360438:4151762"
+	//modRuntimeOnly "curse.maven:lithium-360438:4151762"
 	//modRuntimeOnly "curse.maven:sodium-394468:3957319"
-	modRuntimeOnly "curse.maven:starlight-521783:3835973"
+	//modRuntimeOnly "curse.maven:starlight-521783:3835973"
 	//modRuntimeOnly "curse.maven:async-locator-625069:4257310"
-	modRuntimeOnly "curse.maven:disablecustomworldsadvice-401978:3827588"
+	//modRuntimeOnly "curse.maven:disablecustomworldsadvice-401978:3827588"
 
 	// Integrations
 	// Waystones

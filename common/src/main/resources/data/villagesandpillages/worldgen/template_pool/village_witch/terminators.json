@@ -3,6 +3,38 @@
 	"fallback": "minecraft:empty",
 	"elements": [
 		{
+			"weight": 5,
+			"element": {
+				"location": "villagesandpillages:village_witch/road/crossroad/crossroad_one_way_broken",
+				"processors": "villagesandpillages:village_witch",
+				"projection": "rigid",
+				"is_priority": true,
+				"condition": {
+					"type": "yungsapi:all_of",
+					"conditions": [
+						{
+							"type": "yungsapi:not",
+							"condition": {
+								"type": "yungsapi:piece_in_range",
+								"pieces": [
+									"villagesandpillages:village_witch/house/small/small_house_01",
+									"villagesandpillages:village_witch/house/small/small_house_02",
+									"villagesandpillages:village_witch/house/small/small_house_03",
+									"villagesandpillages:village_witch/house/medium/medium_house_01",
+									"villagesandpillages:village_witch/house/medium/medium_house_02"
+								],
+								"horizontal_range": 2,
+								"rotation": "none"
+							}
+						}
+					]
+				},
+				"name": "broken_crossroad",
+				"max_count": 1,
+				"element_type": "yungsapi:yung_single_element"
+			}
+		},
+		{
 			"weight": 4,
 			"element": {
 				"location": "villagesandpillages:village_witch/road/end/road_end_long",

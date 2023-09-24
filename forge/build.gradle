@@ -20,13 +20,13 @@ configurations {
 }
 
 dependencies {
-	forge "net.minecraftforge:forge:${minecraft_version}-${rootProject.forge_version}"
+	forge "net.minecraftforge:forge:${rootProject.minecraft_version}-${rootProject.forge_version}"
 
-	modApi "com.yungnickyoung.minecraft.yungsapi:YungsApi:${minecraft_version}-Forge-${yungsapi_version}"
+	modApi "com.yungnickyoung.minecraft.yungsapi:YungsApi:${rootProject.minecraft_version}-Forge-${rootProject.yungsapi_version}"
 
-	modRuntimeOnly "curse.maven:cloth-config-348521:4633416"
-	modRuntimeOnly "curse.maven:balm-531761:4442591"
-	modRuntimeOnly "curse.maven:waystones-245755:4635420"
+	//modRuntimeOnly "curse.maven:cloth-config-348521:4633416"
+	//modRuntimeOnly "curse.maven:balm-531761:4442591"
+	//modRuntimeOnly "curse.maven:waystones-245755:4635420"
 
 	common(project(path: ":common", configuration: "namedElements")) { transitive false }
 	shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }

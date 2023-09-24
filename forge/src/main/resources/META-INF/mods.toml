@@ -4,27 +4,30 @@ license = "CC BY-NC-ND 4.0"
 issueTrackerURL = "https://github.com/Faboslav/villages-and-pillages/issues"
 
 [[mods]]
-modId="${modId}"
+modId = "${modId}"
 version = "${modVersion}"
 displayName = "${modName}"
 authors = "${modAuthor}"
 description = "${modDescription}"
-logoFile = "icon.jpg"
-displayURL="https://www.curseforge.com/minecraft/mc-mods/villages-and-pillages"
+logoFile = "icon.png"
+displayURL = "https://www.curseforge.com/minecraft/mc-mods/villages-and-pillages"
 
-[[dependencies.${modId}]]
+[modproperties.${ modId }]
+catalogueImageIcon = "icon.png"
+
+[[dependencies.${ modId }]]
 modId = "minecraft"
 mandatory = true
-versionRange = "[${minecraftVersion})"
+versionRange = "[${minecraftVersion},)"
 
-[[dependencies.${modId}]]
+[[dependencies.${ modId }]]
 modId = "forge"
 mandatory = true
 versionRange = "[${forgeVersion},)"
 
-[[dependencies.${modId}]]
+[[dependencies.${ modId }]]
 modId = "yungsapi"
 mandatory = true
-versionRange="[${minecraftVersion}-Forge-${yungsapiVersion},)"
+versionRange = "[${minecraftVersion}-Forge-${yungsapiVersion},)"
 ordering = "NONE"
 side = "BOTH"
