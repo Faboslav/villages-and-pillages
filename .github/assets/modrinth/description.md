@@ -1,8 +1,5 @@
-<h1><center>Villages&Pillages</center></h1>
+<h1>🛖 Villages&Pillages</h1>
 
-<hr>
-
-<p></p>
 <p style="text-align: center;">
 	<a style="text-decoration: none;" href="https://ko-fi.com/faboslav">
 		<img src="https://img.shields.io/static/v1?label=&amp;message=Ko-fi&amp;color=ff5f5f&amp;labelColor=111214&amp;logoColor=white&amp;style=for-the-badge&amp;logo=ko-fi" height="28" />
@@ -17,36 +14,51 @@
 		<img src="https://img.shields.io/static/v1?label=&amp;message=Requires Fabric API&amp;color=c9d1d9&amp;labelColor=111214&amp;logoColor=white&amp;style=for-the-badge&amp;logo=curseforge" height="28" />
 	</a>
 	<a style="text-decoration: none;" href="https://modrinth.com/mod/yungs-api">
-		<img src="https://img.shields.io/static/v1?label=&amp;message=Requires YUNG's APIs&amp;color=c9d1d9&amp;labelColor=111214&amp;logoColor=white&amp;style=for-the-badge&amp;logo=curseforge" height="28" />
+		<img src="https://img.shields.io/static/v1?label=&amp;message=Requires YUNGs APIs&amp;color=c9d1d9&amp;labelColor=111214&amp;logoColor=white&amp;style=for-the-badge&amp;logo=curseforge" height="28" />
 	</a>
 </p>
 
-<hr>
+<br>
 
-<p>
-	<span style="font-size: 14px;">Villages&Pillages is a small structure mod  with a thrilling twist to Minecraft by introducing hostile and unfriendly pillages that stand in stark contrast to the peaceful villages players are familiar with.</span>
-</p>
-<hr>
+<p>Villages&Pillages is a structure mod that brings an exciting twist to Minecraft by introducing hostile and unfriendly pillages, providing a thrilling contrast to the peaceful villages.</p>
 
-<h2>Season 1: Witch Village</h2>
-
-<p>
-	<img src="https://raw.githubusercontent.com/Faboslav/friends-and-foes-beekeeper-hut/master/.github/assets/images/beekeeper_hut1.png" width="412" height="232" />
-	<span>&emsp;&emsp;</span>
-	<img src="https://raw.githubusercontent.com/Faboslav/friends-and-foes-beekeeper-hut/master/.github/assets/images/beekeeper_hut2.png" width="412" height="232" />
-</p>
-
-<h2>Support</h2>
-
-<p><span style="font-size: 14px;">I will continue to develop my mods regardless of any support as it is my hobby, although most of my free time goes into development of my mods. So if you want to support me anyway, you can do that via <a style="font-size: 14px;" href="https://www.patreon.com/Faboslav">Patreon</a> or <a style="font-size: 14px;" href="https://ko-fi.com/faboslav">Ko-fi</a>. I appreciate that.</span></p>
+<p>The mod will receive seasonal updates, with the first season featuring the addition of Witch Villages!</p>
 
 <br>
 
-<h2>License</h2>
+<h2>🧹 Season 1: Witch Village</h2>
+
+Explore the spine-chilling Witch Village hidden deep within swamps and mangrove biomes. Wander through mossy houses and bubbling cauldrons, navigate treacherous bogs to reveal the village's dark secrets.
 
 <p>
-	<span style="font-size: 14px;">The mod is licensed with <a style="font-size: 14px;" href="https://raw.githubusercontent.com/Faboslav/friends-and-foes/master/LICENSE.txt">CC BY-NC-ND 4.0</a> license.</span>
+	<img src="https://raw.githubusercontent.com/Faboslav/villages-and-pillages/master//.github/assets/images/witch_village.png" width="876" />
+</p>
+
+<br>
+
+<h2>⚙️ Compatibility</h2>
+
+<p>Villages&Pillages is designed to be fully compatible with all world generation mods, and it currently offers enhanced compatibility with the Waystones mod.</p>
+
+<br>
+
+<h2>💬 Community</h2>
+
+<p>Feel free to <a href="https://discord.gg/QGwFvvMQCn">join our community at the discord server</a> to chat, share your creations, ask any question or to simply be updated about the latest development of the mod and notified when the new release is out. Also don't hesitate to <a href="https://github.com/Faboslav/villages-and-pillages/issues">report any crash or bug via GitHub issues</a>.</p>
+
+<br>
+
+<h2>👋 Support</h2>
+
+<p>I will continue developing my mods as a hobby because I truly enjoy it. If you'd like to support me, you can do so on <a href="https://www.patreon.com/Faboslav">Patreon</a> or <a href="https://ko-fi.com/faboslav">Ko-fi</a>. Your support is greatly appreciated.</p>
+
+<br>
+
+<h2>📜 License</h2>
+
+<p>
+	The mod is licensed with <a href="https://raw.githubusercontent.com/Faboslav/friends-and-foes/master/LICENSE.txt">CC BY-NC-ND 4.0</a> license.
 </p>
 <p>
-	<span style="font-size: 14px;">Feel free to look over my code for examples of how i have implemented and solved various problems while writing this mod, incorporate snippets into your own code.&nbsp;Also feel free to use this mod in any modpack (although credit/link back to this page will be greatly appreciated).</span>
+	Please feel free to explore my code for examples of how I've tackled and solved various challenges while developing this mod. You're welcome to incorporate code snippets into your own projects. Also feel free to use this mod in any modpack (although credit/link back to this page will be greatly appreciated).
 </p>
