@@ -30,7 +30,7 @@ This mod would not exist in the state as it is without the following people:
 - [TelepathicGrunt] - Support with structure generation related stuff and things
 - [yungnickyoung] - Amazing "YUNG's API" and related additional support
 
-[report crash/bug, share your ideas or give some feedback]: https://github.com/Faboslav/friends-and-foes/issues/new/choose
+[report crash/bug, share your ideas or give some feedback]: https://github.com/Faboslav/villages-and-pillages/issues/new/choose
 
 [CurseForge]: https://www.curseforge.com/minecraft/mc-mods/villages-and-pillages
 
