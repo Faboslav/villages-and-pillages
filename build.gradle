@@ -26,19 +26,19 @@ allprojects {
 
 	processResources {
 		def expandProps = [
-			"modJavaVersion"     : mod_java_version,
-			'modId'              : mod_id,
-			'modName'            : mod_name,
-			'modDescription'     : mod_description,
-			'modVersion'         : mod_version,
-			'modAuthor'          : mod_author,
-			"minecraftVersion"   : minecraft_version,
-			"minMinecraftVersion": min_minecraft_version,
-			"fabricLoaderVersion": fabric_loader_version,
-			"fabricApiVersion"   : fabric_api_version,
-			"forgeVersion"       : forge_version,
-			"yungsapiMinecraftVersion" : yungsapi_minecraft_version,
-			"yungsapiVersion": yungsapi_version
+			"modJavaVersion"          : mod_java_version,
+			'modId'                   : mod_id,
+			'modName'                 : mod_name,
+			'modDescription'          : mod_description,
+			'modVersion'              : mod_version,
+			'modAuthor'               : mod_author,
+			"minecraftVersion"        : minecraft_version,
+			"minMinecraftVersion"     : min_minecraft_version,
+			"fabricLoaderVersion"     : fabric_loader_version,
+			"fabricApiVersion"        : fabric_api_version,
+			"forgeVersion"            : forge_version,
+			"yungsapiMinecraftVersion": yungsapi_minecraft_version,
+			"yungsapiVersion"         : yungsapi_version
 		]
 
 		filesMatching(['pack.mcmeta', 'fabric.mod.json', 'META-INF/mods.toml', '*.mixins.json']) {
