@@ -12,7 +12,7 @@ loom {
 	forge {
 		convertAccessWideners = true
 		extraAccessWideners.add loom.accessWidenerPath.get().asFile.name
-		mixinConfig "variantsandventures-common.mixins.json"
+		mixinConfig "${mod_id}-common.mixins.json"
 	}
 }
 
@@ -33,7 +33,7 @@ dependencies {
 	forge "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 
 	// YUNG's API (https://www.curseforge.com/minecraft/mc-mods/yungs-api-forge)
-	modApi "com.yungnickyoung.minecraft.yungsapi:YungsApi:${yungsapi_minecraft_version}-Forge-${yungsapi_version}"
+	modImplementation("com.yungnickyoung.minecraft.yungsapi:YungsApi:${yungsapi_minecraft_version}-Forge-${yungsapi_version}")
 
 	common(project(path: ":common", configuration: "namedElements")) { transitive false }
 	shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
