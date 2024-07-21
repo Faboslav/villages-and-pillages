@@ -1,9 +1,19 @@
 plugins {
-	id "com.github.johnrengelman.shadow" version "7.1.2"
+	id "com.github.johnrengelman.shadow" version "8.1.1"
 }
 
 allprojects {
-	archivesBaseName = "villagesandpillages-forge-mc${rootProject.minecraft_version}"
+	archivesBaseName = "${mod_id}-forge-mc${minecraft_version}"
+}
+
+loom {
+	accessWidenerPath = project(":common").loom.accessWidenerPath
+
+	forge {
+		convertAccessWideners = true
+		extraAccessWideners.add loom.accessWidenerPath.get().asFile.name
+		mixinConfig "variantsandventures-common.mixins.json"
+	}
 }
 
 architectury {
@@ -20,40 +30,13 @@ configurations {
 }
 
 dependencies {
-	forge "net.minecraftforge:forge:${rootProject.minecraft_version}-${rootProject.forge_version}"
+	forge "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 
-	modApi "com.yungnickyoung.minecraft.yungsapi:YungsApi:${rootProject.yungsapi_minecraft_version}-Forge-${rootProject.yungsapi_version}"
-
-	//modRuntimeOnly "curse.maven:cloth-config-348521:4633416"
-	//modRuntimeOnly "curse.maven:balm-531761:4442591"
-	//modRuntimeOnly "curse.maven:waystones-245755:4635420"
+	// YUNG's API (https://www.curseforge.com/minecraft/mc-mods/yungs-api-forge)
+	modApi "com.yungnickyoung.minecraft.yungsapi:YungsApi:${yungsapi_minecraft_version}-Forge-${yungsapi_version}"
 
 	common(project(path: ":common", configuration: "namedElements")) { transitive false }
 	shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
-}
-
-processResources {
-	inputs.property "modId", rootProject.mod_id
-	inputs.property "modVersion", rootProject.mod_version
-	inputs.property "modName", rootProject.mod_name
-	inputs.property "modDescription", rootProject.mod_description
-	inputs.property "modAuthor", rootProject.mod_author
-	inputs.property "minecraftVersion", rootProject.minecraft_version
-	inputs.property "forgeVersion", rootProject.forge_version
-	inputs.property "yungsapiMinecraftVersion", rootProject.yungsapi_minecraft_version
-	inputs.property "yungsapiVersion", rootProject.yungsapi_version
-
-	filesMatching("META-INF/mods.toml") {
-		expand "modId": rootProject.mod_id,
-			"modVersion": rootProject.mod_version,
-			"modName": rootProject.mod_name,
-			"modDescription": rootProject.mod_description,
-			"modAuthor": rootProject.mod_author,
-			"minecraftVersion": rootProject.minecraft_version,
-			"forgeVersion": rootProject.forge_version,
-			"yungsapiMinecraftVersion": rootProject.yungsapi_minecraft_version,
-			"yungsapiVersion": rootProject.yungsapi_version
-	}
 }
 
 shadowJar {
@@ -65,7 +48,7 @@ shadowJar {
 }
 
 remapJar {
-	input.set shadowJar.archiveFile
+	inputFile.set shadowJar.archiveFile
 	dependsOn shadowJar
 	archiveClassifier.set(null)
 }
@@ -87,5 +70,11 @@ components.java {
 }
 
 repositories {
+	maven {
+		url = "https://maven.theillusivec4.top/"
+	}
+
 	maven { url "https://www.cursemaven.com" }
+
+	maven { url = "https://pkgs.dev.azure.com/djtheredstoner/DevAuth/_packaging/public/maven/v1" }
 }
