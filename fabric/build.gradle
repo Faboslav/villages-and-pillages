@@ -1,15 +1,9 @@
 plugins {
-	id "com.github.johnrengelman.shadow" version "7.1.2"
+	id "com.github.johnrengelman.shadow" version "8.1.1"
 }
 
 allprojects {
-	archivesBaseName = "villagesandpillages-fabric-mc${rootProject.minecraft_version}"
-}
-
-configurations.all {
-	resolutionStrategy {
-		force "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
-	}
+	archivesBaseName = "${mod_id}-fabric-mc${minecraft_version}"
 }
 
 architectury {
@@ -31,60 +25,14 @@ configurations {
 
 dependencies {
 	// Core dependencies
-	modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
-	modApi "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_api_version}"
-	modApi "com.yungnickyoung.minecraft.yungsapi:YungsApi:${rootProject.yungsapi_minecraft_version}-Fabric-${rootProject.yungsapi_version}"
+	modImplementation "net.fabricmc:fabric-loader:${fabric_loader_version}"
+	modApi "net.fabricmc.fabric-api:fabric-api:${fabric_api_version}"
 
-	// For faster development https://www.cursemaven.com/
-	// https://www.curseforge.com/minecraft/mc-mods/skip-transitions/files
-	//modRuntimeOnly "curse.maven:skip-transitions-592071:3735539"
-	// https://www.curseforge.com/minecraft/mc-mods/just-load
-	//modRuntimeOnly "curse.maven:just-load-601990:3921149"
-	// https://www.curseforge.com/minecraft/mc-mods/fastload
-	//modRuntimeOnly "curse.maven:fastload-630620:4278866"
-	// https://www.curseforge.com/minecraft/mc-mods/lazydfu/files
-	//modRuntimeOnly "curse.maven:lazydfu-433518:3821870"
-	// https://www.curseforge.com/minecraft/mc-mods/starlight/files
-	//modRuntimeOnly "curse.maven:lithium-360438:4151762"
-	//modRuntimeOnly "curse.maven:sodium-394468:3957319"
-	//modRuntimeOnly "curse.maven:starlight-521783:3835973"
-	//modRuntimeOnly "curse.maven:async-locator-625069:4257310"
-	//modRuntimeOnly "curse.maven:disablecustomworldsadvice-401978:3827588"
-
-	// Integrations
-	// Waystones
-	//modRuntimeOnly "curse.maven:cloth-config-348521:4633414"
-	//modRuntimeOnly "curse.maven:balm-fabric-500525:4442592"
-	//modRuntimeOnly "curse.maven:waystones-fabric-500087:4635403"
+	// YUNG's API (https://www.curseforge.com/minecraft/mc-mods/yungs-api-fabric)
+	modImplementation("com.yungnickyoung.minecraft.yungsapi:YungsApi:${yungsapi_minecraft_version}-Fabric-${yungsapi_version}")
 
 	common(project(path: ":common", configuration: "namedElements")) { transitive false }
 	shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
-}
-
-processResources {
-	inputs.property 'modId', rootProject.mod_id
-	inputs.property 'modName', rootProject.mod_name
-	inputs.property 'modDescription', rootProject.mod_description
-	inputs.property 'modVersion', rootProject.mod_version
-	inputs.property 'modAuthor', rootProject.mod_author
-	inputs.property "minecraftVersion", rootProject.minecraft_version
-	inputs.property "yungsapiMinecraftVersion", rootProject.yungsapi_minecraft_version
-	inputs.property "yungsapiVersion", rootProject.yungsapi_version
-
-	filesMatching("fabric.mod.json") {
-		expand([
-			'modId'         : rootProject.mod_id,
-			'modName'       : rootProject.mod_name,
-			'modDescription': rootProject.mod_description,
-			'modVersion'    : rootProject.mod_version,
-			'modAuthor'     : rootProject.mod_author,
-			"minecraftVersion": rootProject.minecraft_version,
-			"fabricApiVersion": rootProject.fabric_api_version,
-			"fabricLoaderVersion": rootProject.fabric_loader_version,
-			"yungsapiMinecraftVersion": rootProject.yungsapi_minecraft_version,
-			"yungsapiVersion": rootProject.yungsapi_version
-		])
-	}
 }
 
 shadowJar {
