@@ -14,10 +14,7 @@ logoBlur = false
 displayURL = "https://www.curseforge.com/minecraft/mc-mods/variants-and-ventures"
 
 [[mixins]]
-config = "variantsandventures-common.mixins.json"
-
-[[mixins]]
-config = "variantsandventures-neoforge.mixins.json"
+config = "${modId}-common.mixins.json"
 
 [[dependencies.${ modId }]]
 modId = "minecraft"
