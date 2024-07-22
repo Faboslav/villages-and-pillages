@@ -3,22 +3,12 @@ plugins {
 }
 
 allprojects {
-	archivesBaseName = "${mod_id}-forge-mc${minecraft_version}"
-}
-
-loom {
-	accessWidenerPath = project(":common").loom.accessWidenerPath
-
-	forge {
-		convertAccessWideners = true
-		extraAccessWideners.add loom.accessWidenerPath.get().asFile.name
-		mixinConfig "${mod_id}-common.mixins.json"
-	}
+	archivesBaseName = "${mod_id}-neoforge-mc${minecraft_version}"
 }
 
 architectury {
 	platformSetupLoomIde()
-	forge()
+	neoForge()
 }
 
 configurations {
@@ -26,17 +16,23 @@ configurations {
 	shadowCommon
 	compileClasspath.extendsFrom common
 	runtimeClasspath.extendsFrom common
-	developmentForge.extendsFrom common
+	developmentNeoForge.extendsFrom common
+}
+
+
+loom {
+	accessWidenerPath = project(":common").loom.accessWidenerPath
 }
 
 dependencies {
-	forge "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
+	neoForge "net.neoforged:neoforge:${neoforge_version}"
 
 	// YUNG's API (https://www.curseforge.com/minecraft/mc-mods/yungs-api-forge)
-	modImplementation("com.yungnickyoung.minecraft.yungsapi:YungsApi:${yungsapi_minecraft_version}-Forge-${yungsapi_version}")
+	modImplementation("com.yungnickyoung.minecraft.yungsapi:YungsApi:${yungsapi_minecraft_version}-NeoForge-${yungsapi_version}")
 
 	common(project(path: ":common", configuration: "namedElements")) { transitive false }
-	shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
+	shadowCommon(project(path: ":common", configuration: "transformProductionNeoForge")) { transitive = false }
+
 }
 
 shadowJar {
@@ -51,6 +47,7 @@ remapJar {
 	inputFile.set shadowJar.archiveFile
 	dependsOn shadowJar
 	archiveClassifier.set(null)
+	atAccessWideners.add("${mod_id}.accesswidener")
 }
 
 jar {
@@ -71,10 +68,13 @@ components.java {
 
 repositories {
 	maven {
+		name = 'NeoForged'
+		url = 'https://maven.neoforged.net/'
+	}
+
+	maven {
 		url = "https://maven.theillusivec4.top/"
 	}
 
 	maven { url "https://www.cursemaven.com" }
-
-	maven { url = "https://pkgs.dev.azure.com/djtheredstoner/DevAuth/_packaging/public/maven/v1" }
 }
