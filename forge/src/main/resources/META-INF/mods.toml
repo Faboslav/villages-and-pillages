@@ -1,5 +1,5 @@
 modLoader = "javafml"
-loaderVersion = "[43,)"
+loaderVersion = "*"
 license = "CC BY-NC-ND 4.0"
 issueTrackerURL = "https://github.com/Faboslav/villages-and-pillages/issues"
 
@@ -18,7 +18,7 @@ catalogueImageIcon = "icon.png"
 [[dependencies.${ modId }]]
 modId = "minecraft"
 mandatory = true
-versionRange = "[${minecraftVersion},)"
+versionRange = "[${minMinecraftVersion},)"
 
 [[dependencies.${ modId }]]
 modId = "forge"

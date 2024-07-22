@@ -11,69 +11,96 @@ on:
 
 jobs:
     build:
+        name: "Build project"
         runs-on: ubuntu-latest
-        name: "Build"
-        timeout-minutes: 30
+        timeout-minutes: 15
+        outputs:
+            matrix: ${{ steps.set-matrix.outputs.matrix }}
 
         steps:
             -   name: "Checkout repository"
-                uses: actions/checkout@v3.5.3
+                uses: actions/checkout@v4
                 with:
                     fetch-depth: 0
 
-            -   name: "Setup environment"
-                uses: ./.github/actions/setup-environment
+            -   name: "Parse gradle properties"
+                id: gradle-properties
+                run: |
+                    while IFS='=' read -r key value; do
+                      key=$(echo $key | awk '{$1=$1;print}')
+                        value=$(echo $value | awk '{$1=$1;print}')
+                    
+                        case "$key" in
+                          mod_java_version) echo "JAVA_VERSION=$value" >> $GITHUB_OUTPUT ;;
+                          minecraft_version) echo "MINECRAFT_VERSION=$value" >> $GITHUB_OUTPUT ;;
+                          mod_name) echo "MOD_NAME=$value" >> $GITHUB_OUTPUT ;;
+                          mod_version) echo "MOD_VERSION=$value" >> $GITHUB_OUTPUT ;;
+                          enabled_platforms) echo "ENABLED_PLATFORMS=$value" >> $GITHUB_OUTPUT ;;
+                        esac
+                    done < gradle.properties
 
-            -   name: "Build with gradle"
-                run: ./gradlew build
+            -   name: "Set up JDK"
+                uses: actions/setup-java@v4
+                with:
+                    java-version: ${{ steps.gradle-properties.outputs.JAVA_VERSION }}
+                    distribution: temurin
 
-    run-client:
-        needs: build
+            -   name: "Run gradle build"
+                uses: gradle/actions/setup-gradle@v3
+                with:
+                    cache-read-only: false
+                    generate-job-summary: false
+                    gradle-version: wrapper
+                    arguments: build
+
+            -   name: "Generate matrix for the run job"
+                id: set-matrix
+                run: ./.github/scripts/generate-run-matrix.sh
+
+    run:
+        name: Run ${{ matrix.mod_loader }} ${{ matrix.script }}
         runs-on: ubuntu-latest
+        needs: build
         strategy:
             fail-fast: false
-            matrix:
-                mod_loader: [ "fabric", "forge" ]
-        name: Run ${{ matrix.mod_loader }} client
-        timeout-minutes: 30
+            matrix: ${{fromJson(needs.build.outputs.matrix)}}
+        timeout-minutes: 15
 
         steps:
             -   name: "Checkout repository"
-                uses: actions/checkout@v3.5.3
+                uses: actions/checkout@v4
                 with:
                     fetch-depth: 0
 
-            -   name: "Setup environment"
-                uses: ./.github/actions/setup-environment
+            -   name: "Parse gradle properties"
+                id: gradle-properties
+                run: |
+                    while IFS='=' read -r key value; do
+                      key=$(echo $key | awk '{$1=$1;print}')
+                        value=$(echo $value | awk '{$1=$1;print}')
+                    
+                        case "$key" in
+                          mod_java_version) echo "JAVA_VERSION=$value" >> $GITHUB_OUTPUT ;;
+                        esac
+                    done < gradle.properties
 
-            -   name: Run ${{ matrix.mod_loader }} client
-                uses: modmuss50/xvfb-action@v1
+            -   name: "Set up JDK"
+                uses: actions/setup-java@v4
                 with:
-                    run: ./.github/scripts/run-client.sh ${{ matrix.mod_loader }}
-                    shell: bash
+                    java-version: ${{ steps.gradle-properties.outputs.JAVA_VERSION }}
+                    distribution: temurin
 
-    run-server:
-        needs: build
-        runs-on: ubuntu-latest
-        strategy:
-            fail-fast: false
-            matrix:
-                mod_loader: [ "fabric", "forge" ]
-        name: Run ${{ matrix.mod_loader }} server
-        timeout-minutes: 30
-
-        steps:
-            -   name: "Checkout repository"
-                uses: actions/checkout@v3.5.3
+            -   name: "Setup Gradle"
+                uses: gradle/actions/setup-gradle@v3
                 with:
-                    fetch-depth: 0
-
-            -   name: "Setup environment"
-                uses: ./.github/actions/setup-environment
+                    cache-read-only: true
+                    gradle-version: wrapper
 
             -   name: "Accept eula"
                 run: mkdir -p ${{ matrix.mod_loader }}/run && echo "eula=true" > ${{ matrix.mod_loader }}/run/eula.txt
 
-            -   name: Run ${{ matrix.mod_loader }} server
-                run: ./.github/scripts/run-server.sh ${{ matrix.mod_loader }}
-                shell: bash
+            -   name: Run ${{ matrix.mod_loader }} ${{ matrix.script }}
+                uses: modmuss50/xvfb-action@v1
+                with:
+                    run: ./.github/scripts/run-${{ matrix.script }}.sh ${{ matrix.mod_loader }}
+                    shell: bash
