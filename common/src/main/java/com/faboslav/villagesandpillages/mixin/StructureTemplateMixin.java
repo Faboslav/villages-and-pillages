@@ -2,6 +2,7 @@ package com.faboslav.villagesandpillages.mixin;
 
 import com.faboslav.villagesandpillages.init.VillagesAndPillagesProcessorTypes;
 import com.faboslav.villagesandpillages.mixin.accessor.StructureProcessorAccessor;
+import net.minecraft.structure.StructureLiquidSettings;
 import net.minecraft.structure.StructurePlacementData;
 import net.minecraft.structure.StructureTemplate;
 import net.minecraft.util.math.BlockPos;
@@ -39,7 +40,7 @@ public class StructureTemplateMixin
 					return ((StructureProcessorAccessor) processor).callGetType() == VillagesAndPillagesProcessorTypes.WATERLOG_PROCESSOR;
 				})
 		) {
-			placementData.setPlaceFluids(false);
+			placementData.setLiquidSettings(StructureLiquidSettings.IGNORE_WATERLOGGING);
 		}
 	}
 }

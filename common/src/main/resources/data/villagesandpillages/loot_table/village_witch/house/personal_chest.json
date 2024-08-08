@@ -15,13 +15,28 @@
 						{
 							"function": "minecraft:set_count",
 							"count": {
-								"min": 3.0,
-								"max": 6.0,
+								"min": 1.0,
+								"max": 3.0,
 								"type": "minecraft:uniform"
 							}
 						}
 					],
-					"name": "minecraft:redstone"
+					"name": "minecraft:stick"
+				},
+				{
+					"type": "minecraft:item",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": {
+								"min": 2.0,
+								"max": 5.0,
+								"type": "minecraft:uniform"
+							}
+						}
+					],
+					"name": "minecraft:glass_bottle"
 				},
 				{
 					"type": "minecraft:item",
@@ -51,6 +66,21 @@
 							}
 						}
 					],
+					"name": "minecraft:redstone"
+				},
+				{
+					"type": "minecraft:item",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": {
+								"min": 3.0,
+								"max": 6.0,
+								"type": "minecraft:uniform"
+							}
+						}
+					],
 					"name": "minecraft:spider_eye"
 				},
 				{
@@ -66,62 +96,22 @@
 							}
 						}
 					],
+					"name": "minecraft:gunpowder"
+				},
+				{
+					"type": "minecraft:item",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": {
+								"min": 3.0,
+								"max": 6.0,
+								"type": "minecraft:uniform"
+							}
+						}
+					],
 					"name": "minecraft:sugar"
-				},
-				{
-					"type": "minecraft:item",
-					"weight": 1,
-					"functions": [
-						{
-							"function": "minecraft:set_count",
-							"count": {
-								"min": 3.0,
-								"max": 6.0,
-								"type": "minecraft:uniform"
-							}
-						}
-					],
-					"name": "minecraft:brown_mushroom"
-				},
-				{
-					"type": "minecraft:item",
-					"weight": 1,
-					"functions": [
-						{
-							"function": "minecraft:set_count",
-							"count": {
-								"min": 3.0,
-								"max": 6.0,
-								"type": "minecraft:uniform"
-							}
-						}
-					],
-					"name": "minecraft:red_mushroom"
-				},
-				{
-					"type": "minecraft:item",
-					"weight": 1,
-					"functions": [
-						{
-							"function": "minecraft:set_count",
-							"count": {
-								"min": 3.0,
-								"max": 6.0,
-								"type": "minecraft:uniform"
-							}
-						}
-					],
-					"name": "minecraft:fermented_spider_eye"
-				},
-				{
-					"type": "minecraft:item",
-					"weight": 1,
-					"name": "minecraft:rabbit_foot"
-				},
-				{
-					"type": "minecraft:item",
-					"weight": 1,
-					"name": "minecraft:pufferfish"
 				}
 			]
 		},
@@ -135,61 +125,57 @@
 				{
 					"type": "minecraft:item",
 					"weight": 1,
+					"name": "minecraft:potion",
 					"functions": [
 						{
-							"function": "minecraft:set_count",
-							"count": {
-								"min": 2.0,
-								"max": 5.0,
-								"type": "minecraft:uniform"
-							}
+							"function": "minecraft:set_potion",
+							"id": "minecraft:healing"
 						}
-					],
-					"name": "minecraft:glass_bottle"
+					]
 				},
 				{
 					"type": "minecraft:item",
 					"weight": 1,
+					"name": "minecraft:potion",
 					"functions": [
 						{
-							"function": "minecraft:set_nbt",
-							"tag": "{Potion:\"minecraft:slowness\"}"
+							"function": "minecraft:set_potion",
+							"id": "minecraft:regeneration"
 						}
-					],
-					"name": "minecraft:splash_potion"
+					]
 				},
 				{
 					"type": "minecraft:item",
 					"weight": 1,
+					"name": "minecraft:potion",
 					"functions": [
 						{
-							"function": "minecraft:set_nbt",
-							"tag": "{Potion:\"minecraft:poison\"}"
+							"function": "minecraft:set_potion",
+							"id": "minecraft:fire_resistance"
 						}
-					],
-					"name": "minecraft:splash_potion"
+					]
 				},
 				{
 					"type": "minecraft:item",
 					"weight": 1,
+					"name": "minecraft:potion",
 					"functions": [
 						{
-							"function": "minecraft:set_nbt",
-							"tag": "{Potion:\"minecraft:weakness\"}"
+							"function": "minecraft:set_potion",
+							"id": "minecraft:swiftness"
 						}
-					],
-					"name": "minecraft:splash_potion"
+					]
 				},
 				{
 					"type": "minecraft:item",
 					"weight": 1,
+					"name": "minecraft:potion",
 					"functions": [
 						{
-							"function": "minecraft:set_nbt",
-							"tag": "{Potion:\"minecraft:harming\"}"
+							"function": "minecraft:set_potion",
+							"id": "minecraft:water_breathing"
 						}
-					],
-					"name": "minecraft:splash_potion"
+					]
 				}
 			]
 		}

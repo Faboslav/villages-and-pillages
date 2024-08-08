@@ -2,6 +2,7 @@ package com.faboslav.villagesandpillages.world.structures;
 
 import com.faboslav.villagesandpillages.init.VillagesAndPillagesStructureTypes;
 import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import com.yungnickyoung.minecraft.yungsapi.api.YungJigsawManager;
 import com.yungnickyoung.minecraft.yungsapi.world.structure.YungJigsawStructure;
@@ -10,6 +11,7 @@ import com.yungnickyoung.minecraft.yungsapi.world.structure.terrainadaptation.En
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.structure.StructureLiquidSettings;
 import net.minecraft.structure.pool.StructurePool;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
@@ -25,6 +27,8 @@ import net.minecraft.world.gen.chunk.ChunkGenerator;
 import net.minecraft.world.gen.chunk.VerticalBlockSample;
 import net.minecraft.world.gen.heightprovider.HeightProvider;
 import net.minecraft.world.gen.noise.NoiseConfig;
+import net.minecraft.world.gen.structure.DimensionPadding;
+import net.minecraft.world.gen.structure.JigsawStructure;
 import net.minecraft.world.gen.structure.Structure;
 import net.minecraft.world.gen.structure.StructureType;
 
@@ -40,31 +44,24 @@ import java.util.function.Predicate;
 public class VillageWitchStructure extends YungJigsawStructure
 {
 	public static final int MAX_TOTAL_STRUCTURE_RADIUS = 128;
-	public static final Codec<VillageWitchStructure> CODEC = RecordCodecBuilder.create(builder -> builder.group(configCodecBuilder(builder), StructurePool.REGISTRY_CODEC.fieldOf("start_pool").forGetter((structure) -> {
-		return structure.startPool;
-	}), Identifier.CODEC.optionalFieldOf("start_jigsaw_name").forGetter((structure) -> {
-		return structure.startJigsawName;
-	}), Codec.intRange(0, 128).fieldOf("size").forGetter((structure) -> {
-		return structure.maxDepth;
-	}), HeightProvider.CODEC.fieldOf("start_height").forGetter((structure) -> {
-		return structure.startHeight;
-	}), IntProvider.createValidatingCodec(0, 15).optionalFieldOf("x_offset_in_chunk", ConstantIntProvider.create(0)).forGetter((structure) -> {
-		return structure.xOffsetInChunk;
-	}), IntProvider.createValidatingCodec(0, 15).optionalFieldOf("z_offset_in_chunk", ConstantIntProvider.create(0)).forGetter((structure) -> {
-		return structure.zOffsetInChunk;
-	}), Codec.BOOL.optionalFieldOf("use_expansion_hack", false).forGetter((structure) -> {
-		return structure.useExpansionHack;
-	}), Heightmap.Type.CODEC.optionalFieldOf("project_start_to_heightmap").forGetter((structure) -> {
-		return structure.projectStartToHeightmap;
-	}), Codec.intRange(1, MAX_TOTAL_STRUCTURE_RADIUS).fieldOf("max_distance_from_center").forGetter((structure) -> {
-		return structure.maxDistanceFromCenter;
-	}), Codec.INT.optionalFieldOf("max_y").forGetter((structure) -> {
-		return structure.maxY;
-	}), Codec.INT.optionalFieldOf("min_y").forGetter((structure) -> {
-		return structure.minY;
-	}), EnhancedTerrainAdaptationType.ADAPTATION_CODEC.optionalFieldOf("enhanced_terrain_adaptation", EnhancedTerrainAdaptation.NONE).forGetter((structure) -> {
-		return structure.enhancedTerrainAdaptation;
-	})).apply(builder, VillageWitchStructure::new));
+	public static final MapCodec<VillageWitchStructure> CODEC = RecordCodecBuilder.mapCodec(builder -> builder
+			.group(
+				configCodecBuilder(builder),
+				StructurePool.REGISTRY_CODEC.fieldOf("start_pool").forGetter(structure -> structure.startPool),
+				Identifier.CODEC.optionalFieldOf("start_jigsaw_name").forGetter(structure -> structure.startJigsawName),
+				Codec.intRange(0, 128).fieldOf("size").forGetter(structure -> structure.maxDepth),
+				HeightProvider.CODEC.fieldOf("start_height").forGetter(structure -> structure.startHeight),
+				IntProvider.createValidatingCodec(0, 15).optionalFieldOf("x_offset_in_chunk", ConstantIntProvider.create(0)).forGetter(structure -> structure.xOffsetInChunk),
+				IntProvider.createValidatingCodec(0, 15).optionalFieldOf("z_offset_in_chunk", ConstantIntProvider.create(0)).forGetter(structure -> structure.zOffsetInChunk),
+				Codec.BOOL.optionalFieldOf("use_expansion_hack", false).forGetter(structure -> structure.useExpansionHack),
+				Heightmap.Type.CODEC.optionalFieldOf("project_start_to_heightmap").forGetter(structure -> structure.projectStartToHeightmap),
+				Codec.intRange(1, MAX_TOTAL_STRUCTURE_RADIUS).fieldOf("max_distance_from_center").forGetter(structure -> structure.maxDistanceFromCenter),
+				Codec.INT.optionalFieldOf("max_y").forGetter(structure -> structure.maxY),
+				Codec.INT.optionalFieldOf("min_y").forGetter(structure -> structure.minY),
+				EnhancedTerrainAdaptationType.ADAPTATION_CODEC.optionalFieldOf("enhanced_terrain_adaptation", EnhancedTerrainAdaptation.NONE).forGetter(structure -> structure.enhancedTerrainAdaptation),
+				DimensionPadding.CODEC.optionalFieldOf("dimension_padding", DimensionPadding.NONE).forGetter(structure -> structure.dimensionPadding),
+				StructureLiquidSettings.codec.optionalFieldOf("liquid_settings", StructureLiquidSettings.APPLY_WATERLOGGING).forGetter(structure -> structure.liquidSettings))
+			.apply(builder, VillageWitchStructure::new));
 
 	public final RegistryEntry<StructurePool> startPool;
 	private final Optional<Identifier> startJigsawName;
@@ -78,6 +75,8 @@ public class VillageWitchStructure extends YungJigsawStructure
 	public final Optional<Integer> maxY;
 	public final Optional<Integer> minY;
 	public final EnhancedTerrainAdaptation enhancedTerrainAdaptation;
+	public final DimensionPadding dimensionPadding;
+	public final StructureLiquidSettings liquidSettings;
 
 	public VillageWitchStructure(
 		Structure.Config structureSettings,
@@ -92,7 +91,9 @@ public class VillageWitchStructure extends YungJigsawStructure
 		int maxBlockDistanceFromCenter,
 		Optional<Integer> maxY,
 		Optional<Integer> minY,
-		EnhancedTerrainAdaptation enhancedTerrainAdaptation
+		EnhancedTerrainAdaptation enhancedTerrainAdaptation,
+		DimensionPadding dimensionPadding,
+		StructureLiquidSettings liquidSettings
 	) {
 		super(
 			structureSettings,
@@ -107,7 +108,9 @@ public class VillageWitchStructure extends YungJigsawStructure
 			maxBlockDistanceFromCenter,
 			maxY,
 			minY,
-			enhancedTerrainAdaptation
+			enhancedTerrainAdaptation,
+			dimensionPadding,
+			liquidSettings
 		);
 		this.startPool = startPool;
 		this.startJigsawName = startJigsawName;
@@ -121,6 +124,8 @@ public class VillageWitchStructure extends YungJigsawStructure
 		this.maxY = maxY;
 		this.minY = minY;
 		this.enhancedTerrainAdaptation = enhancedTerrainAdaptation;
+		this.dimensionPadding = dimensionPadding;
+		this.liquidSettings = liquidSettings;
 	}
 
 	@Override
@@ -149,7 +154,9 @@ public class VillageWitchStructure extends YungJigsawStructure
 			this.projectStartToHeightmap,
 			this.maxDistanceFromCenter,
 			this.maxY,
-			this.minY
+			this.minY,
+			JigsawStructure.DEFAULT_DIMENSION_PADDING,
+			JigsawStructure.DEFAULT_LIQUID_SETTINGS
 		);
 	}
 
@@ -167,12 +174,12 @@ public class VillageWitchStructure extends YungJigsawStructure
 					var structurePosition = new StructurePosition(new BlockPos(x, 68, z), collector -> {
 					});
 
-					if (this.isBiomeValid(
+					if (!this.isBiomeValid(
 						structurePosition,
 						context.chunkGenerator(),
 						context.noiseConfig(),
 						this.getValidBiomes()::contains
-					) == false) {
+					)) {
 						return false;
 					}
 				}

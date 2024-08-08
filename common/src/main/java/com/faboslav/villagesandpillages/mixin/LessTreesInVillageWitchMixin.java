@@ -1,7 +1,6 @@
 package com.faboslav.villagesandpillages.mixin;
 
 import com.faboslav.villagesandpillages.VillagesAndPillages;
-import com.faboslav.villagesandpillages.mixin.accessor.ChunkRegionAccessor;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.math.BlockPos;
@@ -35,7 +34,7 @@ public final class LessTreesInVillageWitchMixin
 
 			StructureWorldAccess world = context.getWorld();
 			Registry<Structure> structureRegistry = world.getRegistryManager().getOptional(RegistryKeys.STRUCTURE).orElseThrow();
-			StructureAccessor structureAccessor = ((ChunkRegionAccessor) world).getStructureAccessor();
+			StructureAccessor structureAccessor = world.toServerWorld().getStructureAccessor();
 
 			if (
 				context.getRandom().nextFloat() > 0.33

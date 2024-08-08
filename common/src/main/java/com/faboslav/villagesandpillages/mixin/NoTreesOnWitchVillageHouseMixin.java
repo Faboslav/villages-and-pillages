@@ -1,7 +1,6 @@
 package com.faboslav.villagesandpillages.mixin;
 
 import com.faboslav.villagesandpillages.VillagesAndPillages;
-import com.faboslav.villagesandpillages.mixin.accessor.ChunkRegionAccessor;
 import net.minecraft.block.Blocks;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKeys;
@@ -35,7 +34,7 @@ public class NoTreesOnWitchVillageHouseMixin
 		if (context.getWorld() instanceof ChunkRegion) {
 			StructureWorldAccess world = context.getWorld();
 			Registry<Structure> structureRegistry = world.getRegistryManager().getOptional(RegistryKeys.STRUCTURE).orElseThrow();
-			StructureAccessor structureAccessor = ((ChunkRegionAccessor) world).getStructureAccessor();
+			StructureAccessor structureAccessor = world.toServerWorld().getStructureAccessor();
 			BlockPos originBlock = context.getOrigin();
 
 			if (

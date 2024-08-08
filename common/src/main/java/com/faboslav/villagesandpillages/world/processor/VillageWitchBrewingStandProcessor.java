@@ -1,7 +1,7 @@
 package com.faboslav.villagesandpillages.world.processor;
 
 import com.faboslav.villagesandpillages.init.VillagesAndPillagesProcessorTypes;
-import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import net.minecraft.block.Blocks;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtList;
@@ -16,8 +16,7 @@ import net.minecraft.world.WorldView;
 
 public class VillageWitchBrewingStandProcessor extends StructureProcessor
 {
-	public static final VillageWitchBrewingStandProcessor INSTANCE = new VillageWitchBrewingStandProcessor();
-	public static final Codec<VillageWitchBrewingStandProcessor> CODEC = Codec.unit(() -> INSTANCE);
+	public static final MapCodec<VillageWitchBrewingStandProcessor> CODEC = MapCodec.unit(VillageWitchBrewingStandProcessor::new);
 
 	@Override
 	public StructureTemplate.StructureBlockInfo process(

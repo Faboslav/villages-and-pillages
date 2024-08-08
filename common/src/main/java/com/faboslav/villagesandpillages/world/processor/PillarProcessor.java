@@ -2,6 +2,7 @@ package com.faboslav.villagesandpillages.world.processor;
 
 import com.faboslav.villagesandpillages.init.VillagesAndPillagesProcessorTypes;
 import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.block.BlockState;
 import net.minecraft.structure.StructurePlacementData;
@@ -22,7 +23,7 @@ import net.minecraft.world.WorldView;
  */
 public final class PillarProcessor extends StructureProcessor
 {
-	public static final Codec<PillarProcessor> CODEC = RecordCodecBuilder.create(instance -> instance
+	public static final MapCodec<PillarProcessor> CODEC = RecordCodecBuilder.mapCodec(instance -> instance
 		.group(
 			BlockState.CODEC.fieldOf("target_block").forGetter(config -> config.targetBlock),
 			BlockState.CODEC.fieldOf("target_block_output").forGetter(config -> config.targetBlockOutput),

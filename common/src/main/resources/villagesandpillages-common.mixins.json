@@ -10,7 +10,6 @@
 		"LessTreesInVillageWitchMixin",
 		"NoTreesOnWitchVillageHouseMixin",
 		"StructureTemplateMixin",
-		"accessor.ChunkRegionAccessor",
 		"accessor.StructureProcessorAccessor"
 	]
 }
