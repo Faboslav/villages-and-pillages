@@ -1,4 +1,4 @@
-# Villages&Pillages
+# Villages & Pillages
 
 Villages & Pillages is a structure mod that brings an exciting twist to Minecraft by introducing hostile and unfriendly pillages, providing a thrilling contrast to the peaceful villages.
 
