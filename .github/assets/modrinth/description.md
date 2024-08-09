@@ -1,4 +1,4 @@
-<h1>🛖 Villages&Pillages</h1>
+<h1>🛖 Villages & Pillages</h1>
 
 <p style="text-align: center;">
 	<a style="text-decoration: none;" href="https://ko-fi.com/faboslav">
@@ -20,7 +20,7 @@
 
 <br>
 
-<p>Villages&Pillages is a structure mod that brings an exciting twist to Minecraft by introducing hostile and unfriendly pillages, providing a thrilling contrast to the peaceful villages.</p>
+<p>Villages & Pillages is a structure mod that brings an exciting twist to Minecraft by introducing hostile and unfriendly pillages, providing a thrilling contrast to the peaceful villages.</p>
 
 <p>The mod will receive seasonal updates, with the first season featuring the addition of Witch Villages!</p>
 
@@ -38,7 +38,7 @@ Explore the spine-chilling Witch Village hidden deep within swamps and mangrove 
 
 <h2>⚙️ Compatibility</h2>
 
-<p>Villages&Pillages is designed to be fully compatible with all world generation mods, and it currently offers enhanced compatibility with the Waystones mod.</p>
+<p>Villages & Pillages is designed to be fully compatible with all world generation mods, and it currently offers enhanced compatibility with the Waystones mod.</p>
 
 <br>
 
