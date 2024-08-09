@@ -1,11 +1,11 @@
 # Villages&Pillages
 
-Villages&Pillages is a structure mod that brings an exciting twist to Minecraft by introducing hostile and unfriendly pillages, providing a thrilling contrast to the peaceful villages.
+Villages & Pillages is a structure mod that brings an exciting twist to Minecraft by introducing hostile and unfriendly pillages, providing a thrilling contrast to the peaceful villages.
 
 The mod will receive seasonal updates, with the first season featuring the addition of Witch Villages!
 ## Compatibility
 
-Villages&Pillages is designed to be fully compatible with all world generation mods, and it currently offers enhanced compatibility with the Waystones mod.
+Villages & Pillages is designed to be fully compatible with all world generation mods, and it currently offers enhanced compatibility with the Waystones mod.
 
 ## Important links
 
