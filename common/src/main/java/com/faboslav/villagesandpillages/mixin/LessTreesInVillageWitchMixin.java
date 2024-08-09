@@ -37,7 +37,7 @@ public final class LessTreesInVillageWitchMixin
 			StructureAccessor structureAccessor = ((ChunkRegionAccessor) world).getStructureAccessor();
 
 			if (
-				context.getRandom().nextFloat() > 0.33
+				context.getRandom().nextFloat() > 0.5
 				&& structureAccessor.getStructureAt(
 					mutable,
 					structureRegistry.get(VillagesAndPillages.makeID("village_witch"))
