@@ -1,7 +1,7 @@
 package com.faboslav.villagesandpillages.world.processor;
 
 import com.faboslav.villagesandpillages.init.VillagesAndPillagesProcessorTypes;
-import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.yungnickyoung.minecraft.yungsapi.api.world.randomize.BlockStateRandomizer;
 import net.minecraft.block.Blocks;
 import net.minecraft.structure.StructurePlacementData;
@@ -14,8 +14,7 @@ import net.minecraft.world.WorldView;
 
 public class VillageWitchFlowerPotProcessor extends StructureProcessor
 {
-	public static final VillageWitchFlowerPotProcessor INSTANCE = new VillageWitchFlowerPotProcessor();
-	public static final Codec<VillageWitchFlowerPotProcessor> CODEC = Codec.unit(() -> INSTANCE);
+	public static final MapCodec<VillageWitchFlowerPotProcessor> CODEC = MapCodec.unit(VillageWitchFlowerPotProcessor::new);
 	private final BlockStateRandomizer pottedPlantsSelector = new BlockStateRandomizer(Blocks.FLOWER_POT.getDefaultState())
 		.addBlock(Blocks.POTTED_DEAD_BUSH.getDefaultState(), .2f)
 		.addBlock(Blocks.POTTED_BLUE_ORCHID.getDefaultState(), .15f)

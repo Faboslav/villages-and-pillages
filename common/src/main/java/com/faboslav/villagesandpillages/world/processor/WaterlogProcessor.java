@@ -1,7 +1,7 @@
 package com.faboslav.villagesandpillages.world.processor;
 
 import com.faboslav.villagesandpillages.init.VillagesAndPillagesProcessorTypes;
-import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import net.minecraft.structure.StructurePlacementData;
 import net.minecraft.structure.StructureTemplate;
 import net.minecraft.structure.processor.StructureProcessor;
@@ -11,8 +11,7 @@ import net.minecraft.world.WorldView;
 
 public class WaterlogProcessor extends StructureProcessor
 {
-	public static final WaterlogProcessor INSTANCE = new WaterlogProcessor();
-	public static final Codec<WaterlogProcessor> CODEC = Codec.unit(() -> INSTANCE);
+	public static final MapCodec<WaterlogProcessor> CODEC = MapCodec.unit(WaterlogProcessor::new);
 
 	@Override
 	public StructureTemplate.StructureBlockInfo process(

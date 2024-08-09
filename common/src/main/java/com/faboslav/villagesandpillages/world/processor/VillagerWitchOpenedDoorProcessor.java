@@ -1,7 +1,7 @@
 package com.faboslav.villagesandpillages.world.processor;
 
 import com.faboslav.villagesandpillages.init.VillagesAndPillagesProcessorTypes;
-import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -18,8 +18,7 @@ import net.minecraft.world.WorldView;
 
 public final class VillagerWitchOpenedDoorProcessor extends StructureProcessor
 {
-	public static final VillagerWitchOpenedDoorProcessor INSTANCE = new VillagerWitchOpenedDoorProcessor();
-	public static final Codec<VillagerWitchOpenedDoorProcessor> CODEC = Codec.unit(() -> INSTANCE);
+	public static final MapCodec<VillagerWitchOpenedDoorProcessor> CODEC = MapCodec.unit(VillagerWitchOpenedDoorProcessor::new);
 
 	@Override
 	public StructureTemplate.StructureBlockInfo process(
@@ -49,7 +48,7 @@ public final class VillagerWitchOpenedDoorProcessor extends StructureProcessor
 		}
 
 		Random random = structurePlacementData.getRandom(lowerDoorBlockPos);
-		boolean isOpened = random.nextFloat() > 0.66F;
+		boolean isOpened = random.nextFloat() > 0.8F;
 
 		currentBlockInfo = new StructureTemplate.StructureBlockInfo(
 			doorBlockPos,

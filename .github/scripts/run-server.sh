@@ -1,11 +1,14 @@
 #!/bin/bash
 
-./gradlew $1:runServer --args="nogui" > gradle_server_output.txt 2>&1 &
+mkdir -p $1/run && echo "eula=true" > $1/run/eula.txt
+
+./gradlew $1:runServer --no-daemon --args="nogui" 2>&1 | tee gradle_server_output.txt &
 
 SUCCESS_PATTERN='For help, type "help"'
 ERROR_PATTERNS=(
     'For more details see the full crash report file'
     ' end of report '
+    'Failed download after 3 attempts'
 )
 TIMEOUT=1800
 ELAPSED=0
