@@ -54,7 +54,7 @@
 			}
 		},
 		{
-			"weight": 2,
+			"weight": 3,
 			"element": {
 				"location": "villagesandpillages:village_witch/house/medium/medium_house_01",
 				"processors": "villagesandpillages:village_witch_house",
@@ -71,7 +71,7 @@
 			}
 		},
 		{
-			"weight": 2,
+			"weight": 3,
 			"element": {
 				"location": "villagesandpillages:village_witch/house/medium/medium_house_02",
 				"processors": "villagesandpillages:village_witch_house",
@@ -343,7 +343,7 @@
 			}
 		},
 		{
-			"weight": 1,
+			"weight": 2,
 			"element": {
 				"location": "villagesandpillages:village_witch/road/crossroad/crossroad_four_way",
 				"processors": "villagesandpillages:village_witch",
