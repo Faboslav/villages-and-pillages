@@ -48,7 +48,7 @@ public final class VillagerWitchOpenedDoorProcessor extends StructureProcessor
 		}
 
 		Random random = structurePlacementData.getRandom(lowerDoorBlockPos);
-		boolean isOpened = random.nextFloat() > 0.66F;
+		boolean isOpened = random.nextFloat() > 0.8F;
 
 		currentBlockInfo = new StructureTemplate.StructureBlockInfo(
 			doorBlockPos,
