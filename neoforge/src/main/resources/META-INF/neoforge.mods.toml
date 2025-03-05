@@ -17,9 +17,18 @@ displayURL = "https://www.curseforge.com/minecraft/mc-mods/variants-and-ventures
 config = "${modId}-common.mixins.json"
 
 [[dependencies.${ modId }]]
+modId = "neoforge"
+type = "required"
+versionRange = "*"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.${ modId }]]
 modId = "minecraft"
 required = true
 versionRange = "[${minMinecraftVersion},)"
+ordering = "NONE"
+side = "BOTH"
 
 [[dependencies.${ modId }]]
 modId = "yungsapi"
@@ -27,6 +36,10 @@ required = true
 versionRange = "[${yungsapiMinecraftVersion}-NeoForge-${yungsapiVersion},)"
 ordering = "NONE"
 side = "BOTH"
+[dependencies.${modId}.mc-publish]
+    ignore=false
+    modrinth="yungs-api"
+    curseforge="yungs-api-neoforge"
 
 [modproperties.${ modId }]
 catalogueImageIcon = "catalogue_icon.png"

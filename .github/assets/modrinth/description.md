@@ -1,4 +1,4 @@
-<h1>🛖 Villages & Pillages</h1>
+<h1>🛖 Villages&Pillages</h1>
 
 <p style="text-align: center;">
 	<a style="text-decoration: none;" href="https://ko-fi.com/faboslav">
@@ -31,7 +31,7 @@
 Explore the spine-chilling Witch Village hidden deep within swamps and mangrove biomes. Wander through mossy houses and bubbling cauldrons, navigate treacherous bogs to reveal the village's dark secrets.
 
 <p>
-	<img src="https://raw.githubusercontent.com/Faboslav/villages-and-pillages/master//.github/assets/images/witch_village.png" width="876" />
+	<img src="https://raw.githubusercontent.com/Faboslav/villages-and-pillages/master/.github/assets/images/witch_village.png" width="876" />
 </p>
 
 <br>
@@ -57,7 +57,7 @@ Explore the spine-chilling Witch Village hidden deep within swamps and mangrove 
 <h2>📜 License</h2>
 
 <p>
-	The mod is licensed with <a href="https://raw.githubusercontent.com/Faboslav/friends-and-foes/master/LICENSE.txt">CC BY-NC-ND 4.0</a> license.
+	The mod is licensed with <a href="https://raw.githubusercontent.com/Faboslav/villages-and-pillages/master/LICENSE.txt">CC BY-NC-ND 4.0</a> license.
 </p>
 <p>
 	Please feel free to explore my code for examples of how I've tackled and solved various challenges while developing this mod. You're welcome to incorporate code snippets into your own projects. Also feel free to use this mod in any modpack (although credit/link back to this page will be greatly appreciated).

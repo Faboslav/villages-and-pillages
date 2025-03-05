@@ -27,15 +27,26 @@
 	"depends": {
 		"java": ">=${modJavaVersion}",
 		"minecraft": ">=${minMinecraftVersion}",
-		"fabricloader": ">=${fabricLoaderVersion}",
-		"fabric": ">=${fabricApiVersion}",
+		"fabricloader": "*",
+		"fabric-api": "*",
 		"yungsapi": ">=${yungsapiMinecraftVersion}-Fabric-${yungsapiVersion}"
 	},
 	"custom": {
+		"modmenu": {
+			"links": {
+				"modmenu.discord": "https://discord.com/invite/QGwFvvMQCn"
+			}
+		},
 		"catalogue": {
 			"icon": {
 				"image": "icon.png"
 			}
 		}
+	},
+	"mc-publish": {
+		"dependencies": [
+			"fabric-api(required){curseforge:306612}{modrinth:P7dR8mSH}",
+			"yungsapi(required){curseforge:421649}{modrinth:Ua7DFN59}"
+		]
 	}
 }
