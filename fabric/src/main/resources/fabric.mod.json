@@ -41,12 +41,12 @@
 			"icon": {
 				"image": "icon.png"
 			}
+		},
+		"mc-publish": {
+			"dependencies": [
+				"fabric-api(required){curseforge:306612}{modrinth:P7dR8mSH}",
+				"yungsapi(required){curseforge:421649}{modrinth:Ua7DFN59}"
+			]
 		}
-	},
-	"mc-publish": {
-		"dependencies": [
-			"fabric-api(required){curseforge:306612}{modrinth:P7dR8mSH}",
-			"yungsapi(required){curseforge:421649}{modrinth:Ua7DFN59}"
-		]
 	}
 }
