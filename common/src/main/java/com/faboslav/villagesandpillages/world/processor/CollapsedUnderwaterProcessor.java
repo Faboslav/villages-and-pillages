@@ -76,10 +76,12 @@ public final class CollapsedUnderwaterProcessor extends StructureProcessor
 			BlockPos.Mutable mutable = blockInfoGlobal.pos().mutableCopy().move(Direction.DOWN);
 			BlockState currentBlockState = worldView.getBlockState(mutable);
 			Random random = structurePlacementData.getRandom(blockInfoGlobal.pos());
+			var worldBottomY = worldView.getBottomY();
+			var worldTopY = worldView.getTopYInclusive();
 
 			while (
-				mutable.getY() > worldView.getBottomY()
-				&& mutable.getY() < worldView.getTopY()
+				mutable.getY() > worldBottomY
+				&& mutable.getY() < worldTopY
 				&& (currentBlockState.isAir() || !worldView.getFluidState(mutable).isEmpty())
 			) {
 				if (
