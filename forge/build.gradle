@@ -32,8 +32,8 @@ configurations {
 dependencies {
 	forge "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 
-	// YUNG's API (https://www.curseforge.com/minecraft/mc-mods/yungs-api-forge)
-	modImplementation("com.yungnickyoung.minecraft.yungsapi:YungsApi:${yungsapi_minecraft_version}-Forge-${yungsapi_version}")
+	// YUNG's API (https://modrinth.com/mod/yungs-api)
+	modImplementation("maven.modrinth:yungs-api:${yungsapi_minecraft_version}-Forge-${yungsapi_version}")
 
 	common(project(path: ":common", configuration: "namedElements")) { transitive false }
 	shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
@@ -73,8 +73,6 @@ repositories {
 	maven {
 		url = "https://maven.theillusivec4.top/"
 	}
-
-	maven { url "https://www.cursemaven.com" }
 
 	maven { url = "https://pkgs.dev.azure.com/djtheredstoner/DevAuth/_packaging/public/maven/v1" }
 }

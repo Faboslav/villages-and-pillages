@@ -8,6 +8,7 @@ import com.yungnickyoung.minecraft.yungsapi.api.YungJigsawManager;
 import com.yungnickyoung.minecraft.yungsapi.world.structure.YungJigsawStructure;
 import com.yungnickyoung.minecraft.yungsapi.world.structure.terrainadaptation.adaptations.EnhancedTerrainAdaptation;
 import com.yungnickyoung.minecraft.yungsapi.world.structure.terrainadaptation.adaptations.EnhancedTerrainAdaptationType;
+import com.yungnickyoung.minecraft.yungsapi.world.structure.terrainadaptation.adaptations.NoneAdaptation;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.registry.entry.RegistryEntry;
@@ -58,7 +59,7 @@ public class VillageWitchStructure extends YungJigsawStructure
 				Codec.intRange(1, MAX_TOTAL_STRUCTURE_RADIUS).fieldOf("max_distance_from_center").forGetter(structure -> structure.maxDistanceFromCenter),
 				Codec.INT.optionalFieldOf("max_y").forGetter(structure -> structure.maxY),
 				Codec.INT.optionalFieldOf("min_y").forGetter(structure -> structure.minY),
-				EnhancedTerrainAdaptationType.ADAPTATION_CODEC.optionalFieldOf("enhanced_terrain_adaptation", EnhancedTerrainAdaptation.NONE).forGetter(structure -> structure.enhancedTerrainAdaptation),
+				EnhancedTerrainAdaptationType.ADAPTATION_CODEC.optionalFieldOf("enhanced_terrain_adaptation", NoneAdaptation.INSTANCE).forGetter(structure -> structure.enhancedTerrainAdaptation),
 				DimensionPadding.CODEC.optionalFieldOf("dimension_padding", DimensionPadding.NONE).forGetter(structure -> structure.dimensionPadding),
 				StructureLiquidSettings.codec.optionalFieldOf("liquid_settings", StructureLiquidSettings.APPLY_WATERLOGGING).forGetter(structure -> structure.liquidSettings))
 			.apply(builder, VillageWitchStructure::new));

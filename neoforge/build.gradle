@@ -27,8 +27,8 @@ loom {
 dependencies {
 	neoForge "net.neoforged:neoforge:${neoforge_version}"
 
-	// YUNG's API (https://www.curseforge.com/minecraft/mc-mods/yungs-api-forge)
-	modImplementation("com.yungnickyoung.minecraft.yungsapi:YungsApi:${yungsapi_minecraft_version}-NeoForge-${yungsapi_version}")
+	// YUNG's API (https://modrinth.com/mod/yungs-api)
+	modImplementation("maven.modrinth:yungs-api:${yungsapi_minecraft_version}-NeoForge-${yungsapi_version}")
 
 	common(project(path: ":common", configuration: "namedElements")) { transitive false }
 	shadowCommon(project(path: ":common", configuration: "transformProductionNeoForge")) { transitive = false }
@@ -69,12 +69,6 @@ components.java {
 repositories {
 	maven {
 		name = 'NeoForged'
-		url = 'https://maven.neoforged.net/'
+		url = 'https://maven.neoforged.net/releases'
 	}
-
-	maven {
-		url = "https://maven.theillusivec4.top/"
-	}
-
-	maven { url "https://www.cursemaven.com" }
 }

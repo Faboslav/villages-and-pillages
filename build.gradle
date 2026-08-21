@@ -56,6 +56,10 @@ allprojects {
 			name = "Jitpack"
 			url 'https://jitpack.io/'
 		}
+		maven {
+			name = "Modrinth"
+			url = "https://api.modrinth.com/maven"
+		}
 	}
 
 	tasks.withType(JavaCompile).configureEach {
