@@ -106,7 +106,11 @@ public abstract class BeardifierMixin implements VillageWitchTerrainAdaptationDa
 			if (beardifier == Beardifier.EMPTY) {
 				beardifier = new Beardifier(List.of(), List.of(), null);
 			}
-			//?}
+			//?} else if >= 1.21.9 {
+			/*if (beardifier == Beardifier.EMPTY) {
+				beardifier = new Beardifier(List.of(), List.of(), BoundingBox.infinite());
+			}
+			*///?}
 			VillageWitchTerrainAdaptationData terrainAdaptationData = (VillageWitchTerrainAdaptationData) beardifier;
 			terrainAdaptationData.villagesandpillages$setTerrainAdaptationPieces(pieces);
 			terrainAdaptationData.villagesandpillages$setTerrainAdaptationJunctions(junctions);

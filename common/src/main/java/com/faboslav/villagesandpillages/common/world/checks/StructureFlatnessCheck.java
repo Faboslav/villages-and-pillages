@@ -14,7 +14,7 @@ public final class StructureFlatnessCheck
 		RandomState randomState
 	) {
 		var structurePieceSamples = structureCheckData.getStructurePieceSamples();
-		int maxHeightDifference = 24;
+		int maxHeightDifference = 12;
 
 		int totalFlatnessChecks = structurePieceSamples.length;
 		int minHeight = Integer.MAX_VALUE;

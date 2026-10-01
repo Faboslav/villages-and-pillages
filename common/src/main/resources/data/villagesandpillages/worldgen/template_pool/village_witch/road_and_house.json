@@ -69,7 +69,7 @@
 			"weight": 2,
 			"element": {
 				"element_type": "minecraft:single_pool_element",
-				"location": "villagesandpillages:village_witch/road/crossroad/crossroad_three_way",
+				"location": "villagesandpillages:village_witch/road/crossroad/crossroad_two_way",
 				"processors": "villagesandpillages:village_witch",
 				"projection": "rigid"
 			}
@@ -78,7 +78,7 @@
 			"weight": 1,
 			"element": {
 				"element_type": "minecraft:single_pool_element",
-				"location": "villagesandpillages:village_witch/road/crossroad/crossroad_two_way",
+				"location": "villagesandpillages:village_witch/road/crossroad/crossroad_one_way",
 				"processors": "villagesandpillages:village_witch",
 				"projection": "rigid"
 			}

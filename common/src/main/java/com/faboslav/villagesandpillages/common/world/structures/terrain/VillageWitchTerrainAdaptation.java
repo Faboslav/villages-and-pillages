@@ -11,7 +11,7 @@ import net.minecraft.util.Mth;
  */
 public final class VillageWitchTerrainAdaptation
 {
-	private static final int KERNEL_SIZE = 24;
+	private static final int KERNEL_SIZE = 48;
 	private static final int KERNEL_DISTANCE = 96;
 	private static final int KERNEL_RADIUS = KERNEL_SIZE / 2;
 	private static final float[] KERNEL = Util.make(new float[KERNEL_SIZE * KERNEL_SIZE * KERNEL_SIZE], kernel -> {
