@@ -25,11 +25,10 @@
 		"villagesandpillages-common.mixins.json"
 	],
 	"depends": {
-		"java": ">=${modJavaVersion}",
+		"java": ">=${javaVersion}",
 		"minecraft": ">=${minMinecraftVersion}",
 		"fabricloader": "*",
-		"fabric-api": "*",
-		"yungsapi": ">=${yungsapiMinecraftVersion}-Fabric-${yungsapiVersion}"
+		"fabric-api": "*"
 	},
 	"custom": {
 		"modmenu": {
@@ -44,8 +43,7 @@
 		},
 		"mc-publish": {
 			"dependencies": [
-				"fabric-api(required){curseforge:306612}{modrinth:P7dR8mSH}",
-				"yungsapi(required){curseforge:421649}{modrinth:Ua7DFN59}"
+				"fabric-api(required){curseforge:306612}{modrinth:P7dR8mSH}"
 			]
 		}
 	}

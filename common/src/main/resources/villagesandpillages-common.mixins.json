@@ -1,14 +1,17 @@
 {
-  "required": true,
-  "package": "com.faboslav.villagesandpillages.mixin",
-  "compatibilityLevel": "JAVA_${modJavaVersion}",
-  "minVersion": "0.8",
-  "injectors": {
-    "defaultRequire": 1
-  },
-  "mixins": [
-    "StructureTemplateMixin",
-    "TreeFeatureMixin",
-    "accessor.StructureProcessorAccessor"
-  ]
+	"required": true,
+	"package": "com.faboslav.villagesandpillages.common.mixin",
+	"compatibilityLevel": "JAVA_${javaVersion}",
+	"refmap": "${modId}.refmap.json",
+	"minVersion": "0.8",
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"mixins": [
+		"BeardifierMixin",
+		"StructureMixin",
+		"StructureTemplateMixin",
+		"TreeFeatureMixin",
+		"accessor.StructureProcessorAccessor"
+	]
 }

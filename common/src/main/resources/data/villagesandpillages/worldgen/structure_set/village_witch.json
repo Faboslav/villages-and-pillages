@@ -6,7 +6,7 @@
 		}
 	],
 	"placement": {
-		"type": "yungsapi:enhanced_random_spread",
+		"type": "minecraft:random_spread",
 		"salt": 365808513,
 		"spacing": 24,
 		"separation": 16

@@ -8,115 +8,102 @@ on:
                 required: true
                 default: "['fabric', 'forge', 'neoforge']"
                 type: string
-            branches:
-                description: 'List of branches to be published'
+            versions:
+                description: 'List of versions to be published'
                 required: true
-                default: "['1.19.2', '1.19.3', '1.19.4', '1.20.1', '1.20.4', '1.21', '1.21.4']"
+                default: "['1.20.1', '1.21.1', '1.21.4', '1.21.5', '1.21.8', '1.21.10', '1.21.11', '26.1.2', '26.2', '26.3']"
                 type: string
 
 jobs:
-    publish:
+    generate-publish-matrix:
         runs-on: ubuntu-latest
-        name: Publish ${{ matrix.branch }} ${{ matrix.mod_loader }}
-        timeout-minutes: 60
-        strategy:
-            max-parallel: 3
-            fail-fast: false
-            matrix:
-                branch: ${{ fromJson(inputs.branches) }}
-                mod_loader: ${{ fromJson(inputs.mod_loaders) }}
-                include:
-                    -   mod_loader: "fabric"
-                        supported_mod_loaders: [ "fabric", "quilt" ]
-
-                    -   mod_loader: "forge"
-                        supported_mod_loaders: [ "forge" ]
-
-                    -   mod_loader: "neoforge"
-                        supported_mod_loaders: [ "neoforge" ]
-
+        name: Generate publish matrix
+        outputs:
+            matrix: ${{ steps.set-matrix.outputs.matrix }}
         steps:
             -   name: "Checkout repository"
-                uses: actions/checkout@v4
+                uses: actions/checkout@v6
                 with:
-                    ref: ${{ matrix.branch }}
-                    fetch-depth: 0
+                    fetch-depth: 1
 
-            -   name: "Check if the mod loader is supported"
-                id: check-mod-loader
-                run: |
-                    if [ -d ${{ matrix.mod_loader }} ]; then
-                        echo "Mod loader is supported"
-                        echo "is_mod_loader_supported=true" >> $GITHUB_OUTPUT
-                    else
-                        echo "Mod loader is not supported"
-                        echo "is_mod_loader_supported=false" >> $GITHUB_OUTPUT
-                    fi
+            -   name: "Generate matrix for the publish job"
+                id: set-matrix
+                run: ./.github/scripts/generate-publish-matrix.sh "${{ inputs.mod_loaders }}" "${{ inputs.versions }}"
+
+    create-github-release:
+        runs-on: ubuntu-latest
+        name: Create github release
+        steps:
+            -   name: "Checkout repository"
+                uses: actions/checkout@v6
+                with:
+                    fetch-depth: 1
 
             -   name: "Parse gradle properties"
-                if: steps.check-mod-loader.outputs.is_mod_loader_supported == 'true'
                 id: gradle-properties
-                run: |
-                    while IFS='=' read -r key value; do
-                      key=$(echo $key | awk '{$1=$1;print}')
-                        value=$(echo $value | awk '{$1=$1;print}')
-                    
-                        case "$key" in
-                          mod_java_version) echo "JAVA_VERSION=$value" >> $GITHUB_OUTPUT ;;
-                          minecraft_version) echo "MINECRAFT_VERSION=$value" >> $GITHUB_OUTPUT ;;
-                          min_minecraft_version) echo "MIN_MINECRAFT_VERSION=$value" >> $GITHUB_OUTPUT ;;
-                          mod_name) echo "MOD_NAME=$value" >> $GITHUB_OUTPUT ;;
-                          mod_version) echo "MOD_VERSION=$value" >> $GITHUB_OUTPUT ;;
-                        esac
-                    done < gradle.properties
+                run: ./.github/scripts/parse-gradle-properties.sh ${{ matrix.version }}
 
             -   name: "Parse changelog"
-                if: steps.check-mod-loader.outputs.is_mod_loader_supported == 'true'
-                id: parse-changelog
-                run: |
-                    changelog=$(cat CHANGELOG.md)
-                    tag=${{ steps.gradle-properties.outputs.MOD_VERSION }}
-
-                    list=$(echo "$changelog" | sed -n "/^## $tag/,/^## [0-9]/p" | sed -e '1d;$d' -e '/^$/d')
-
-                    echo "$list" > RELEASE_CHANGELOG.md
+                run: ./.github/scripts/parse-changelog.sh ${{ steps.gradle-properties.outputs.MOD_VERSION }}
 
             -   name: "Create github release"
-                if: steps.check-mod-loader.outputs.is_mod_loader_supported == 'true'
                 continue-on-error: true
                 uses: ncipollo/release-action@v1
                 with:
                     skipIfReleaseExists: true
                     allowUpdates: true
-                    omitNameDuringUpdate: true
                     omitBodyDuringUpdate: true
-                    tag: mc${{ steps.gradle-properties.outputs.MINECRAFT_VERSION }}-${{ steps.gradle-properties.outputs.MOD_VERSION }}
-                    name: ${{ steps.gradle-properties.outputs.MOD_NAME }} ${{ steps.gradle-properties.outputs.MOD_VERSION }} for Minecraft ${{ steps.gradle-properties.outputs.MINECRAFT_VERSION }}
+                    omitDraftDuringUpdate: true
+                    omitNameDuringUpdate: true
+                    omitPrereleaseDuringUpdate: true
+                    tag: ${{ steps.gradle-properties.outputs.MOD_VERSION }}
+                    name: ${{ steps.gradle-properties.outputs.MOD_NAME }} ${{ steps.gradle-properties.outputs.MOD_VERSION }}
                     bodyFile: RELEASE_CHANGELOG.md
 
-            -   name: "Set up JDK"
-                if: steps.check-mod-loader.outputs.is_mod_loader_supported == 'true'
-                uses: actions/setup-java@v4
+    publish-to-platforms:
+        runs-on: ubuntu-latest
+        needs: [generate-publish-matrix, create-github-release]
+        name: Publish ${{ matrix.mod_loader }} ${{ matrix.version }}
+        timeout-minutes: 60
+        strategy:
+            max-parallel: 3
+            fail-fast: false
+            matrix: ${{ fromJson(needs.generate-publish-matrix.outputs.matrix) }}
+
+        steps:
+            -   name: "Checkout repository"
+                uses: actions/checkout@v6
                 with:
-                    java-version: ${{ steps.gradle-properties.outputs.JAVA_VERSION }}
+                    fetch-depth: 1
+
+            -   name: "Set up JDK"
+                uses: actions/setup-java@v5
+                with:
+                    java-version: 25
                     distribution: temurin
 
-            -   name: "Setup gradle and run build"
-                if: steps.check-mod-loader.outputs.is_mod_loader_supported == 'true'
-                uses: gradle/gradle-build-action@v3
+            -   name: "Setup Gradle"
+                uses: gradle/actions/setup-gradle@v6
                 with:
                     cache-read-only: true
-                    generate-job-summary: false
                     gradle-version: wrapper
-                    arguments: ${{ matrix.mod_loader }}:build
+                    add-job-summary: 'on-failure'
+
+            -   name: "Run build"
+                run: ./gradlew ${{ matrix.mod_loader }}:${{ matrix.version }}:build
+
+            -   name: "Parse gradle properties"
+                id: gradle-properties
+                run: ./.github/scripts/parse-gradle-properties.sh ${{ matrix.version }}
+
+            -   name: "Parse changelog"
+                run: ./.github/scripts/parse-changelog.sh ${{ steps.gradle-properties.outputs.MOD_VERSION }}
 
             -   name: Publish ${{ matrix.mod_loader }}
-                if: steps.check-mod-loader.outputs.is_mod_loader_supported == 'true'
-                uses: Kir-Antipov/mc-publish@v3.3.0
+                uses: Kir-Antipov/mc-publish@v3.3.1
                 with:
                     github-token: ${{ secrets.GITHUB_TOKEN }}
-                    github-tag: mc${{ steps.gradle-properties.outputs.MINECRAFT_VERSION }}-${{ steps.gradle-properties.outputs.MOD_VERSION }}
-                    github-commitish: ${{ steps.gradle-properties.outputs.MINECRAFT_VERSION }}
+                    github-tag: ${{ steps.gradle-properties.outputs.MOD_VERSION }}
 
                     curseforge-id: ${{ vars.CURSEFORGE_PROJECT_ID }}
                     curseforge-token: ${{ secrets.CURSEFORGE_RELEASE_TOKEN }}
@@ -126,21 +113,15 @@ jobs:
                     modrinth-token: ${{ secrets.MODRINTH_RELEASE_TOKEN}}
 
                     name: ${{ steps.gradle-properties.outputs.MOD_NAME }} ${{ steps.gradle-properties.outputs.MOD_VERSION }}
-                    version: ${{ matrix.mod_loader }}-mc${{ steps.gradle-properties.outputs.MINECRAFT_VERSION }}-${{ steps.gradle-properties.outputs.MOD_VERSION }}
+                    version: ${{ matrix.mod_loader }}-${{ steps.gradle-properties.outputs.MOD_VERSION }}+mc${{ steps.gradle-properties.outputs.MINECRAFT_VERSION }}
                     loaders: ${{ join(matrix.supported_mod_loaders, ' ') }}
-                    game-versions: "${{ steps.gradle-properties.outputs.MINECRAFT_VERSION }}\n${{ steps.gradle-properties.outputs.MIN_MINECRAFT_VERSION }}"
+                    environment: client | server
+                    game-versions: |
+                        >=${{ steps.gradle-properties.outputs.MIN_MINECRAFT_VERSION }} <=${{ steps.gradle-properties.outputs.MINECRAFT_VERSION }}
+                    game-version-filter: releases
                     changelog-file: RELEASE_CHANGELOG.md
                     files: |
-                        ${{ matrix.mod_loader }}/build/libs/!(*-@(dev|dev-shadow|sources|javadoc)).jar
+                        ${{ matrix.mod_loader }}/versions/${{ matrix.version }}/build/libs/!(*-@(dev|dev-shadow|sources|javadoc)).jar
 
-    clear-cache:
-        needs: publish
-        runs-on: ubuntu-latest
-        name: "Clear cache"
-        timeout-minutes: 60
-        steps:
-            -   uses: MyAlbum/purge-cache@v2
-                with:
-                    accessed: true
-                    created: true
-                    max-age: 21600
+                    retry-attempts: 6
+                    retry-delay: 30000

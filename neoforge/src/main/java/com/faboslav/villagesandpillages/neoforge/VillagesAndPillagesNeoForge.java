@@ -1,8 +1,7 @@
 package com.faboslav.villagesandpillages.neoforge;
 
-import com.faboslav.villagesandpillages.VillagesAndPillages;
-import com.faboslav.villagesandpillages.platform.neoforge.StructureProcessorTypeRegistryImpl;
-import com.faboslav.villagesandpillages.platform.neoforge.StructureTypeRegistryImpl;
+import com.faboslav.villagesandpillages.common.VillagesAndPillages;
+import com.faboslav.villagesandpillages.neoforge.platform.StructureProcessorTypeRegistryImpl;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
@@ -14,6 +13,5 @@ public final class VillagesAndPillagesNeoForge
 		VillagesAndPillages.init();
 
 		StructureProcessorTypeRegistryImpl.STRUCTURE_PROCESSOR_TYPES.register(modEventBus);
-		StructureTypeRegistryImpl.STRUCTURE_TYPES.register(modEventBus);
 	}
 }

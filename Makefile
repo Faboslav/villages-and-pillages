@@ -23,19 +23,26 @@ gen-sources: ## Generate sources
 	./gradlew genSources
 
 run-fabric-client: ## Runs fabric client
-	./gradlew fabric:runClient
+	./gradlew fabric:26.3:runClient
 
 run-forge-client: ## Runs forge client
-	./gradlew forge:runClient
+	./gradlew forge:1.20.1:runClient
 
 run-neoforge-client: ## Runs neoforge client
-	./gradlew neoforge:runClient
+	./gradlew neoforge:26.3:runClient
 
 run-fabric-server: ## Runs fabric server
-	./gradlew fabric:runServer
+	./gradlew fabric:26.3:runServer
 
 run-forge-server: ## Runs forge server
-	./gradlew forge:runServer
+	./gradlew forge:1.20.1:runServer
 
 run-neoforge-server: ## Runs neoforge server
-	./gradlew neoforge:runServer
+	./gradlew neoforge:26.3:runServer
+
+
+nuke: ## Nuke the project
+	./gradlew --stop
+	rm -rf $GRADLE_HOME/caches/transforms-*
+	rm -rf $GRADLE_HOME/caches/build-cache-*
+	find . -type d \( -name ".idea" -o -name ".kotlin" -o -name ".gradle" -o -name "build" -o -name "run" \) -exec rm -rf {} +
