@@ -1,3 +1,9 @@
+## 2.0.0
+
+- Reworked most of the internal mod setup
+- Improved terrain check accuracy and performance
+- Improved terrain generation around the structures
+
 ## 1.0.3
 
 - Fixed compatibility with newer YUNG's API (version of 5.1.4)
